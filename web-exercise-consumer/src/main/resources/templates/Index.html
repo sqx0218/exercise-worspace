@@ -1,0 +1,2994 @@
+
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html>
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+		<!--<meta name="viewport" content="initial-scale=1.0, user-scalable=no" />-->
+        <title>运动场地场馆预订</title>
+        <meta name="keywords" content="运动场,运动馆,运动教练,羽毛球,乒乓球,游泳,场馆预订,场馆信息查询,场馆信息">
+        <meta name="description" content="格瓦拉生活网提供运动场地场馆,羽毛球馆,羽毛球场地,游泳馆查询预订,运动场馆价格表,运动场馆优惠信息,运动场馆教练,运动场所会员卡转让等信息.">
+		<link href="../demo/templates/index/css/ue_gridheader.css" rel="stylesheet">
+		<link href="../demo/templates/index/css/styleheader.css" rel="stylesheet">
+		<link href="../demo/templates/index/css/style2header.css" rel="stylesheet">
+		<link href="../demo/resources/js/hDialog/animate.css" rel="stylesheet">
+		<script src="../demo/resources/js/jquery-1.9.1.min.js" type="text/javascript"></script>
+		<link rel="stylesheet" type="text/css" href="http://cloud.cloudcq.com/templates/index/css/login.css">		
+		<script src="../demo/templates/index/js/jquery.easing.min.js" type="text/javascript"></script>
+		<script src="../demo/templates/index/js/custom.js" type="text/javascript"></script>
+    </head>
+    <body>
+        <!--[if lt IE 7]>
+            <div class="ui_warning ui_ieUpdate center">
+                你正在使用低版本浏览器，为了更好的产品体验，强烈建议您立即
+                <a class="blue" href="http://windows.microsoft.com/zh-cn/internet-explorer/download-ie" target="_blank">升级浏览器</a>。
+            </div>
+        <![endif]-->
+<div id="header">
+	     						<div class="login_tip" style="float:right;">
+							<div class="log_box">
+
+							</div>
+						</div>
+						
+</div>
+<script src="../demo/resources/js/hDialog/jquery.hDialog.js" type="text/javascript"></script>
+
+
+
+
+        <!-- 登录 注册-->
+<div id="HBox" style='display:none;'>
+		<div class="pd20 loginpd">
+			<div class="loginwrap">
+				<div class="loginh">
+					<div class="fl">会员登录</div>
+					<div class="clear"></div>
+				</div>
+				<div class="loginbtn">
+						<div class="loginsubmit fl">
+							<input type="button" value="动态登录" id="dongtai" class="flag on" style="background-color:red;">
+						</div>
+						<div class="loginsubmit fl">
+							<input type="button" value="密码登录" id="mima" class="flag off">
+						</div>
+						<div class="clear"></div>
+				</div>
+				<div class="clear"></div>
+				<form action="index.php?a=vip_login" method="post" id="login_form" onsubmit='return false'>
+					<div class="logininput">
+						<input type="hidden" name="id_d" id="hide_id_d">
+						<input type="text" name="userid" id="phone_l" maxlength="11" class="loginusername" placeholder="手机号">
+						<input style='width:80px;margin-top:10px;' maxlength="6" name="verification_d" placeholder="验证码" id="yzm_phone_d">
+						<input type="button" id="send_d" style="margin-left:10px;position:relative;top:-40px;left:90px; font-size:10px;width:120px;height:40px;border:1px;cursor:pointer;background:#10c766;color: white;" onclick='send_code_d()' value='发送验证码'>
+						<input type="password" class="loginuserpasswordt" style='display:none;' maxlength="20" id="password" placeholder="密码">
+						<input type='text' id='vcode' style='width:80px;margin-top:10px;display:none;' maxlength="4" class="loginusername3" placeholder="验证码"><img style='position:relative;top:-40px;left:90px;cursor:pointer;display:none;' src="admin-user_vcode58.jpg" id='yanzhengma' title='看不清？换一张'>
+					</div>
+					<div class="loginbtn">
+						<div class="loginsubmit fl">
+							<input type="button" value="登录" onclick="login()">
+						</div>
+						<div class="loginsubmit fl">
+							<input type="button" value="立即注册" id="lijizhuce">
+						</div>
+						<div class="clear"></div>
+					</div>
+				</form>
+			</div>
+  </div>
+</div><!-- HBox end -->	
+<div id="rBox" style='display:none;'>
+	  <div class="pd20 loginpd">
+		<div class="loginwrap">
+		  <div class="loginh">
+			<div class="fl">会员注册</div>
+			<div class="clear"></div>
+		  </div>
+		  <div class="clear"></div>
+			<form action="index.php?a=vip_add" method="post" id='addform'>
+			  <div class="logininput">
+					<input type="hidden" name="id" id="hide_id">
+					<input type="text" rel="phone" maxlength="11" placeholder="输入手机号码" class="loginusername" id="phone_r" name="phone" value="">
+					<input type="password" id="one_pwd" name="user_pwd" maxlength="20" class="loginusername" rel="lock" placeholder="填写密码">
+					<input type="password" id="two_pwd" name="user_pwd_o" maxlength="20" class="loginusername" rel="lock" placeholder="确认密码">             
+					<input style='width:80px;margin-top:10px;' maxlength="6" name="verification" placeholder="验证码" id="yzm_phone">
+					<input type="button" id="send" style="margin-left:10px;position:relative;top:-40px;left:90px; font-size:10px;width:120px;height:40px;border:1px;cursor:pointer;background:#10c766;color: white;" onclick='send_code()' value='发送验证码'>
+					<input type="hidden" id="phone_id">
+			</div>
+			 <div class="loginbtn">
+				<div class="loginsubmit fl">
+					<input type="button" value="立即注册" onclick="do_phone()">
+				</div>
+				<div class="clear"></div>
+			</div>
+		</form>
+		</div>
+	</div>
+</div>
+<!-- HBox end -->	
+ <script>
+$(function(){
+		var $el1 = $('.register');
+		$('#yanzhengma').on('click',function(){
+			$(this).attr('src','admin.php?c=user&a=vcode&g='+Math.random());
+		});
+		var userid = $('#fabu').attr('title');
+		if(userid == ''){
+			$('#fabu').hDialog({width: 440,height: 432}); //默认调用
+			$('#dia').hDialog({width: 440,height: 432}); //默认调用
+		/*$.tooltip('请先登录');*/
+		}else{
+			$('#fabu,#dia').on('click',function(){
+				window.location.href="index.php?a=regeven&act=fill";
+			});
+		}
+		$('.login').hDialog({width: 440,height: 432}); //默认调用
+		$el1.hDialog({'box':'#rBox',width: 440,height: 432}); //默认调用
+		//$('.login').hDialog({width: 500});
+		$('#lijizhuce').on('click',function(){
+			$('.login').hDialog('close',{box:'#HBox'});
+			$el1.click();
+		});
+		var flag = false;
+		$(".flag").on('click',function(){
+			if( !flag ){
+				if( !$(this).hasClass('on') ){
+					$(".off").css('background-color','red');
+					$(".on").css('background-color','#70CA10');
+					flag = true;
+					$("#yzm_phone_d").hide();
+					$("#send_d").hide();
+					$("#password").show();
+					$("#vcode").show();
+					$("#yanzhengma").show();
+				}
+			}else{
+				if( !$(this).hasClass('off') ){
+					$(".on").css('background-color','red');
+					$(".off").css('background-color','#70CA10');
+					flag = false;
+					$("#yzm_phone_d").show();
+					$("#send_d").show();
+					$("#password").hide();
+					$("#vcode").hide();
+					$("#yanzhengma").hide();
+				}
+			}
+		});
+
+});
+	function time(){			
+		$('#send').val("发送验证码");
+		var count = 120;
+		var countdown = setInterval(CountDown, 1000);
+		function CountDown() {
+			$("#send").attr("disabled", true);
+			$("#send").val("" + count + " 秒后再次获取");
+			if (count == 0) {
+				$("#send").val("重新获取验证码").removeAttr("disabled");
+				clearInterval(countdown);
+			}
+			count--;
+		}
+	}
+	function time1(){			
+		$('#send_d').val("发送验证码");
+		var count = 120;
+		var countdown = setInterval(CountDown, 1000);
+		function CountDown() {
+			$("#send_d").attr("disabled", true);
+			$("#send_d").val("" + count + " 秒后再次获取");
+			if (count == 0) {
+				$("#send_d").val("重新获取验证码").removeAttr("disabled");
+				clearInterval(countdown);
+			}
+			count--;
+		}
+		
+	}
+				
+	//手机注册发送验证码
+	function send_code(){
+		var send = $("#send").val();
+		if(send=='发送验证码' || send=='重新获取验证码'){
+			var userid = $('#phone_r').val();
+			if(userid == ""){
+				 $.tooltip('请输入手机号');
+				return false;
+			}
+			if(userid.length!=11){
+				 $.tooltip('手机号位数有误');
+				return false;
+			}
+			if(isNaN(userid)){
+				 $.tooltip('手机号输入有误');
+				return false;
+			}
+			 $.ajax({
+			   type: "GET",//传输的方式
+			   url: "index.php?a=vip_add&userid="+userid+"&isajax=1&platform=reservation",
+			   success: function(msg){ 
+					if(msg=='手机号'){
+						$.tooltip('手机号已被注册');
+						return false;
+					
+					}else{
+						time();
+					}
+			   }	
+			})
+			return false;
+		}
+	}    
+	//用户手机注册
+	function do_phone()
+	{	
+		var id = $("#hide_id").val();
+		var phone = $("#phone_r").val();
+		var verification = $("#yzm_phone").val()
+		if(phone == ""){
+			$.tooltip('请输入手机号');
+			return false;
+		}
+		if(phone.length!=11){
+			 $.tooltip('手机号位数有误');
+			return false;
+		}
+		if(isNaN(phone)){
+			 $.tooltip('手机号输入有误');
+			return false;
+		}
+		var first_pwd = $("#one_pwd").val();
+		var second_pwd = $("#two_pwd").val();
+		if(first_pwd == ""){
+			 $.tooltip("请创建密码");
+			return false;
+		}
+		if(second_pwd == ""){
+			 $.tooltip("请确认密码");
+			return false;
+		}
+		if(first_pwd != second_pwd){
+			 $.tooltip("两次输入密码不一致，请重新输入");
+			return false;
+		}
+
+		if($("#yzm_phone").val()==""){
+			 $.tooltip("请输入验证码");
+			$("#yzm_phone").find("input[name='user_pwd']").val("");
+			$("#yzm_phone").find("input[name='user_pwd']").focus();
+			return false;
+		}
+
+
+		var auth_code = document.getElementById("yzm_phone").value;
+		var auth_code_id = document.getElementById("phone_id").value;
+		if(auth_code == ""){
+			 $.tooltip("请输入验证码！");
+			return false;
+		}
+		 $.ajax({
+		   type: "GET",//传输的方式
+		   url: "index.php?a=vip_add&id="+id+"&isajax=2"+"&phone="+phone+"&verification="+verification+"&password="+second_pwd,
+		   success: function(msg){ 
+				if(msg==1){
+					alert('注册成功');
+					window.location.href="index.php";
+				
+				}else{
+					 $.tooltip("验证码输入有误！");
+				
+				}
+		   }	
+		})
+		return false;
+	  
+	}
+
+	//手机动态登录发送验证码
+	function send_code_d(){
+		var send_d = $("#send_d").val();
+		if(send_d=='发送验证码' || send_d=='重新获取验证码'){
+			var userid = $('#phone_l').val();
+			if(userid == ""){
+				 $.tooltip('请输入手机号');
+				return false;
+			}
+			if(userid.length!=11){
+				 $.tooltip('手机号位数有误');
+				return false;
+			}
+			if(isNaN(userid)){
+				 $.tooltip('手机号输入有误');
+				return false;
+			}
+			 $.ajax({
+			   type: "GET",//传输的方式
+			   url: "index.php?a=vip_login&userid="+userid+"&isajax=2&platform=reservation",
+			   success: function(msg){ 
+					if(msg==1){
+						$.tooltip('您还不是会员,请先注册！');
+						return false;
+					
+					}else{
+						time1();
+					}
+			   }	
+			})
+			return false;
+		}
+	}  
+
+	//用户登录
+  function login(){
+		var phone = $('#phone_l').val();
+		if(phone == ""){
+				$.tooltip('请输入手机号');
+				return false;
+		}
+		if($("#password").is(":visible")){
+			var password = $('#password').val();
+			var vcode = $('#vcode').val();
+			if(password == ""){
+				$.tooltip('请输入密码');
+				return false;
+			}
+			if(vcode == ""){
+				$.tooltip('请输入验证码');
+				return false;
+			}
+			$.ajax({
+			   type: "POST",//传输的方式
+			   url: "index.php?a=vip_login&isajax=1",
+			   data:{"phone":phone,"password":password,"vcode":vcode},
+			   success: function(msg){ 
+					if(msg==0){
+						 $.tooltip("用户名或密码输入有误！");
+					
+					}else if(msg==3){
+						$.tooltip("验证码输入有误！");
+					
+					}else{
+						window.location.href = "index.php";
+					}
+			   }	
+			})
+			return false;
+	   }else{
+		var yanzhengma = $('#yzm_phone_d').val();
+		if(yanzhengma == ""){
+				$.tooltip('请输入验证码');
+				return false;
+		}
+	   $.ajax({
+			   type: "POST",//传输的方式
+			   url: "index.php?a=vip_login&isajax=3",
+			   data:{"phone":phone,"yanzhengma":yanzhengma},
+			   success: function(msg){ 
+					if(msg==0){
+						 $.tooltip("手机号或验证码输入有误！");
+					
+					}else{
+						window.location.href = "index.php";
+					}
+			   }	
+			})
+			return false;
+	   
+	   }
+   }
+
+</script>       
+
+		<link href="../demo/templates/index/css/style.css" rel="stylesheet">
+        <link href="../demo/templates/index/css/index.css" rel="stylesheet">
+		<style>
+.title a:hover {
+    color: #6bb156 !important;
+    text-decoration: none;
+}
+.mt15 a:hover {
+    color: #6bb156 !important;
+    text-decoration: none;
+}
+.hotVenue ul li .title span a:hover {
+    background-color: #e83818;
+    color: #fff !important;
+}
+		</style>
+		<div class="splash-wood ipadWidht" id="splash-wood" style="margin-top:50px;">
+            <div class="speedyReserve">
+                <div class="isMask"></div>
+                <ul class="clear">
+                    <li class="item"><em>项目</em><span id="itemTirger" class="freeTag2"></span><input type="hidden" name="itemvalueid" id="itemvalueid" value=""></li>
+                    <li class="venue"><em>场馆</em><span id="fast_tirger" onclick="searchSport(this)" class="freeTag2"></span><input type="hidden" name="areavalueid" id="areavalueid" value=""></li>
+                    <li class="btn"><a id="" href="../page/tosearch" class="sportBtn" target="_blank" title="预定">快速预定</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="upsell">
+            <div class="ui_layout">
+                <div class="itemListTop">
+                    <div class="itemList_box">
+                        <ul class="clear" id="itemList_box">
+						                          <li>
+								<a target="_blank" href="../skip/toZuQiuShow">
+									<span><em style="background-position:0 -300px;"></em></span>
+									<p>足球</p>
+								</a>
+							</li>
+						                          <li>
+								<a target="_blank" href="../skip/toIndex2">
+									<span><em style="background-position:1px 1px;"></em></span>
+									<p>羽毛球</p>
+								</a>
+							</li>
+						                          <li>
+								<a target="_blank" href="../skip/toIndex3">
+									<span><em style="background-position:0 -149px;"></em></span>
+									<p>网球</p>
+								</a>
+							</li>
+						                          <li>
+								<a target="_blank" href="../skip/toIndex4">
+									<span><em style="background-position:0 -375px;"></em></span>
+									<p>篮球</p>
+								</a>
+							</li>
+						                          <li>
+								<a target="_blank" href="../skip/toIndex5">
+									<span><em style="background-position:0 -223px;"></em></span>
+									<p>乒乓球</p>
+								</a>
+							</li>
+						                          <li>
+								<a target="_blank" href="../skip/toIndex6">
+									<span><em style="background-position:-2px -80px;"></em></span>
+									<p>游泳</p>
+								</a>
+							</li>
+						                          <li>
+								<a target="_blank" href="../skip/toIndex7">
+									<span><em style="background-position:0 -1875px;"></em></span>
+									<p>健身</p>
+								</a>
+							</li>
+						                          <li>
+								<a target="_blank" href="../skip/toIndex8">
+									<span><em style="background-position:0 -525px;"></em></span>
+									<p>桌球</p>
+								</a>
+							</li>
+						                          <li style='display:none;'>
+								<a target="_blank" href="../skip/toIndex9">
+									<span><em style="background-position:0 -1950px;"></em></span>
+									<p>瑜伽</p>
+								</a>
+							</li>
+						                          <li style='display:none;'>
+								<a target="_blank" href="../skip/toIndex10">
+									<span><em style="background-position:0 -2025px;"></em></span>
+									<p>搏击</p>
+								</a>
+							</li>
+						                          <li style='display:none;'>
+								<a target="_blank" href="../skip/toIndex11">
+									<span><em style="background-position:0 -978px;"></em></span>
+									<p>溜冰</p>
+								</a>
+							</li>
+						                          <li style='display:none;'>
+								<a target="_blank" href="../skip/toIndex12">
+									<span><em style="background-position:0 -1200px;"></em></span>
+									<p>轮滑</p>
+								</a>
+							</li>
+						                          <li style='display:none;'>
+								<a target="_blank" href="../skip/toIndex13">
+									<span><em style="background-position:0 -600px;"></em></span>
+									<p>攀岩</p>
+								</a>
+							</li>
+						                          <li style='display:none;'>
+								<a target="_blank" href="../skip/toIndex314">
+									<span><em style="background-position:2px -450px;"></em></span>
+									<p>壁球</p>
+								</a>
+							</li>
+						                          <li style='display:none;'>
+								<a target="_blank" href="../skip/toIndex315">
+									<span><em style="background-position:0 -678px;"></em></span>
+									<p>射箭</p>
+								</a>
+							</li>
+						                          <li style='display:none;'>
+								<a target="_blank" href="../skip/toIndex16">
+									<span><em style="background-position:-2px -820px;"></em></span>
+									<p>高尔夫球</p>
+								</a>
+							</li>
+						                          <li style='display:none;'>
+								<a target="_blank" href="../skip/toIndex17">
+									<span><em style="background-position:0 -902px;"></em></span>
+									<p>射击</p>
+								</a>
+							</li>
+						                          <li style='display:none;'>
+								<a target="_blank" href="../skip/toIndex18">
+									<span><em style="background-position:0 -750px;"></em></span>
+									<p>保龄球</p>
+								</a>
+							</li>
+						                          <li style='display:none;'>
+								<a target="_blank" href="../skip/toIndex19">
+									<span><em style="background-position:0 -1575px;"></em></span>
+									<p>马术</p>
+								</a>
+							</li>
+						                          <li style='display:none;'>
+								<a target="_blank" href="../skip/toIndex20">
+									<span><em style="background-position:0 -1650px;"></em></span>
+									<p>卡丁车</p>
+								</a>
+							</li>
+						                          <li style='display:none;'>
+								<a target="_blank" href="../skip/toIndex21">
+									<span><em style="background-position:0 -2100px;"></em></span>
+									<p>击剑</p>
+								</a>
+							</li>
+						                        </ul>
+                        <div class="hasHover" style="display:none;"></div>
+                        <div class="iUp"><em></em></div>
+                    </div>
+                </div>
+                <div class="mod_index">
+                    <div class="mod_hd">
+                        <div class="mod_hd_title">
+					        <span>|</span>推<span>|</span>荐<span>|</span>场<span>|</span>馆<span>|</span>
+				        </div>
+                        <h2 class="freeTag" style="background-position:center 0;">热门场馆推荐</h2>
+                    </div>
+                    <div class="mod_bd">
+                        <div class="hotVenue">
+                            <ul class="clear" style="width:1160px;" id="hotVenueShow">
+															<li>
+									<div class='title' style='height:27px;overflow:hidden;width:405px;'>
+										<h2>
+											<a class='color3' target='_blank' title='海联羽毛球馆' href='index-detail_23.html'>海联羽毛球馆</a>
+										</h2>
+																																<span>
+												<a target='_blank' href='index-search_22.html' title='羽毛球'>
+													<label>羽毛球</label>
+													<em class='freeTag2'></em>
+												</a>
+											</span>
+																														</div>
+									<p class='mt15'>
+										<em class='freeTag2'></em>
+										<a class='c999' target='_blank' href='index-search_16.html'>重庆市</a>
+										<font title='重庆市渝北区海联学院后门'>重庆市渝北区海联学院后门</font>
+										<span class="grade">
+											<sub style="margin:0;">9</sub>
+											<sup>.9</sup>
+										</span>
+									</p>
+									<div class='mt5 conditionIco'>
+										<span><em class='freeTag2 sp_tcc'></em>停车场</span>
+										<span><em class='freeTag2 sp_skjs'></em>哈哈哈哈哈哈哈</span>
+										<span><em class='freeTag2 sp_qczj'></em>器材租借</span>
+									</div>
+																			<a href='../page/todetail_54' class='sportBtn indexhotBtn' target='_blank'>在线预订</a>
+																	</li>
+															<li>
+									<div class='title' style='height:27px;overflow:hidden;width:405px;'>
+										<h2>
+											<a class='color3' target='_blank' title='驰骋绿茵奥体足球中心' href='index-detail_203.html'>驰骋绿茵奥体足球中心</a>
+										</h2>
+																																<span>
+												<a target='_blank' href='index-search_20.html' title='足球'>
+													<label>足球</label>
+													<em class='freeTag2'></em>
+												</a>
+											</span>
+																														</div>
+									<p class='mt15'>
+										<em class='freeTag2'></em>
+										<a class='c999' target='_blank' href='index-search_16.html'>重庆市</a>
+										<font title='重庆市九龙坡奥体中心一支路'>重庆市九龙坡奥体中心一支路</font>
+										<span class="grade">
+											<sub style="margin:0;">9</sub>
+											<sup>.9</sup>
+										</span>
+									</p>
+									<div class='mt5 conditionIco'>
+										<span><em class='freeTag2 sp_tcc'></em>停车场</span>
+										<span><em class='freeTag2 sp_skjs'></em>卖品销售</span>
+										<span><em class='freeTag2 sp_qczj'></em>器材租借</span>
+									</div>
+																			<a href='index-detail_203.html' class='sportBtn indexhotBtn' target='_blank'>在线预订</a>
+																	</li>
+															<li>
+									<div class='title' style='height:27px;overflow:hidden;width:405px;'>
+										<h2>
+											<a class='color3' target='_blank' title='勇士联盟足球基地' href='index-detail_211.html'>勇士联盟足球基地</a>
+										</h2>
+																																<span>
+												<a target='_blank' href='index-search_20.html' title='足球'>
+													<label>足球</label>
+													<em class='freeTag2'></em>
+												</a>
+											</span>
+																														</div>
+									<p class='mt15'>
+										<em class='freeTag2'></em>
+										<a class='c999' target='_blank' href='index-search_16.html'>重庆市</a>
+										<font title='九龙坡区华龙大道89号新金尊机电市场楼顶'>九龙坡区华龙大道89号新金尊机电市场楼顶</font>
+										<span class="grade">
+											<sub style="margin:0;">9</sub>
+											<sup>.9</sup>
+										</span>
+									</p>
+									<div class='mt5 conditionIco'>
+										<span><em class='freeTag2 sp_tcc'></em>停车场</span>
+										<span><em class='freeTag2 sp_skjs'></em>卖品销售</span>
+										<span><em class='freeTag2 sp_qczj'></em>器材租借</span>
+									</div>
+																			<a href='index-detail_211.html' class='sportBtn indexhotBtn' target='_blank'>在线预订</a>
+																	</li>
+															<li>
+									<div class='title' style='height:27px;overflow:hidden;width:405px;'>
+										<h2>
+											<a class='color3' target='_blank' title='驰骋绿茵联发体育公园' href='index-detail_204.html'>驰骋绿茵联发体育公园</a>
+										</h2>
+																																<span>
+												<a target='_blank' href='index-search_20.html' title='足球'>
+													<label>足球</label>
+													<em class='freeTag2'></em>
+												</a>
+											</span>
+																														</div>
+									<p class='mt15'>
+										<em class='freeTag2'></em>
+										<a class='c999' target='_blank' href='index-search_16.html'>重庆市</a>
+										<font title='渝北区鸳鸯金开大道'>渝北区鸳鸯金开大道</font>
+										<span class="grade">
+											<sub style="margin:0;">9</sub>
+											<sup>.9</sup>
+										</span>
+									</p>
+									<div class='mt5 conditionIco'>
+										<span><em class='freeTag2 sp_tcc'></em>停车场</span>
+										<span><em class='freeTag2 sp_skjs'></em>卖品销售</span>
+										<span><em class='freeTag2 sp_qczj'></em>器材租借</span>
+									</div>
+																			<a href='index-detail_204.html' class='sportBtn indexhotBtn' target='_blank'>在线预订</a>
+																	</li>
+															<li>
+									<div class='title' style='height:27px;overflow:hidden;width:405px;'>
+										<h2>
+											<a class='color3' target='_blank' title='奥体中心网球场' href='index-detail_127.html'>奥体中心网球场</a>
+										</h2>
+																																<span>
+												<a target='_blank' href='index-search_24.html' title='网球'>
+													<label>网球</label>
+													<em class='freeTag2'></em>
+												</a>
+											</span>
+																														</div>
+									<p class='mt15'>
+										<em class='freeTag2'></em>
+										<a class='c999' target='_blank' href='index-search_16.html'>重庆市</a>
+										<font title='重庆市九龙坡区奥林匹克体育中心同创奥网中心'>重庆市九龙坡区奥林匹克体育中心同创奥网中心</font>
+										<span class="grade">
+											<sub style="margin:0;">9</sub>
+											<sup>.9</sup>
+										</span>
+									</p>
+									<div class='mt5 conditionIco'>
+										<span><em class='freeTag2 sp_tcc'></em>停车场</span>
+										<span><em class='freeTag2 sp_skjs'></em>卖品销售</span>
+										<span><em class='freeTag2 sp_qczj'></em>器材租借</span>
+									</div>
+																			<a href='index-detail_127.html' class='sportBtn indexhotBtn' target='_blank'>在线预订</a>
+																	</li>
+															<li>
+									<div class='title' style='height:27px;overflow:hidden;width:405px;'>
+										<h2>
+											<a class='color3' target='_blank' title='金竹健身运动城' href='index-detail_192.html'>金竹健身运动城</a>
+										</h2>
+																																<span>
+												<a target='_blank' href='index-search_20.html' title='足球'>
+													<label>足球</label>
+													<em class='freeTag2'></em>
+												</a>
+											</span>
+																						<span>
+												<a target='_blank' href='index-search_22.html' title='羽毛球'>
+													<label>羽毛球</label>
+													<em class='freeTag2'></em>
+												</a>
+											</span>
+																														</div>
+									<p class='mt15'>
+										<em class='freeTag2'></em>
+										<a class='c999' target='_blank' href='index-search_16.html'>重庆市</a>
+										<font title='鱼洞金竹工业园区金竹街（浩浪机械）'>鱼洞金竹工业园区金竹街（浩浪机械）</font>
+										<span class="grade">
+											<sub style="margin:0;">9</sub>
+											<sup>.9</sup>
+										</span>
+									</p>
+									<div class='mt5 conditionIco'>
+										<span><em class='freeTag2 sp_tcc'></em>停车场</span>
+										<span><em class='freeTag2 sp_skjs'></em>卖品销售</span>
+										<span><em class='freeTag2 sp_qczj'></em>器材租借</span>
+									</div>
+																			<a href='index-detail_192.html' class='sportBtn indexhotBtn' target='_blank'>在线预订</a>
+																	</li>
+															<li>
+									<div class='title' style='height:27px;overflow:hidden;width:405px;'>
+										<h2>
+											<a class='color3' target='_blank' title='大田湾全民健身中心' href='index-detail_70.html'>大田湾全民健身中心</a>
+										</h2>
+																																<span>
+												<a target='_blank' href='index-search_24.html' title='网球'>
+													<label>网球</label>
+													<em class='freeTag2'></em>
+												</a>
+											</span>
+																						<span>
+												<a target='_blank' href='index-search_23.html' title='乒乓球'>
+													<label>乒乓球</label>
+													<em class='freeTag2'></em>
+												</a>
+											</span>
+																						<span>
+												<a target='_blank' href='index-search_20.html' title='足球'>
+													<label>足球</label>
+													<em class='freeTag2'></em>
+												</a>
+											</span>
+																						<span>
+												<a target='_blank' href='index-search_21.html' title='篮球'>
+													<label>篮球</label>
+													<em class='freeTag2'></em>
+												</a>
+											</span>
+																						<span>
+												<a target='_blank' href='index-search_22.html' title='羽毛球'>
+													<label>羽毛球</label>
+													<em class='freeTag2'></em>
+												</a>
+											</span>
+																														</div>
+									<p class='mt15'>
+										<em class='freeTag2'></em>
+										<a class='c999' target='_blank' href='index-search_241.html'>渝中区</a>
+										<font title='重庆市渝中区两路口大田湾'>重庆市渝中区两路口大田湾</font>
+										<span class="grade">
+											<sub style="margin:0;">9</sub>
+											<sup>.9</sup>
+										</span>
+									</p>
+									<div class='mt5 conditionIco'>
+										<span><em class='freeTag2 sp_tcc'></em>停车场</span>
+										<span><em class='freeTag2 sp_skjs'></em>卖品销售</span>
+										<span><em class='freeTag2 sp_qczj'></em>器材租借</span>
+									</div>
+																			<a href='index-detail_70.html' class='sportBtn indexhotBtn' target='_blank'>在线预订</a>
+																	</li>
+															<li>
+									<div class='title' style='height:27px;overflow:hidden;width:405px;'>
+										<h2>
+											<a class='color3' target='_blank' title='璧兴羽毛球馆' href='index-detail_315.html'>璧兴羽毛球馆</a>
+										</h2>
+																																<span>
+												<a target='_blank' href='index-search_22.html' title='羽毛球'>
+													<label>羽毛球</label>
+													<em class='freeTag2'></em>
+												</a>
+											</span>
+																														</div>
+									<p class='mt15'>
+										<em class='freeTag2'></em>
+										<a class='c999' target='_blank' href='index-search_16.html'>重庆市</a>
+										<font title='重庆璧山区红宇大道2号（计生委宾馆旁）'>重庆璧山区红宇大道2号（计生委宾馆旁）</font>
+										<span class="grade">
+											<sub style="margin:0;">9</sub>
+											<sup>.9</sup>
+										</span>
+									</p>
+									<div class='mt5 conditionIco'>
+										<span><em class='freeTag2 sp_tcc'></em>停车场</span>
+										<span><em class='freeTag2 sp_skjs'></em>卖品销售</span>
+										<span><em class='freeTag2 sp_qczj'></em>器材租借</span>
+									</div>
+																			<a href='index-detail_315.html' class='sportBtn indexhotBtn' target='_blank'>在线预订</a>
+																	</li>
+															<li>
+									<div class='title' style='height:27px;overflow:hidden;width:405px;'>
+										<h2>
+											<a class='color3' target='_blank' title='奥体中心游泳跳水馆' href='index-detail_267.html'>奥体中心游泳跳水馆</a>
+										</h2>
+																																<span>
+												<a target='_blank' href='index-search_25.html' title='游泳'>
+													<label>游泳</label>
+													<em class='freeTag2'></em>
+												</a>
+											</span>
+																														</div>
+									<p class='mt15'>
+										<em class='freeTag2'></em>
+										<a class='c999' target='_blank' href='index-search_16.html'>重庆市</a>
+										<font title='重庆市九龙坡区袁家岗奥体中心'>重庆市九龙坡区袁家岗奥体中心</font>
+										<span class="grade">
+											<sub style="margin:0;">9</sub>
+											<sup>.9</sup>
+										</span>
+									</p>
+									<div class='mt5 conditionIco'>
+										<span><em class='freeTag2 sp_tcc'></em>停车场</span>
+										<span><em class='freeTag2 sp_skjs'></em>卖品销售</span>
+										<span><em class='freeTag2 sp_qczj'></em>器材租借</span>
+									</div>
+																			<a href='index-detail_267.html' class='sportBtn indexhotBtn' target='_blank'>在线预订</a>
+																	</li>
+															<li>
+									<div class='title' style='height:27px;overflow:hidden;width:405px;'>
+										<h2>
+											<a class='color3' target='_blank' title='大渡口区体育馆' href='index-detail_320.html'>大渡口区体育馆</a>
+										</h2>
+										<span><a href="javascript:"><label>暂无项目开放</label></a></span>									</div>
+									<p class='mt15'>
+										<em class='freeTag2'></em>
+										<a class='c999' target='_blank' href='index-search_251.html'>大渡口区</a>
+										<font title='文体支路月光村'>文体支路月光村</font>
+										<span class="grade">
+											<sub style="margin:0;">9</sub>
+											<sup>.9</sup>
+										</span>
+									</p>
+									<div class='mt5 conditionIco'>
+										<span><em class='freeTag2 sp_tcc'></em>停车场</span>
+										<span><em class='freeTag2 sp_skjs'></em>卖品销售</span>
+										<span><em class='freeTag2 sp_qczj'></em>器材租借</span>
+									</div>
+																			<a href='javascript:' style='background-color:#727070' class='sportBtn indexhotBtn' target='_blank'>场馆维护</a>
+																	</li>
+															<li>
+									<div class='title' style='height:27px;overflow:hidden;width:405px;'>
+										<h2>
+											<a class='color3' target='_blank' title='亿动汇羽毛球馆' href='index-detail_212.html'>亿动汇羽毛球馆</a>
+										</h2>
+																																<span>
+												<a target='_blank' href='index-search_22.html' title='羽毛球'>
+													<label>羽毛球</label>
+													<em class='freeTag2'></em>
+												</a>
+											</span>
+																														</div>
+									<p class='mt15'>
+										<em class='freeTag2'></em>
+										<a class='c999' target='_blank' href='index-search_221.html'>沙坪坝区</a>
+										<font title='沙坪坝区高九路芳草地美堤亚广电总台'>沙坪坝区高九路芳草地美堤亚广电总台</font>
+										<span class="grade">
+											<sub style="margin:0;">9</sub>
+											<sup>.9</sup>
+										</span>
+									</p>
+									<div class='mt5 conditionIco'>
+										<span><em class='freeTag2 sp_tcc'></em>停车场</span>
+										<span><em class='freeTag2 sp_skjs'></em>卖品销售</span>
+										<span><em class='freeTag2 sp_qczj'></em>器材租借</span>
+									</div>
+																			<a href='index-detail_212.html' class='sportBtn indexhotBtn' target='_blank'>在线预订</a>
+																	</li>
+															<li>
+									<div class='title' style='height:27px;overflow:hidden;width:405px;'>
+										<h2>
+											<a class='color3' target='_blank' title='海悦荟(协信阿卡迪亚店)' href='index-detail_257.html'>海悦荟(协信阿卡迪亚店)</a>
+										</h2>
+																																<span>
+												<a target='_blank' href='index-search_22.html' title='羽毛球'>
+													<label>羽毛球</label>
+													<em class='freeTag2'></em>
+												</a>
+											</span>
+																						<span>
+												<a target='_blank' href='index-search_25.html' title='游泳'>
+													<label>游泳</label>
+													<em class='freeTag2'></em>
+												</a>
+											</span>
+																						<span>
+												<a target='_blank' href='index-search_45.html' title='瑜伽'>
+													<label>瑜伽</label>
+													<em class='freeTag2'></em>
+												</a>
+											</span>
+																						<span>
+												<a target='_blank' href='index-search_26.html' title='健身'>
+													<label>健身</label>
+													<em class='freeTag2'></em>
+												</a>
+											</span>
+																														</div>
+									<p class='mt15'>
+										<em class='freeTag2'></em>
+										<a class='c999' target='_blank' href='index-search_241.html'>渝中区</a>
+										<font title='渝中区大坪六店子协信阿卡迪亚'>渝中区大坪六店子协信阿卡迪亚</font>
+										<span class="grade">
+											<sub style="margin:0;">9</sub>
+											<sup>.9</sup>
+										</span>
+									</p>
+									<div class='mt5 conditionIco'>
+										<span><em class='freeTag2 sp_tcc'></em>停车场</span>
+										<span><em class='freeTag2 sp_skjs'></em>卖品销售</span>
+										<span><em class='freeTag2 sp_qczj'></em>器材租借</span>
+									</div>
+																			<a href='index-detail_257.html' class='sportBtn indexhotBtn' target='_blank'>在线预订</a>
+																	</li>
+															<li>
+									<div class='title' style='height:27px;overflow:hidden;width:405px;'>
+										<h2>
+											<a class='color3' target='_blank' title='重庆鳄鱼柔术馆CHQBJJ' href='index-detail_259.html'>重庆鳄鱼柔术馆CHQBJJ</a>
+										</h2>
+																																<span>
+												<a target='_blank' href='index-search_46.html' title='搏击'>
+													<label>搏击</label>
+													<em class='freeTag2'></em>
+												</a>
+											</span>
+																														</div>
+									<p class='mt15'>
+										<em class='freeTag2'></em>
+										<a class='c999' target='_blank' href='index-search_221.html'>沙坪坝区</a>
+										<font title='重大A区体育馆地下二层'>重大A区体育馆地下二层</font>
+										<span class="grade">
+											<sub style="margin:0;">9</sub>
+											<sup>.9</sup>
+										</span>
+									</p>
+									<div class='mt5 conditionIco'>
+										<span><em class='freeTag2 sp_tcc'></em>停车场</span>
+										<span><em class='freeTag2 sp_skjs'></em>卖品销售</span>
+										<span><em class='freeTag2 sp_qczj'></em>器材租借</span>
+									</div>
+																			<a href='index-detail_259.html' class='sportBtn indexhotBtn' target='_blank'>在线预订</a>
+																	</li>
+															<li>
+									<div class='title' style='height:27px;overflow:hidden;width:405px;'>
+										<h2>
+											<a class='color3' target='_blank' title='重庆大学羽毛球馆' href='index-detail_261.html'>重庆大学羽毛球馆</a>
+										</h2>
+																																<span>
+												<a target='_blank' href='index-search_22.html' title='羽毛球'>
+													<label>羽毛球</label>
+													<em class='freeTag2'></em>
+												</a>
+											</span>
+																														</div>
+									<p class='mt15'>
+										<em class='freeTag2'></em>
+										<a class='c999' target='_blank' href='index-search_221.html'>沙坪坝区</a>
+										<font title='重庆市沙坪坝重庆大学A区体育馆'>重庆市沙坪坝重庆大学A区体育馆</font>
+										<span class="grade">
+											<sub style="margin:0;">9</sub>
+											<sup>.9</sup>
+										</span>
+									</p>
+									<div class='mt5 conditionIco'>
+										<span><em class='freeTag2 sp_tcc'></em>停车场</span>
+										<span><em class='freeTag2 sp_skjs'></em>卖品销售</span>
+										<span><em class='freeTag2 sp_qczj'></em>器材租借</span>
+									</div>
+																			<a href='index-detail_261.html' class='sportBtn indexhotBtn' target='_blank'>在线预订</a>
+																	</li>
+															<li>
+									<div class='title' style='height:27px;overflow:hidden;width:405px;'>
+										<h2>
+											<a class='color3' target='_blank' title='重庆龙海健身汇丽水箐苑店' href='index-detail_263.html'>重庆龙海健身汇丽水箐苑店</a>
+										</h2>
+																																<span>
+												<a target='_blank' href='index-search_26.html' title='健身'>
+													<label>健身</label>
+													<em class='freeTag2'></em>
+												</a>
+											</span>
+																						<span>
+												<a target='_blank' href='index-search_45.html' title='瑜伽'>
+													<label>瑜伽</label>
+													<em class='freeTag2'></em>
+												</a>
+											</span>
+																														</div>
+									<p class='mt15'>
+										<em class='freeTag2'></em>
+										<a class='c999' target='_blank' href='index-search_18.html'>九龙坡区</a>
+										<font title='重庆九龙坡大黄路丽水箐苑站'>重庆九龙坡大黄路丽水箐苑站</font>
+										<span class="grade">
+											<sub style="margin:0;">9</sub>
+											<sup>.9</sup>
+										</span>
+									</p>
+									<div class='mt5 conditionIco'>
+										<span><em class='freeTag2 sp_tcc'></em>停车场</span>
+										<span><em class='freeTag2 sp_skjs'></em>卖品销售</span>
+										<span><em class='freeTag2 sp_qczj'></em>器材租借</span>
+									</div>
+																			<a href='index-detail_263.html' class='sportBtn indexhotBtn' target='_blank'>在线预订</a>
+																	</li>
+															<li>
+									<div class='title' style='height:27px;overflow:hidden;width:405px;'>
+										<h2>
+											<a class='color3' target='_blank' title='青脉健身重邮综健身中心' href='index-detail_265.html'>青脉健身重邮综健身中心</a>
+										</h2>
+																																<span>
+												<a target='_blank' href='index-search_26.html' title='健身'>
+													<label>健身</label>
+													<em class='freeTag2'></em>
+												</a>
+											</span>
+																														</div>
+									<p class='mt15'>
+										<em class='freeTag2'></em>
+										<a class='c999' target='_blank' href='index-search_201.html'>南岸区</a>
+										<font title='重庆市南岸区黄桷垭崇文小区崇文路9号附64号'>重庆市南岸区黄桷垭崇文小区崇文路9号附64号</font>
+										<span class="grade">
+											<sub style="margin:0;">9</sub>
+											<sup>.9</sup>
+										</span>
+									</p>
+									<div class='mt5 conditionIco'>
+										<span><em class='freeTag2 sp_tcc'></em>停车场</span>
+										<span><em class='freeTag2 sp_skjs'></em>卖品销售</span>
+										<span><em class='freeTag2 sp_qczj'></em>器材租借</span>
+									</div>
+																			<a href='index-detail_265.html' class='sportBtn indexhotBtn' target='_blank'>在线预订</a>
+																	</li>
+															<li>
+									<div class='title' style='height:27px;overflow:hidden;width:405px;'>
+										<h2>
+											<a class='color3' target='_blank' title='渝北SM广场三人制足球场' href='index-detail_10.html'>渝北SM广场三人制足球场</a>
+										</h2>
+																																<span>
+												<a target='_blank' href='index-search_20.html' title='足球'>
+													<label>足球</label>
+													<em class='freeTag2'></em>
+												</a>
+											</span>
+																														</div>
+									<p class='mt15'>
+										<em class='freeTag2'></em>
+										<a class='c999' target='_blank' href='index-search_291.html'>渝北区</a>
+										<font title='重庆市渝北区松石大道148号重庆SM广场'>重庆市渝北区松石大道148号重庆SM广场</font>
+										<span class="grade">
+											<sub style="margin:0;">9</sub>
+											<sup>.9</sup>
+										</span>
+									</p>
+									<div class='mt5 conditionIco'>
+										<span><em class='freeTag2 sp_tcc'></em>停车场</span>
+										<span><em class='freeTag2 sp_skjs'></em>卖品销售</span>
+										<span><em class='freeTag2 sp_qczj'></em>器材租借</span>
+									</div>
+																			<a href='index-detail_10.html' class='sportBtn indexhotBtn' target='_blank'>在线预订</a>
+																	</li>
+															<li>
+									<div class='title' style='height:27px;overflow:hidden;width:405px;'>
+										<h2>
+											<a class='color3' target='_blank' title='重庆尚体国际瑜伽会所' href='index-detail_270.html'>重庆尚体国际瑜伽会所</a>
+										</h2>
+																																<span>
+												<a target='_blank' href='index-search_45.html' title='瑜伽'>
+													<label>瑜伽</label>
+													<em class='freeTag2'></em>
+												</a>
+											</span>
+																														</div>
+									<p class='mt15'>
+										<em class='freeTag2'></em>
+										<a class='c999' target='_blank' href='index-search_291.html'>渝北区</a>
+										<font title='渝北区汽博中心融创金贸时代4栋15层(金渝轻轨站，奥园，叠彩城)'>渝北区汽博中心融创金贸时代4栋15层(金渝轻轨站，奥园，叠彩城)</font>
+										<span class="grade">
+											<sub style="margin:0;">9</sub>
+											<sup>.9</sup>
+										</span>
+									</p>
+									<div class='mt5 conditionIco'>
+										<span><em class='freeTag2 sp_tcc'></em>停车场</span>
+										<span><em class='freeTag2 sp_skjs'></em>卖品销售</span>
+										<span><em class='freeTag2 sp_qczj'></em>器材租借</span>
+									</div>
+																			<a href='index-detail_270.html' class='sportBtn indexhotBtn' target='_blank'>在线预订</a>
+																	</li>
+															<li>
+									<div class='title' style='height:27px;overflow:hidden;width:405px;'>
+										<h2>
+											<a class='color3' target='_blank' title='中冶赛迪羽毛球馆' href='index-detail_21.html'>中冶赛迪羽毛球馆</a>
+										</h2>
+																																<span>
+												<a target='_blank' href='index-search_22.html' title='羽毛球'>
+													<label>羽毛球</label>
+													<em class='freeTag2'></em>
+												</a>
+											</span>
+																														</div>
+									<p class='mt15'>
+										<em class='freeTag2'></em>
+										<a class='c999' target='_blank' href='index-search_291.html'>渝北区</a>
+										<font title='重庆市渝北区北部新区江金路4号'>重庆市渝北区北部新区江金路4号</font>
+										<span class="grade">
+											<sub style="margin:0;">9</sub>
+											<sup>.9</sup>
+										</span>
+									</p>
+									<div class='mt5 conditionIco'>
+										<span><em class='freeTag2 sp_tcc'></em>停车场</span>
+										<span><em class='freeTag2 sp_skjs'></em>卖品销售</span>
+										<span><em class='freeTag2 sp_qczj'></em>器材租借</span>
+									</div>
+																			<a href='index-detail_21.html' class='sportBtn indexhotBtn' target='_blank'>在线预订</a>
+																	</li>
+															<li>
+									<div class='title' style='height:27px;overflow:hidden;width:405px;'>
+										<h2>
+											<a class='color3' target='_blank' title='朱毅育龙游泳俱乐部 ' href='index-detail_278.html'>朱毅育龙游泳俱乐部 </a>
+										</h2>
+																																<span>
+												<a target='_blank' href='index-search_25.html' title='游泳'>
+													<label>游泳</label>
+													<em class='freeTag2'></em>
+												</a>
+											</span>
+																														</div>
+									<p class='mt15'>
+										<em class='freeTag2'></em>
+										<a class='c999' target='_blank' href='index-search_18.html'>九龙坡区</a>
+										<font title='重庆市九龙坡区 杨家坪街道九龙广场西郊路27号'>重庆市九龙坡区 杨家坪街道九龙广场西郊路27号</font>
+										<span class="grade">
+											<sub style="margin:0;">9</sub>
+											<sup>.9</sup>
+										</span>
+									</p>
+									<div class='mt5 conditionIco'>
+										<span><em class='freeTag2 sp_tcc'></em>停车场</span>
+										<span><em class='freeTag2 sp_skjs'></em>卖品销售</span>
+										<span><em class='freeTag2 sp_qczj'></em>器材租借</span>
+									</div>
+																			<a href='index-detail_278.html' class='sportBtn indexhotBtn' target='_blank'>在线预订</a>
+																	</li>
+															<li>
+									<div class='title' style='height:27px;overflow:hidden;width:405px;'>
+										<h2>
+											<a class='color3' target='_blank' title='朱毅育龙游泳俱乐部(沙区一中店)' href='index-detail_279.html'>朱毅育龙游泳俱乐部(沙区一中店)</a>
+										</h2>
+																																<span>
+												<a target='_blank' href='index-search_25.html' title='游泳'>
+													<label>游泳</label>
+													<em class='freeTag2'></em>
+												</a>
+											</span>
+																														</div>
+									<p class='mt15'>
+										<em class='freeTag2'></em>
+										<a class='c999' target='_blank' href='index-search_221.html'>沙坪坝区</a>
+										<font title='重庆市沙坪坝区 一中'>重庆市沙坪坝区 一中</font>
+										<span class="grade">
+											<sub style="margin:0;">9</sub>
+											<sup>.9</sup>
+										</span>
+									</p>
+									<div class='mt5 conditionIco'>
+										<span><em class='freeTag2 sp_tcc'></em>停车场</span>
+										<span><em class='freeTag2 sp_skjs'></em>卖品销售</span>
+										<span><em class='freeTag2 sp_qczj'></em>器材租借</span>
+									</div>
+																			<a href='index-detail_279.html' class='sportBtn indexhotBtn' target='_blank'>在线预订</a>
+																	</li>
+															<li>
+									<div class='title' style='height:27px;overflow:hidden;width:405px;'>
+										<h2>
+											<a class='color3' target='_blank' title='重庆交通大学知园运动中心' href='index-detail_24.html'>重庆交通大学知园运动中心</a>
+										</h2>
+																																<span>
+												<a target='_blank' href='index-search_24.html' title='网球'>
+													<label>网球</label>
+													<em class='freeTag2'></em>
+												</a>
+											</span>
+																						<span>
+												<a target='_blank' href='index-search_21.html' title='篮球'>
+													<label>篮球</label>
+													<em class='freeTag2'></em>
+												</a>
+											</span>
+																						<span>
+												<a target='_blank' href='index-search_22.html' title='羽毛球'>
+													<label>羽毛球</label>
+													<em class='freeTag2'></em>
+												</a>
+											</span>
+																														</div>
+									<p class='mt15'>
+										<em class='freeTag2'></em>
+										<a class='c999' target='_blank' href='index-search_201.html'>南岸区</a>
+										<font title='重庆市南岸区重庆交通大学知园中心（7号门）'>重庆市南岸区重庆交通大学知园中心（7号门）</font>
+										<span class="grade">
+											<sub style="margin:0;">9</sub>
+											<sup>.9</sup>
+										</span>
+									</p>
+									<div class='mt5 conditionIco'>
+										<span><em class='freeTag2 sp_tcc'></em>停车场</span>
+										<span><em class='freeTag2 sp_skjs'></em>卖品销售</span>
+										<span><em class='freeTag2 sp_qczj'></em>器材租借</span>
+									</div>
+																			<a href='index-detail_24.html' class='sportBtn indexhotBtn' target='_blank'>在线预订</a>
+																	</li>
+															<li>
+									<div class='title' style='height:27px;overflow:hidden;width:405px;'>
+										<h2>
+											<a class='color3' target='_blank' title='纵合体育足球场' href='index-detail_25.html'>纵合体育足球场</a>
+										</h2>
+																																<span>
+												<a target='_blank' href='index-search_20.html' title='足球'>
+													<label>足球</label>
+													<em class='freeTag2'></em>
+												</a>
+											</span>
+																														</div>
+									<p class='mt15'>
+										<em class='freeTag2'></em>
+										<a class='c999' target='_blank' href='index-search_261.html'>江北区</a>
+										<font title='重庆市江北区南桥寺小天鹅花园旁'>重庆市江北区南桥寺小天鹅花园旁</font>
+										<span class="grade">
+											<sub style="margin:0;">9</sub>
+											<sup>.9</sup>
+										</span>
+									</p>
+									<div class='mt5 conditionIco'>
+										<span><em class='freeTag2 sp_tcc'></em>停车场</span>
+										<span><em class='freeTag2 sp_skjs'></em>卖品销售</span>
+										<span><em class='freeTag2 sp_qczj'></em>器材租借</span>
+									</div>
+																			<a href='index-detail_25.html' class='sportBtn indexhotBtn' target='_blank'>在线预订</a>
+																	</li>
+															<li>
+									<div class='title' style='height:27px;overflow:hidden;width:405px;'>
+										<h2>
+											<a class='color3' target='_blank' title='重庆国际会展中心羽毛球场' href='index-detail_26.html'>重庆国际会展中心羽毛球场</a>
+										</h2>
+																																<span>
+												<a target='_blank' href='index-search_22.html' title='羽毛球'>
+													<label>羽毛球</label>
+													<em class='freeTag2'></em>
+												</a>
+											</span>
+																														</div>
+									<p class='mt15'>
+										<em class='freeTag2'></em>
+										<a class='c999' target='_blank' href='index-search_201.html'>南岸区</a>
+										<font title='重庆市南岸区南坪会展中心7楼'>重庆市南岸区南坪会展中心7楼</font>
+										<span class="grade">
+											<sub style="margin:0;">9</sub>
+											<sup>.9</sup>
+										</span>
+									</p>
+									<div class='mt5 conditionIco'>
+										<span><em class='freeTag2 sp_tcc'></em>停车场</span>
+										<span><em class='freeTag2 sp_skjs'></em>卖品销售</span>
+										<span><em class='freeTag2 sp_qczj'></em>器材租借</span>
+									</div>
+																			<a href='index-detail_26.html' class='sportBtn indexhotBtn' target='_blank'>在线预订</a>
+																	</li>
+															<li>
+									<div class='title' style='height:27px;overflow:hidden;width:405px;'>
+										<h2>
+											<a class='color3' target='_blank' title='高度羽毛球馆' href='index-detail_28.html'>高度羽毛球馆</a>
+										</h2>
+																																<span>
+												<a target='_blank' href='index-search_22.html' title='羽毛球'>
+													<label>羽毛球</label>
+													<em class='freeTag2'></em>
+												</a>
+											</span>
+																														</div>
+									<p class='mt15'>
+										<em class='freeTag2'></em>
+										<a class='c999' target='_blank' href='index-search_16.html'>重庆市</a>
+										<font title='重庆市南岸区南坪海棠溪'>重庆市南岸区南坪海棠溪</font>
+										<span class="grade">
+											<sub style="margin:0;">9</sub>
+											<sup>.9</sup>
+										</span>
+									</p>
+									<div class='mt5 conditionIco'>
+										<span><em class='freeTag2 sp_tcc'></em>停车场</span>
+										<span><em class='freeTag2 sp_skjs'></em>卖品销售</span>
+										<span><em class='freeTag2 sp_qczj'></em>器材租借</span>
+									</div>
+																			<a href='index-detail_28.html' class='sportBtn indexhotBtn' target='_blank'>在线预订</a>
+																	</li>
+															<li>
+									<div class='title' style='height:27px;overflow:hidden;width:405px;'>
+										<h2>
+											<a class='color3' target='_blank' title='海派健身(观音桥金源店)' href='index-detail_288.html'>海派健身(观音桥金源店)</a>
+										</h2>
+																																<span>
+												<a target='_blank' href='index-search_25.html' title='游泳'>
+													<label>游泳</label>
+													<em class='freeTag2'></em>
+												</a>
+											</span>
+																														</div>
+									<p class='mt15'>
+										<em class='freeTag2'></em>
+										<a class='c999' target='_blank' href='index-search_261.html'>江北区</a>
+										<font title='重庆市江北区 江北区观音桥金源大饭店地下不夜城'>重庆市江北区 江北区观音桥金源大饭店地下不夜城</font>
+										<span class="grade">
+											<sub style="margin:0;">9</sub>
+											<sup>.9</sup>
+										</span>
+									</p>
+									<div class='mt5 conditionIco'>
+										<span><em class='freeTag2 sp_tcc'></em>停车场</span>
+										<span><em class='freeTag2 sp_skjs'></em>卖品销售</span>
+										<span><em class='freeTag2 sp_qczj'></em>器材租借</span>
+									</div>
+																			<a href='index-detail_288.html' class='sportBtn indexhotBtn' target='_blank'>在线预订</a>
+																	</li>
+															<li>
+									<div class='title' style='height:27px;overflow:hidden;width:405px;'>
+										<h2>
+											<a class='color3' target='_blank' title='重庆虹康体育公园' href='index-detail_33.html'>重庆虹康体育公园</a>
+										</h2>
+																																<span>
+												<a target='_blank' href='index-search_20.html' title='足球'>
+													<label>足球</label>
+													<em class='freeTag2'></em>
+												</a>
+											</span>
+																						<span>
+												<a target='_blank' href='index-search_21.html' title='篮球'>
+													<label>篮球</label>
+													<em class='freeTag2'></em>
+												</a>
+											</span>
+																														</div>
+									<p class='mt15'>
+										<em class='freeTag2'></em>
+										<a class='c999' target='_blank' href='index-search_18.html'>九龙坡区</a>
+										<font title='重庆市九龙坡区袁家岗奥体中心二号门对面'>重庆市九龙坡区袁家岗奥体中心二号门对面</font>
+										<span class="grade">
+											<sub style="margin:0;">9</sub>
+											<sup>.9</sup>
+										</span>
+									</p>
+									<div class='mt5 conditionIco'>
+										<span><em class='freeTag2 sp_tcc'></em>停车场</span>
+										<span><em class='freeTag2 sp_skjs'></em>卖品销售</span>
+										<span><em class='freeTag2 sp_qczj'></em>器材租借</span>
+									</div>
+																			<a href='index-detail_33.html' class='sportBtn indexhotBtn' target='_blank'>在线预订</a>
+																	</li>
+															<li>
+									<div class='title' style='height:27px;overflow:hidden;width:405px;'>
+										<h2>
+											<a class='color3' target='_blank' title='骐鸣健身汇（重庆全民店）' href='index-detail_34.html'>骐鸣健身汇（重庆全民店）</a>
+										</h2>
+																																<span>
+												<a target='_blank' href='index-search_26.html' title='健身'>
+													<label>健身</label>
+													<em class='freeTag2'></em>
+												</a>
+											</span>
+																						<span>
+												<a target='_blank' href='index-search_45.html' title='瑜伽'>
+													<label>瑜伽</label>
+													<em class='freeTag2'></em>
+												</a>
+											</span>
+																						<span>
+												<a target='_blank' href='index-search_25.html' title='游泳'>
+													<label>游泳</label>
+													<em class='freeTag2'></em>
+												</a>
+											</span>
+																														</div>
+									<p class='mt15'>
+										<em class='freeTag2'></em>
+										<a class='c999' target='_blank' href='index-search_16.html'>重庆市</a>
+										<font title='重庆市沙坪坝区汉渝路全民健身中心'>重庆市沙坪坝区汉渝路全民健身中心</font>
+										<span class="grade">
+											<sub style="margin:0;">9</sub>
+											<sup>.9</sup>
+										</span>
+									</p>
+									<div class='mt5 conditionIco'>
+										<span><em class='freeTag2 sp_tcc'></em>停车场</span>
+										<span><em class='freeTag2 sp_skjs'></em>卖品销售</span>
+										<span><em class='freeTag2 sp_qczj'></em>器材租借</span>
+									</div>
+																			<a href='index-detail_34.html' class='sportBtn indexhotBtn' target='_blank'>在线预订</a>
+																	</li>
+															<li>
+									<div class='title' style='height:27px;overflow:hidden;width:405px;'>
+										<h2>
+											<a class='color3' target='_blank' title='奥体中心虹康羽毛球馆' href='index-detail_37.html'>奥体中心虹康羽毛球馆</a>
+										</h2>
+																																<span>
+												<a target='_blank' href='index-search_22.html' title='羽毛球'>
+													<label>羽毛球</label>
+													<em class='freeTag2'></em>
+												</a>
+											</span>
+																														</div>
+									<p class='mt15'>
+										<em class='freeTag2'></em>
+										<a class='c999' target='_blank' href='index-search_16.html'>重庆市</a>
+										<font title='谢陈路1号奥体中心内(近四支路)'>谢陈路1号奥体中心内(近四支路)</font>
+										<span class="grade">
+											<sub style="margin:0;">9</sub>
+											<sup>.9</sup>
+										</span>
+									</p>
+									<div class='mt5 conditionIco'>
+										<span><em class='freeTag2 sp_tcc'></em>停车场</span>
+										<span><em class='freeTag2 sp_skjs'></em>卖品销售</span>
+										<span><em class='freeTag2 sp_qczj'></em>器材租借</span>
+									</div>
+																			<a href='index-detail_37.html' class='sportBtn indexhotBtn' target='_blank'>在线预订</a>
+																	</li>
+															<li>
+									<div class='title' style='height:27px;overflow:hidden;width:405px;'>
+										<h2>
+											<a class='color3' target='_blank' title='凯帝国际网球俱乐部' href='index-detail_46.html'>凯帝国际网球俱乐部</a>
+										</h2>
+																																<span>
+												<a target='_blank' href='index-search_24.html' title='网球'>
+													<label>网球</label>
+													<em class='freeTag2'></em>
+												</a>
+											</span>
+																														</div>
+									<p class='mt15'>
+										<em class='freeTag2'></em>
+										<a class='c999' target='_blank' href='index-search_201.html'>南岸区</a>
+										<font title='重庆市南岸区南滨路江南体育中心'>重庆市南岸区南滨路江南体育中心</font>
+										<span class="grade">
+											<sub style="margin:0;">9</sub>
+											<sup>.9</sup>
+										</span>
+									</p>
+									<div class='mt5 conditionIco'>
+										<span><em class='freeTag2 sp_tcc'></em>停车场</span>
+										<span><em class='freeTag2 sp_skjs'></em>卖品销售</span>
+										<span><em class='freeTag2 sp_qczj'></em>器材租借</span>
+									</div>
+																			<a href='index-detail_46.html' class='sportBtn indexhotBtn' target='_blank'>在线预订</a>
+																	</li>
+															<li>
+									<div class='title' style='height:27px;overflow:hidden;width:405px;'>
+										<h2>
+											<a class='color3' target='_blank' title='圣火体育羽毛球馆' href='index-detail_302.html'>圣火体育羽毛球馆</a>
+										</h2>
+																																<span>
+												<a target='_blank' href='index-search_22.html' title='羽毛球'>
+													<label>羽毛球</label>
+													<em class='freeTag2'></em>
+												</a>
+											</span>
+																														</div>
+									<p class='mt15'>
+										<em class='freeTag2'></em>
+										<a class='c999' target='_blank' href='index-search_201.html'>南岸区</a>
+										<font title='重庆市南岸区双龙路五号南亚车站旁'>重庆市南岸区双龙路五号南亚车站旁</font>
+										<span class="grade">
+											<sub style="margin:0;">9</sub>
+											<sup>.9</sup>
+										</span>
+									</p>
+									<div class='mt5 conditionIco'>
+										<span><em class='freeTag2 sp_tcc'></em>停车场</span>
+										<span><em class='freeTag2 sp_skjs'></em>卖品销售</span>
+										<span><em class='freeTag2 sp_qczj'></em>器材租借</span>
+									</div>
+																			<a href='index-detail_302.html' class='sportBtn indexhotBtn' target='_blank'>在线预订</a>
+																	</li>
+															<li>
+									<div class='title' style='height:27px;overflow:hidden;width:405px;'>
+										<h2>
+											<a class='color3' target='_blank' title='滨江公园体育健身中心篮球场' href='index-detail_47.html'>滨江公园体育健身中心篮球场</a>
+										</h2>
+																																<span>
+												<a target='_blank' href='index-search_21.html' title='篮球'>
+													<label>篮球</label>
+													<em class='freeTag2'></em>
+												</a>
+											</span>
+																														</div>
+									<p class='mt15'>
+										<em class='freeTag2'></em>
+										<a class='c999' target='_blank' href='index-search_241.html'>渝中区</a>
+										<font title='重庆市渝中区长滨路261号(滨江公园体育健身中心)'>重庆市渝中区长滨路261号(滨江公园体育健身中心)</font>
+										<span class="grade">
+											<sub style="margin:0;">9</sub>
+											<sup>.9</sup>
+										</span>
+									</p>
+									<div class='mt5 conditionIco'>
+										<span><em class='freeTag2 sp_tcc'></em>停车场</span>
+										<span><em class='freeTag2 sp_skjs'></em>卖品销售</span>
+										<span><em class='freeTag2 sp_qczj'></em>器材租借</span>
+									</div>
+																			<a href='index-detail_47.html' class='sportBtn indexhotBtn' target='_blank'>在线预订</a>
+																	</li>
+															<li>
+									<div class='title' style='height:27px;overflow:hidden;width:405px;'>
+										<h2>
+											<a class='color3' target='_blank' title='驼熊山鹰攀岩场' href='index-detail_304.html'>驼熊山鹰攀岩场</a>
+										</h2>
+										<span><a href="javascript:"><label>暂无项目开放</label></a></span>									</div>
+									<p class='mt15'>
+										<em class='freeTag2'></em>
+										<a class='c999' target='_blank' href='index-search_291.html'>渝北区</a>
+										<font title='渝北区冉家坝沃尔玛旁(sm广场冉家坝沃尔玛)'>渝北区冉家坝沃尔玛旁(sm广场冉家坝沃尔玛)</font>
+										<span class="grade">
+											<sub style="margin:0;">9</sub>
+											<sup>.9</sup>
+										</span>
+									</p>
+									<div class='mt5 conditionIco'>
+										<span><em class='freeTag2 sp_tcc'></em>停车场</span>
+										<span><em class='freeTag2 sp_skjs'></em>卖品销售</span>
+										<span><em class='freeTag2 sp_qczj'></em>器材租借</span>
+									</div>
+																			<a href='javascript:' style='background-color:#727070' class='sportBtn indexhotBtn' target='_blank'>场馆维护</a>
+																	</li>
+															<li>
+									<div class='title' style='height:27px;overflow:hidden;width:405px;'>
+										<h2>
+											<a class='color3' target='_blank' title='巴南网球中心' href='index-detail_308.html'>巴南网球中心</a>
+										</h2>
+																																<span>
+												<a target='_blank' href='index-search_24.html' title='网球'>
+													<label>网球</label>
+													<em class='freeTag2'></em>
+												</a>
+											</span>
+																														</div>
+									<p class='mt15'>
+										<em class='freeTag2'></em>
+										<a class='c999' target='_blank' href='index-search_17.html'>巴南区</a>
+										<font title='重庆市巴南区体育中心'>重庆市巴南区体育中心</font>
+										<span class="grade">
+											<sub style="margin:0;">9</sub>
+											<sup>.9</sup>
+										</span>
+									</p>
+									<div class='mt5 conditionIco'>
+										<span><em class='freeTag2 sp_tcc'></em>停车场</span>
+										<span><em class='freeTag2 sp_skjs'></em>卖品销售</span>
+										<span><em class='freeTag2 sp_qczj'></em>器材租借</span>
+									</div>
+																			<a href='index-detail_308.html' class='sportBtn indexhotBtn' target='_blank'>在线预订</a>
+																	</li>
+															<li>
+									<div class='title' style='height:27px;overflow:hidden;width:405px;'>
+										<h2>
+											<a class='color3' target='_blank' title='洋人街足球公园' href='index-detail_309.html'>洋人街足球公园</a>
+										</h2>
+																																<span>
+												<a target='_blank' href='index-search_20.html' title='足球'>
+													<label>足球</label>
+													<em class='freeTag2'></em>
+												</a>
+											</span>
+																														</div>
+									<p class='mt15'>
+										<em class='freeTag2'></em>
+										<a class='c999' target='_blank' href='index-search_201.html'>南岸区</a>
+										<font title='重庆市南岸区洋人街美心灯塔下'>重庆市南岸区洋人街美心灯塔下</font>
+										<span class="grade">
+											<sub style="margin:0;">9</sub>
+											<sup>.9</sup>
+										</span>
+									</p>
+									<div class='mt5 conditionIco'>
+										<span><em class='freeTag2 sp_tcc'></em>停车场</span>
+										<span><em class='freeTag2 sp_skjs'></em>卖品销售</span>
+										<span><em class='freeTag2 sp_qczj'></em>器材租借</span>
+									</div>
+																			<a href='index-detail_309.html' class='sportBtn indexhotBtn' target='_blank'>在线预订</a>
+																	</li>
+															<li>
+									<div class='title' style='height:27px;overflow:hidden;width:405px;'>
+										<h2>
+											<a class='color3' target='_blank' title='平顶山足球公园' href='index-detail_310.html'>平顶山足球公园</a>
+										</h2>
+																																<span>
+												<a target='_blank' href='index-search_20.html' title='足球'>
+													<label>足球</label>
+													<em class='freeTag2'></em>
+												</a>
+											</span>
+																														</div>
+									<p class='mt15'>
+										<em class='freeTag2'></em>
+										<a class='c999' target='_blank' href='index-search_221.html'>沙坪坝区</a>
+										<font title='沙坪坝区平顶山文化公园东门右侧'>沙坪坝区平顶山文化公园东门右侧</font>
+										<span class="grade">
+											<sub style="margin:0;">9</sub>
+											<sup>.9</sup>
+										</span>
+									</p>
+									<div class='mt5 conditionIco'>
+										<span><em class='freeTag2 sp_tcc'></em>停车场</span>
+										<span><em class='freeTag2 sp_skjs'></em>卖品销售</span>
+										<span><em class='freeTag2 sp_qczj'></em>器材租借</span>
+									</div>
+																			<a href='index-detail_310.html' class='sportBtn indexhotBtn' target='_blank'>在线预订</a>
+																	</li>
+															<li>
+									<div class='title' style='height:27px;overflow:hidden;width:405px;'>
+										<h2>
+											<a class='color3' target='_blank' title='渝中区门球场' href='index-detail_312.html'>渝中区门球场</a>
+										</h2>
+										<span><a href="javascript:"><label>暂无项目开放</label></a></span>									</div>
+									<p class='mt15'>
+										<em class='freeTag2'></em>
+										<a class='c999' target='_blank' href='index-search_241.html'>渝中区</a>
+										<font title='渝中区长江滨江路171-7号'>渝中区长江滨江路171-7号</font>
+										<span class="grade">
+											<sub style="margin:0;">9</sub>
+											<sup>.9</sup>
+										</span>
+									</p>
+									<div class='mt5 conditionIco'>
+										<span><em class='freeTag2 sp_tcc'></em>停车场</span>
+										<span><em class='freeTag2 sp_skjs'></em>卖品销售</span>
+										<span><em class='freeTag2 sp_qczj'></em>器材租借</span>
+									</div>
+																			<a href='javascript:' style='background-color:#727070' class='sportBtn indexhotBtn' target='_blank'>场馆维护</a>
+																	</li>
+															<li>
+									<div class='title' style='height:27px;overflow:hidden;width:405px;'>
+										<h2>
+											<a class='color3' target='_blank' title='渝中区壁球馆' href='index-detail_313.html'>渝中区壁球馆</a>
+										</h2>
+										<span><a href="javascript:"><label>暂无项目开放</label></a></span>									</div>
+									<p class='mt15'>
+										<em class='freeTag2'></em>
+										<a class='c999' target='_blank' href='index-search_241.html'>渝中区</a>
+										<font title='渝中区长江滨江路'>渝中区长江滨江路</font>
+										<span class="grade">
+											<sub style="margin:0;">9</sub>
+											<sup>.9</sup>
+										</span>
+									</p>
+									<div class='mt5 conditionIco'>
+										<span><em class='freeTag2 sp_tcc'></em>停车场</span>
+										<span><em class='freeTag2 sp_skjs'></em>卖品销售</span>
+										<span><em class='freeTag2 sp_qczj'></em>器材租借</span>
+									</div>
+																			<a href='javascript:' style='background-color:#727070' class='sportBtn indexhotBtn' target='_blank'>场馆维护</a>
+																	</li>
+															<li>
+									<div class='title' style='height:27px;overflow:hidden;width:405px;'>
+										<h2>
+											<a class='color3' target='_blank' title='金滨网球馆' href='index-detail_314.html'>金滨网球馆</a>
+										</h2>
+																																<span>
+												<a target='_blank' href='index-search_24.html' title='网球'>
+													<label>网球</label>
+													<em class='freeTag2'></em>
+												</a>
+											</span>
+																														</div>
+									<p class='mt15'>
+										<em class='freeTag2'></em>
+										<a class='c999' target='_blank' href='index-search_241.html'>渝中区</a>
+										<font title='渝中区长江滨江路171-7号'>渝中区长江滨江路171-7号</font>
+										<span class="grade">
+											<sub style="margin:0;">9</sub>
+											<sup>.9</sup>
+										</span>
+									</p>
+									<div class='mt5 conditionIco'>
+										<span><em class='freeTag2 sp_tcc'></em>停车场</span>
+										<span><em class='freeTag2 sp_skjs'></em>卖品销售</span>
+										<span><em class='freeTag2 sp_qczj'></em>器材租借</span>
+									</div>
+																			<a href='index-detail_314.html' class='sportBtn indexhotBtn' target='_blank'>在线预订</a>
+																	</li>
+															<li>
+									<div class='title' style='height:27px;overflow:hidden;width:405px;'>
+										<h2>
+											<a class='color3' target='_blank' title='黄桷坪门球场' href='index-detail_317.html'>黄桷坪门球场</a>
+										</h2>
+										<span><a href="javascript:"><label>暂无项目开放</label></a></span>									</div>
+									<p class='mt15'>
+										<em class='freeTag2'></em>
+										<a class='c999' target='_blank' href='index-search_16.html'>重庆市</a>
+										<font title='重庆市渝北区文杰心海湾黄桷坪体育公园内'>重庆市渝北区文杰心海湾黄桷坪体育公园内</font>
+										<span class="grade">
+											<sub style="margin:0;">9</sub>
+											<sup>.9</sup>
+										</span>
+									</p>
+									<div class='mt5 conditionIco'>
+										<span><em class='freeTag2 sp_tcc'></em>停车场</span>
+										<span><em class='freeTag2 sp_skjs'></em>卖品销售</span>
+										<span><em class='freeTag2 sp_qczj'></em>器材租借</span>
+									</div>
+																			<a href='javascript:' style='background-color:#727070' class='sportBtn indexhotBtn' target='_blank'>场馆维护</a>
+																	</li>
+															<li>
+									<div class='title' style='height:27px;overflow:hidden;width:405px;'>
+										<h2>
+											<a class='color3' target='_blank' title='翼锋击剑俱乐部' href='index-detail_318.html'>翼锋击剑俱乐部</a>
+										</h2>
+																																<span>
+												<a target='_blank' href='index-search_40.html' title='击剑'>
+													<label>击剑</label>
+													<em class='freeTag2'></em>
+												</a>
+											</span>
+																														</div>
+									<p class='mt15'>
+										<em class='freeTag2'></em>
+										<a class='c999' target='_blank' href='index-search_16.html'>重庆市</a>
+										<font title='重庆市  南岸区  烟雨路1号（凯帝国际网球俱乐部 / 旁）'>重庆市  南岸区  烟雨路1号（凯帝国际网球俱乐部 / 旁）</font>
+										<span class="grade">
+											<sub style="margin:0;">9</sub>
+											<sup>.9</sup>
+										</span>
+									</p>
+									<div class='mt5 conditionIco'>
+										<span><em class='freeTag2 sp_tcc'></em>停车场</span>
+										<span><em class='freeTag2 sp_skjs'></em>卖品销售</span>
+										<span><em class='freeTag2 sp_qczj'></em>器材租借</span>
+									</div>
+																			<a href='index-detail_318.html' class='sportBtn indexhotBtn' target='_blank'>在线预订</a>
+																	</li>
+															<li>
+									<div class='title' style='height:27px;overflow:hidden;width:405px;'>
+										<h2>
+											<a class='color3' target='_blank' title='正派太极功夫馆' href='index-detail_321.html'>正派太极功夫馆</a>
+										</h2>
+										<span><a href="javascript:"><label>暂无项目开放</label></a></span>									</div>
+									<p class='mt15'>
+										<em class='freeTag2'></em>
+										<a class='c999' target='_blank' href='index-search_16.html'>重庆市</a>
+										<font title='重庆市袁家岗奥体中心西侧2号门'>重庆市袁家岗奥体中心西侧2号门</font>
+										<span class="grade">
+											<sub style="margin:0;">9</sub>
+											<sup>.9</sup>
+										</span>
+									</p>
+									<div class='mt5 conditionIco'>
+										<span><em class='freeTag2 sp_tcc'></em>停车场</span>
+										<span><em class='freeTag2 sp_skjs'></em>卖品销售</span>
+										<span><em class='freeTag2 sp_qczj'></em>器材租借</span>
+									</div>
+																			<a href='javascript:' style='background-color:#727070' class='sportBtn indexhotBtn' target='_blank'>场馆维护</a>
+																	</li>
+															<li>
+									<div class='title' style='height:27px;overflow:hidden;width:405px;'>
+										<h2>
+											<a class='color3' target='_blank' title='天美艺体培训基地乒乓球馆' href='index-detail_322.html'>天美艺体培训基地乒乓球馆</a>
+										</h2>
+																																<span>
+												<a target='_blank' href='index-search_23.html' title='乒乓球'>
+													<label>乒乓球</label>
+													<em class='freeTag2'></em>
+												</a>
+											</span>
+																														</div>
+									<p class='mt15'>
+										<em class='freeTag2'></em>
+										<a class='c999' target='_blank' href='index-search_16.html'>重庆市</a>
+										<font title='重庆大学城龙湖花漫庭上行30米'>重庆大学城龙湖花漫庭上行30米</font>
+										<span class="grade">
+											<sub style="margin:0;">9</sub>
+											<sup>.9</sup>
+										</span>
+									</p>
+									<div class='mt5 conditionIco'>
+										<span><em class='freeTag2 sp_tcc'></em>停车场</span>
+										<span><em class='freeTag2 sp_skjs'></em>卖品销售</span>
+										<span><em class='freeTag2 sp_qczj'></em>器材租借</span>
+									</div>
+																			<a href='index-detail_322.html' class='sportBtn indexhotBtn' target='_blank'>在线预订</a>
+																	</li>
+															<li>
+									<div class='title' style='height:27px;overflow:hidden;width:405px;'>
+										<h2>
+											<a class='color3' target='_blank' title='融汇索科' href='index-detail_93.html'>融汇索科</a>
+										</h2>
+																																<span>
+												<a target='_blank' href='index-search_20.html' title='足球'>
+													<label>足球</label>
+													<em class='freeTag2'></em>
+												</a>
+											</span>
+																						<span>
+												<a target='_blank' href='index-search_21.html' title='篮球'>
+													<label>篮球</label>
+													<em class='freeTag2'></em>
+												</a>
+											</span>
+																														</div>
+									<p class='mt15'>
+										<em class='freeTag2'></em>
+										<a class='c999' target='_blank' href='index-search_221.html'>沙坪坝区</a>
+										<font title='重庆市沙坪坝区融汇温泉城旁'>重庆市沙坪坝区融汇温泉城旁</font>
+										<span class="grade">
+											<sub style="margin:0;">9</sub>
+											<sup>.9</sup>
+										</span>
+									</p>
+									<div class='mt5 conditionIco'>
+										<span><em class='freeTag2 sp_tcc'></em>停车场</span>
+										<span><em class='freeTag2 sp_skjs'></em>卖品销售</span>
+										<span><em class='freeTag2 sp_qczj'></em>器材租借</span>
+									</div>
+																			<a href='index-detail_93.html' class='sportBtn indexhotBtn' target='_blank'>在线预订</a>
+																	</li>
+															<li>
+									<div class='title' style='height:27px;overflow:hidden;width:405px;'>
+										<h2>
+											<a class='color3' target='_blank' title='恒大城运动中心' href='index-detail_106.html'>恒大城运动中心</a>
+										</h2>
+																																<span>
+												<a target='_blank' href='index-search_21.html' title='篮球'>
+													<label>篮球</label>
+													<em class='freeTag2'></em>
+												</a>
+											</span>
+																						<span>
+												<a target='_blank' href='index-search_22.html' title='羽毛球'>
+													<label>羽毛球</label>
+													<em class='freeTag2'></em>
+												</a>
+											</span>
+																						<span>
+												<a target='_blank' href='index-search_25.html' title='游泳'>
+													<label>游泳</label>
+													<em class='freeTag2'></em>
+												</a>
+											</span>
+																						<span>
+												<a target='_blank' href='index-search_24.html' title='网球'>
+													<label>网球</label>
+													<em class='freeTag2'></em>
+												</a>
+											</span>
+																						<span>
+												<a target='_blank' href='index-search_23.html' title='乒乓球'>
+													<label>乒乓球</label>
+													<em class='freeTag2'></em>
+												</a>
+											</span>
+																														</div>
+									<p class='mt15'>
+										<em class='freeTag2'></em>
+										<a class='c999' target='_blank' href='index-search_17.html'>巴南区</a>
+										<font title='重庆市巴南区巴南大道9号'>重庆市巴南区巴南大道9号</font>
+										<span class="grade">
+											<sub style="margin:0;">9</sub>
+											<sup>.9</sup>
+										</span>
+									</p>
+									<div class='mt5 conditionIco'>
+										<span><em class='freeTag2 sp_tcc'></em>停车场</span>
+										<span><em class='freeTag2 sp_skjs'></em>卖品销售</span>
+										<span><em class='freeTag2 sp_qczj'></em>器材租借</span>
+									</div>
+																			<a href='index-detail_106.html' class='sportBtn indexhotBtn' target='_blank'>在线预订</a>
+																	</li>
+															<li>
+									<div class='title' style='height:27px;overflow:hidden;width:405px;'>
+										<h2>
+											<a class='color3' target='_blank' title='沙坪坝区体育馆' href='index-detail_114.html'>沙坪坝区体育馆</a>
+										</h2>
+																																<span>
+												<a target='_blank' href='index-search_22.html' title='羽毛球'>
+													<label>羽毛球</label>
+													<em class='freeTag2'></em>
+												</a>
+											</span>
+																						<span>
+												<a target='_blank' href='index-search_21.html' title='篮球'>
+													<label>篮球</label>
+													<em class='freeTag2'></em>
+												</a>
+											</span>
+																														</div>
+									<p class='mt15'>
+										<em class='freeTag2'></em>
+										<a class='c999' target='_blank' href='index-search_221.html'>沙坪坝区</a>
+										<font title='重庆市沙坪坝区汉渝路工人村'>重庆市沙坪坝区汉渝路工人村</font>
+										<span class="grade">
+											<sub style="margin:0;">9</sub>
+											<sup>.9</sup>
+										</span>
+									</p>
+									<div class='mt5 conditionIco'>
+										<span><em class='freeTag2 sp_tcc'></em>停车场</span>
+										<span><em class='freeTag2 sp_skjs'></em>卖品销售</span>
+										<span><em class='freeTag2 sp_qczj'></em>器材租借</span>
+									</div>
+																			<a href='index-detail_114.html' class='sportBtn indexhotBtn' target='_blank'>在线预订</a>
+																	</li>
+															<li>
+									<div class='title' style='height:27px;overflow:hidden;width:405px;'>
+										<h2>
+											<a class='color3' target='_blank' title='华腾网球中心' href='index-detail_130.html'>华腾网球中心</a>
+										</h2>
+																																<span>
+												<a target='_blank' href='index-search_24.html' title='网球'>
+													<label>网球</label>
+													<em class='freeTag2'></em>
+												</a>
+											</span>
+																														</div>
+									<p class='mt15'>
+										<em class='freeTag2'></em>
+										<a class='c999' target='_blank' href='index-search_291.html'>渝北区</a>
+										<font title='重庆市渝北区渝北区黄山大道东段201号高科体育中心内(中华坊) '>重庆市渝北区渝北区黄山大道东段201号高科体育中心内(中华坊) </font>
+										<span class="grade">
+											<sub style="margin:0;">9</sub>
+											<sup>.9</sup>
+										</span>
+									</p>
+									<div class='mt5 conditionIco'>
+										<span><em class='freeTag2 sp_tcc'></em>停车场</span>
+										<span><em class='freeTag2 sp_skjs'></em>卖品销售</span>
+										<span><em class='freeTag2 sp_qczj'></em>器材租借</span>
+									</div>
+																			<a href='index-detail_130.html' class='sportBtn indexhotBtn' target='_blank'>在线预订</a>
+																	</li>
+															<li>
+									<div class='title' style='height:27px;overflow:hidden;width:405px;'>
+										<h2>
+											<a class='color3' target='_blank' title='汽博线外足球场' href='index-detail_153.html'>汽博线外足球场</a>
+										</h2>
+																																<span>
+												<a target='_blank' href='index-search_20.html' title='足球'>
+													<label>足球</label>
+													<em class='freeTag2'></em>
+												</a>
+											</span>
+																														</div>
+									<p class='mt15'>
+										<em class='freeTag2'></em>
+										<a class='c999' target='_blank' href='index-search_291.html'>渝北区</a>
+										<font title='重庆市渝北区重庆市渝北区汽博中心线外足球场'>重庆市渝北区重庆市渝北区汽博中心线外足球场</font>
+										<span class="grade">
+											<sub style="margin:0;">9</sub>
+											<sup>.9</sup>
+										</span>
+									</p>
+									<div class='mt5 conditionIco'>
+										<span><em class='freeTag2 sp_tcc'></em>停车场</span>
+										<span><em class='freeTag2 sp_skjs'></em>卖品销售</span>
+										<span><em class='freeTag2 sp_qczj'></em>器材租借</span>
+									</div>
+																			<a href='index-detail_153.html' class='sportBtn indexhotBtn' target='_blank'>在线预订</a>
+																	</li>
+															<li>
+									<div class='title' style='height:27px;overflow:hidden;width:405px;'>
+										<h2>
+											<a class='color3' target='_blank' title='重庆市隆顺体育中心' href='index-detail_160.html'>重庆市隆顺体育中心</a>
+										</h2>
+																																<span>
+												<a target='_blank' href='index-search_22.html' title='羽毛球'>
+													<label>羽毛球</label>
+													<em class='freeTag2'></em>
+												</a>
+											</span>
+																						<span>
+												<a target='_blank' href='index-search_20.html' title='足球'>
+													<label>足球</label>
+													<em class='freeTag2'></em>
+												</a>
+											</span>
+																						<span>
+												<a target='_blank' href='index-search_27.html' title='桌球'>
+													<label>桌球</label>
+													<em class='freeTag2'></em>
+												</a>
+											</span>
+																														</div>
+									<p class='mt15'>
+										<em class='freeTag2'></em>
+										<a class='c999' target='_blank' href='index-search_18.html'>九龙坡区</a>
+										<font title='重庆市九龙坡区云湖路3号（恒胜公交站光华五金机电城）'>重庆市九龙坡区云湖路3号（恒胜公交站光华五金机电城）</font>
+										<span class="grade">
+											<sub style="margin:0;">9</sub>
+											<sup>.9</sup>
+										</span>
+									</p>
+									<div class='mt5 conditionIco'>
+										<span><em class='freeTag2 sp_tcc'></em>停车场</span>
+										<span><em class='freeTag2 sp_skjs'></em>卖品销售</span>
+										<span><em class='freeTag2 sp_qczj'></em>器材租借</span>
+									</div>
+																			<a href='index-detail_160.html' class='sportBtn indexhotBtn' target='_blank'>在线预订</a>
+																	</li>
+															<li>
+									<div class='title' style='height:27px;overflow:hidden;width:405px;'>
+										<h2>
+											<a class='color3' target='_blank' title='大庆村足球乐园五人制足球场' href='index-detail_171.html'>大庆村足球乐园五人制足球场</a>
+										</h2>
+																																<span>
+												<a target='_blank' href='index-search_20.html' title='足球'>
+													<label>足球</label>
+													<em class='freeTag2'></em>
+												</a>
+											</span>
+																														</div>
+									<p class='mt15'>
+										<em class='freeTag2'></em>
+										<a class='c999' target='_blank' href='index-search_261.html'>江北区</a>
+										<font title='重庆市江北区红石路大庆村公交车站凯源石油公司支路'>重庆市江北区红石路大庆村公交车站凯源石油公司支路</font>
+										<span class="grade">
+											<sub style="margin:0;">9</sub>
+											<sup>.9</sup>
+										</span>
+									</p>
+									<div class='mt5 conditionIco'>
+										<span><em class='freeTag2 sp_tcc'></em>停车场</span>
+										<span><em class='freeTag2 sp_skjs'></em>卖品销售</span>
+										<span><em class='freeTag2 sp_qczj'></em>器材租借</span>
+									</div>
+																			<a href='index-detail_171.html' class='sportBtn indexhotBtn' target='_blank'>在线预订</a>
+																	</li>
+															<li>
+									<div class='title' style='height:27px;overflow:hidden;width:405px;'>
+										<h2>
+											<a class='color3' target='_blank' title='渝强乒乓球训练馆' href='index-detail_188.html'>渝强乒乓球训练馆</a>
+										</h2>
+																																<span>
+												<a target='_blank' href='index-search_23.html' title='乒乓球'>
+													<label>乒乓球</label>
+													<em class='freeTag2'></em>
+												</a>
+											</span>
+																														</div>
+									<p class='mt15'>
+										<em class='freeTag2'></em>
+										<a class='c999' target='_blank' href='index-search_241.html'>渝中区</a>
+										<font title='重庆市渝中区两路口庆园大厦4楼（宋庆龄旧居旁）'>重庆市渝中区两路口庆园大厦4楼（宋庆龄旧居旁）</font>
+										<span class="grade">
+											<sub style="margin:0;">9</sub>
+											<sup>.9</sup>
+										</span>
+									</p>
+									<div class='mt5 conditionIco'>
+										<span><em class='freeTag2 sp_tcc'></em>停车场</span>
+										<span><em class='freeTag2 sp_skjs'></em>卖品销售</span>
+										<span><em class='freeTag2 sp_qczj'></em>器材租借</span>
+									</div>
+																			<a href='index-detail_188.html' class='sportBtn indexhotBtn' target='_blank'>在线预订</a>
+																	</li>
+															<li>
+									<div class='title' style='height:27px;overflow:hidden;width:405px;'>
+										<h2>
+											<a class='color3' target='_blank' title='市体校乒乓球训练基地' href='index-detail_190.html'>市体校乒乓球训练基地</a>
+										</h2>
+																																<span>
+												<a target='_blank' href='index-search_23.html' title='乒乓球'>
+													<label>乒乓球</label>
+													<em class='freeTag2'></em>
+												</a>
+											</span>
+																														</div>
+									<p class='mt15'>
+										<em class='freeTag2'></em>
+										<a class='c999' target='_blank' href='index-search_241.html'>渝中区</a>
+										<font title='重庆市渝中区两路口宋庆龄故居旁边三楼'>重庆市渝中区两路口宋庆龄故居旁边三楼</font>
+										<span class="grade">
+											<sub style="margin:0;">9</sub>
+											<sup>.9</sup>
+										</span>
+									</p>
+									<div class='mt5 conditionIco'>
+										<span><em class='freeTag2 sp_tcc'></em>停车场</span>
+										<span><em class='freeTag2 sp_skjs'></em>卖品销售</span>
+										<span><em class='freeTag2 sp_qczj'></em>器材租借</span>
+									</div>
+																			<a href='index-detail_190.html' class='sportBtn indexhotBtn' target='_blank'>在线预订</a>
+																	</li>
+															<li>
+									<div class='title' style='height:27px;overflow:hidden;width:405px;'>
+										<h2>
+											<a class='color3' target='_blank' title='狂飙乒乓球俱乐部   ' href='index-detail_191.html'>狂飙乒乓球俱乐部   </a>
+										</h2>
+																																<span>
+												<a target='_blank' href='index-search_23.html' title='乒乓球'>
+													<label>乒乓球</label>
+													<em class='freeTag2'></em>
+												</a>
+											</span>
+																														</div>
+									<p class='mt15'>
+										<em class='freeTag2'></em>
+										<a class='c999' target='_blank' href='index-search_241.html'>渝中区</a>
+										<font title='重庆市江北区建新西路4号拓展大厦6楼  '>重庆市江北区建新西路4号拓展大厦6楼  </font>
+										<span class="grade">
+											<sub style="margin:0;">9</sub>
+											<sup>.9</sup>
+										</span>
+									</p>
+									<div class='mt5 conditionIco'>
+										<span><em class='freeTag2 sp_tcc'></em>停车场</span>
+										<span><em class='freeTag2 sp_skjs'></em>卖品销售</span>
+										<span><em class='freeTag2 sp_qczj'></em>器材租借</span>
+									</div>
+																			<a href='index-detail_191.html' class='sportBtn indexhotBtn' target='_blank'>在线预订</a>
+																	</li>
+															<li>
+									<div class='title' style='height:27px;overflow:hidden;width:405px;'>
+										<h2>
+											<a class='color3' target='_blank' title='乐博汇乒乓球场' href='index-detail_193.html'>乐博汇乒乓球场</a>
+										</h2>
+																																<span>
+												<a target='_blank' href='index-search_23.html' title='乒乓球'>
+													<label>乒乓球</label>
+													<em class='freeTag2'></em>
+												</a>
+											</span>
+																														</div>
+									<p class='mt15'>
+										<em class='freeTag2'></em>
+										<a class='c999' target='_blank' href='index-search_261.html'>江北区</a>
+										<font title='重庆市江北区洋河北路六号力帆运动城'>重庆市江北区洋河北路六号力帆运动城</font>
+										<span class="grade">
+											<sub style="margin:0;">9</sub>
+											<sup>.9</sup>
+										</span>
+									</p>
+									<div class='mt5 conditionIco'>
+										<span><em class='freeTag2 sp_tcc'></em>停车场</span>
+										<span><em class='freeTag2 sp_skjs'></em>卖品销售</span>
+										<span><em class='freeTag2 sp_qczj'></em>器材租借</span>
+									</div>
+																			<a href='index-detail_193.html' class='sportBtn indexhotBtn' target='_blank'>在线预订</a>
+																	</li>
+															<li>
+									<div class='title' style='height:27px;overflow:hidden;width:405px;'>
+										<h2>
+											<a class='color3' target='_blank' title='沙区乒乓球运动中心     ' href='index-detail_195.html'>沙区乒乓球运动中心     </a>
+										</h2>
+																																<span>
+												<a target='_blank' href='index-search_23.html' title='乒乓球'>
+													<label>乒乓球</label>
+													<em class='freeTag2'></em>
+												</a>
+											</span>
+																														</div>
+									<p class='mt15'>
+										<em class='freeTag2'></em>
+										<a class='c999' target='_blank' href='index-search_221.html'>沙坪坝区</a>
+										<font title='重庆市沙坪坝区天星桥正街'>重庆市沙坪坝区天星桥正街</font>
+										<span class="grade">
+											<sub style="margin:0;">9</sub>
+											<sup>.9</sup>
+										</span>
+									</p>
+									<div class='mt5 conditionIco'>
+										<span><em class='freeTag2 sp_tcc'></em>停车场</span>
+										<span><em class='freeTag2 sp_skjs'></em>卖品销售</span>
+										<span><em class='freeTag2 sp_qczj'></em>器材租借</span>
+									</div>
+																			<a href='index-detail_195.html' class='sportBtn indexhotBtn' target='_blank'>在线预订</a>
+																	</li>
+															<li>
+									<div class='title' style='height:27px;overflow:hidden;width:405px;'>
+										<h2>
+											<a class='color3' target='_blank' title='沙坪坝全民健身中心' href='index-detail_196.html'>沙坪坝全民健身中心</a>
+										</h2>
+																																<span>
+												<a target='_blank' href='index-search_23.html' title='乒乓球'>
+													<label>乒乓球</label>
+													<em class='freeTag2'></em>
+												</a>
+											</span>
+																														</div>
+									<p class='mt15'>
+										<em class='freeTag2'></em>
+										<a class='c999' target='_blank' href='index-search_221.html'>沙坪坝区</a>
+										<font title='重庆市沙坪坝区体育馆旁'>重庆市沙坪坝区体育馆旁</font>
+										<span class="grade">
+											<sub style="margin:0;">9</sub>
+											<sup>.9</sup>
+										</span>
+									</p>
+									<div class='mt5 conditionIco'>
+										<span><em class='freeTag2 sp_tcc'></em>停车场</span>
+										<span><em class='freeTag2 sp_skjs'></em>卖品销售</span>
+										<span><em class='freeTag2 sp_qczj'></em>器材租借</span>
+									</div>
+																			<a href='index-detail_196.html' class='sportBtn indexhotBtn' target='_blank'>在线预订</a>
+																	</li>
+															<li>
+									<div class='title' style='height:27px;overflow:hidden;width:405px;'>
+										<h2>
+											<a class='color3' target='_blank' title='虹康乒乓球俱乐部' href='index-detail_197.html'>虹康乒乓球俱乐部</a>
+										</h2>
+																																<span>
+												<a target='_blank' href='index-search_23.html' title='乒乓球'>
+													<label>乒乓球</label>
+													<em class='freeTag2'></em>
+												</a>
+											</span>
+																														</div>
+									<p class='mt15'>
+										<em class='freeTag2'></em>
+										<a class='c999' target='_blank' href='index-search_18.html'>九龙坡区</a>
+										<font title='重庆市袁家岗奥体中心体育场9号门  '>重庆市袁家岗奥体中心体育场9号门  </font>
+										<span class="grade">
+											<sub style="margin:0;">9</sub>
+											<sup>.9</sup>
+										</span>
+									</p>
+									<div class='mt5 conditionIco'>
+										<span><em class='freeTag2 sp_tcc'></em>停车场</span>
+										<span><em class='freeTag2 sp_skjs'></em>卖品销售</span>
+										<span><em class='freeTag2 sp_qczj'></em>器材租借</span>
+									</div>
+																			<a href='index-detail_197.html' class='sportBtn indexhotBtn' target='_blank'>在线预订</a>
+																	</li>
+															<li>
+									<div class='title' style='height:27px;overflow:hidden;width:405px;'>
+										<h2>
+											<a class='color3' target='_blank' title='1573乒乓球俱乐部' href='index-detail_198.html'>1573乒乓球俱乐部</a>
+										</h2>
+																																<span>
+												<a target='_blank' href='index-search_23.html' title='乒乓球'>
+													<label>乒乓球</label>
+													<em class='freeTag2'></em>
+												</a>
+											</span>
+																														</div>
+									<p class='mt15'>
+										<em class='freeTag2'></em>
+										<a class='c999' target='_blank' href='index-search_18.html'>九龙坡区</a>
+										<font title='重庆市杨家坪西郊支路桃花溪   '>重庆市杨家坪西郊支路桃花溪   </font>
+										<span class="grade">
+											<sub style="margin:0;">9</sub>
+											<sup>.9</sup>
+										</span>
+									</p>
+									<div class='mt5 conditionIco'>
+										<span><em class='freeTag2 sp_tcc'></em>停车场</span>
+										<span><em class='freeTag2 sp_skjs'></em>卖品销售</span>
+										<span><em class='freeTag2 sp_qczj'></em>器材租借</span>
+									</div>
+																			<a href='index-detail_198.html' class='sportBtn indexhotBtn' target='_blank'>在线预订</a>
+																	</li>
+															<li>
+									<div class='title' style='height:27px;overflow:hidden;width:405px;'>
+										<h2>
+											<a class='color3' target='_blank' title='奥体篮球场' href='index-detail_199.html'>奥体篮球场</a>
+										</h2>
+																																<span>
+												<a target='_blank' href='index-search_21.html' title='篮球'>
+													<label>篮球</label>
+													<em class='freeTag2'></em>
+												</a>
+											</span>
+																														</div>
+									<p class='mt15'>
+										<em class='freeTag2'></em>
+										<a class='c999' target='_blank' href='index-search_18.html'>九龙坡区</a>
+										<font title='重庆市九龙坡区奥体四支路'>重庆市九龙坡区奥体四支路</font>
+										<span class="grade">
+											<sub style="margin:0;">9</sub>
+											<sup>.9</sup>
+										</span>
+									</p>
+									<div class='mt5 conditionIco'>
+										<span><em class='freeTag2 sp_tcc'></em>停车场</span>
+										<span><em class='freeTag2 sp_skjs'></em>卖品销售</span>
+										<span><em class='freeTag2 sp_qczj'></em>器材租借</span>
+									</div>
+																			<a href='index-detail_199.html' class='sportBtn indexhotBtn' target='_blank'>在线预订</a>
+																	</li>
+															<li>
+									<div class='title' style='height:27px;overflow:hidden;width:405px;'>
+										<h2>
+											<a class='color3' target='_blank' title='群星乒乓球俱乐部 ' href='index-detail_200.html'>群星乒乓球俱乐部 </a>
+										</h2>
+																																<span>
+												<a target='_blank' href='index-search_23.html' title='乒乓球'>
+													<label>乒乓球</label>
+													<em class='freeTag2'></em>
+												</a>
+											</span>
+																														</div>
+									<p class='mt15'>
+										<em class='freeTag2'></em>
+										<a class='c999' target='_blank' href='index-search_291.html'>渝北区</a>
+										<font title='重庆市渝北区双龙大道'>重庆市渝北区双龙大道</font>
+										<span class="grade">
+											<sub style="margin:0;">9</sub>
+											<sup>.9</sup>
+										</span>
+									</p>
+									<div class='mt5 conditionIco'>
+										<span><em class='freeTag2 sp_tcc'></em>停车场</span>
+										<span><em class='freeTag2 sp_skjs'></em>卖品销售</span>
+										<span><em class='freeTag2 sp_qczj'></em>器材租借</span>
+									</div>
+																			<a href='index-detail_200.html' class='sportBtn indexhotBtn' target='_blank'>在线预订</a>
+																	</li>
+															<li>
+									<div class='title' style='height:27px;overflow:hidden;width:405px;'>
+										<h2>
+											<a class='color3' target='_blank' title='一立网球场' href='index-detail_201.html'>一立网球场</a>
+										</h2>
+																																<span>
+												<a target='_blank' href='index-search_24.html' title='网球'>
+													<label>网球</label>
+													<em class='freeTag2'></em>
+												</a>
+											</span>
+																														</div>
+									<p class='mt15'>
+										<em class='freeTag2'></em>
+										<a class='c999' target='_blank' href='index-search_251.html'>大渡口区</a>
+										<font title='重庆市大渡口区新山村轻轨站对面'>重庆市大渡口区新山村轻轨站对面</font>
+										<span class="grade">
+											<sub style="margin:0;">9</sub>
+											<sup>.9</sup>
+										</span>
+									</p>
+									<div class='mt5 conditionIco'>
+										<span><em class='freeTag2 sp_tcc'></em>停车场</span>
+										<span><em class='freeTag2 sp_skjs'></em>卖品销售</span>
+										<span><em class='freeTag2 sp_qczj'></em>器材租借</span>
+									</div>
+																			<a href='index-detail_201.html' class='sportBtn indexhotBtn' target='_blank'>在线预订</a>
+																	</li>
+															<li>
+									<div class='title' style='height:27px;overflow:hidden;width:405px;'>
+										<h2>
+											<a class='color3' target='_blank' title='君乐乒乓馆' href='index-detail_202.html'>君乐乒乓馆</a>
+										</h2>
+																																<span>
+												<a target='_blank' href='index-search_23.html' title='乒乓球'>
+													<label>乒乓球</label>
+													<em class='freeTag2'></em>
+												</a>
+											</span>
+																														</div>
+									<p class='mt15'>
+										<em class='freeTag2'></em>
+										<a class='c999' target='_blank' href='index-search_241.html'>渝中区</a>
+										<font title='重庆市渝中区中山三路121号'>重庆市渝中区中山三路121号</font>
+										<span class="grade">
+											<sub style="margin:0;">9</sub>
+											<sup>.9</sup>
+										</span>
+									</p>
+									<div class='mt5 conditionIco'>
+										<span><em class='freeTag2 sp_tcc'></em>停车场</span>
+										<span><em class='freeTag2 sp_skjs'></em>卖品销售</span>
+										<span><em class='freeTag2 sp_qczj'></em>器材租借</span>
+									</div>
+																			<a href='index-detail_202.html' class='sportBtn indexhotBtn' target='_blank'>在线预订</a>
+																	</li>
+															<li>
+									<div class='title' style='height:27px;overflow:hidden;width:405px;'>
+										<h2>
+											<a class='color3' target='_blank' title='恒大华府会所乒乓馆' href='index-detail_205.html'>恒大华府会所乒乓馆</a>
+										</h2>
+																																<span>
+												<a target='_blank' href='index-search_23.html' title='乒乓球'>
+													<label>乒乓球</label>
+													<em class='freeTag2'></em>
+												</a>
+											</span>
+																														</div>
+									<p class='mt15'>
+										<em class='freeTag2'></em>
+										<a class='c999' target='_blank' href='index-search_291.html'>渝北区</a>
+										<font title='重庆市渝北区金山大道1号新区(近古木峰立交)'>重庆市渝北区金山大道1号新区(近古木峰立交)</font>
+										<span class="grade">
+											<sub style="margin:0;">9</sub>
+											<sup>.9</sup>
+										</span>
+									</p>
+									<div class='mt5 conditionIco'>
+										<span><em class='freeTag2 sp_tcc'></em>停车场</span>
+										<span><em class='freeTag2 sp_skjs'></em>卖品销售</span>
+										<span><em class='freeTag2 sp_qczj'></em>器材租借</span>
+									</div>
+																			<a href='index-detail_205.html' class='sportBtn indexhotBtn' target='_blank'>在线预订</a>
+																	</li>
+															<li>
+									<div class='title' style='height:27px;overflow:hidden;width:405px;'>
+										<h2>
+											<a class='color3' target='_blank' title='巴渝世家空中足球花园' href='index-detail_206.html'>巴渝世家空中足球花园</a>
+										</h2>
+																																<span>
+												<a target='_blank' href='index-search_20.html' title='足球'>
+													<label>足球</label>
+													<em class='freeTag2'></em>
+												</a>
+											</span>
+																														</div>
+									<p class='mt15'>
+										<em class='freeTag2'></em>
+										<a class='c999' target='_blank' href='index-search_241.html'>渝中区</a>
+										<font title='渝中区巴渝世家创意产业基地4楼'>渝中区巴渝世家创意产业基地4楼</font>
+										<span class="grade">
+											<sub style="margin:0;">9</sub>
+											<sup>.9</sup>
+										</span>
+									</p>
+									<div class='mt5 conditionIco'>
+										<span><em class='freeTag2 sp_tcc'></em>停车场</span>
+										<span><em class='freeTag2 sp_skjs'></em>卖品销售</span>
+										<span><em class='freeTag2 sp_qczj'></em>器材租借</span>
+									</div>
+																			<a href='index-detail_206.html' class='sportBtn indexhotBtn' target='_blank'>在线预订</a>
+																	</li>
+															<li>
+									<div class='title' style='height:27px;overflow:hidden;width:405px;'>
+										<h2>
+											<a class='color3' target='_blank' title='财信·赖特与山运动公园' href='index-detail_207.html'>财信·赖特与山运动公园</a>
+										</h2>
+																																<span>
+												<a target='_blank' href='index-search_23.html' title='乒乓球'>
+													<label>乒乓球</label>
+													<em class='freeTag2'></em>
+												</a>
+											</span>
+																						<span>
+												<a target='_blank' href='index-search_21.html' title='篮球'>
+													<label>篮球</label>
+													<em class='freeTag2'></em>
+												</a>
+											</span>
+																						<span>
+												<a target='_blank' href='index-search_24.html' title='网球'>
+													<label>网球</label>
+													<em class='freeTag2'></em>
+												</a>
+											</span>
+																						<span>
+												<a target='_blank' href='index-search_22.html' title='羽毛球'>
+													<label>羽毛球</label>
+													<em class='freeTag2'></em>
+												</a>
+											</span>
+																														</div>
+									<p class='mt15'>
+										<em class='freeTag2'></em>
+										<a class='c999' target='_blank' href='index-search_261.html'>江北区</a>
+										<font title='重庆市江北区铁山坪森林公园生态云岭路(僧官寺)'>重庆市江北区铁山坪森林公园生态云岭路(僧官寺)</font>
+										<span class="grade">
+											<sub style="margin:0;">9</sub>
+											<sup>.9</sup>
+										</span>
+									</p>
+									<div class='mt5 conditionIco'>
+										<span><em class='freeTag2 sp_tcc'></em>停车场</span>
+										<span><em class='freeTag2 sp_skjs'></em>卖品销售</span>
+										<span><em class='freeTag2 sp_qczj'></em>器材租借</span>
+									</div>
+																			<a href='index-detail_207.html' class='sportBtn indexhotBtn' target='_blank'>在线预订</a>
+																	</li>
+															<li>
+									<div class='title' style='height:27px;overflow:hidden;width:405px;'>
+										<h2>
+											<a class='color3' target='_blank' title='金竹睿翔羽毛球馆' href='index-detail_208.html'>金竹睿翔羽毛球馆</a>
+										</h2>
+																																<span>
+												<a target='_blank' href='index-search_22.html' title='羽毛球'>
+													<label>羽毛球</label>
+													<em class='freeTag2'></em>
+												</a>
+											</span>
+																														</div>
+									<p class='mt15'>
+										<em class='freeTag2'></em>
+										<a class='c999' target='_blank' href='index-search_16.html'>重庆市</a>
+										<font title='重庆市巴南区鱼洞金竹工业园区瑞达印务内'>重庆市巴南区鱼洞金竹工业园区瑞达印务内</font>
+										<span class="grade">
+											<sub style="margin:0;">9</sub>
+											<sup>.9</sup>
+										</span>
+									</p>
+									<div class='mt5 conditionIco'>
+										<span><em class='freeTag2 sp_tcc'></em>停车场</span>
+										<span><em class='freeTag2 sp_skjs'></em>卖品销售</span>
+										<span><em class='freeTag2 sp_qczj'></em>器材租借</span>
+									</div>
+																			<a href='index-detail_208.html' class='sportBtn indexhotBtn' target='_blank'>在线预订</a>
+																	</li>
+															<li>
+									<div class='title' style='height:27px;overflow:hidden;width:405px;'>
+										<h2>
+											<a class='color3' target='_blank' title='渝超篮球天地' href='index-detail_209.html'>渝超篮球天地</a>
+										</h2>
+																																<span>
+												<a target='_blank' href='index-search_21.html' title='篮球'>
+													<label>篮球</label>
+													<em class='freeTag2'></em>
+												</a>
+											</span>
+																														</div>
+									<p class='mt15'>
+										<em class='freeTag2'></em>
+										<a class='c999' target='_blank' href='index-search_201.html'>南岸区</a>
+										<font title='重庆市南岸区江南体育馆羽毛球馆负二层'>重庆市南岸区江南体育馆羽毛球馆负二层</font>
+										<span class="grade">
+											<sub style="margin:0;">9</sub>
+											<sup>.9</sup>
+										</span>
+									</p>
+									<div class='mt5 conditionIco'>
+										<span><em class='freeTag2 sp_tcc'></em>停车场</span>
+										<span><em class='freeTag2 sp_skjs'></em>卖品销售</span>
+										<span><em class='freeTag2 sp_qczj'></em>器材租借</span>
+									</div>
+																			<a href='index-detail_209.html' class='sportBtn indexhotBtn' target='_blank'>在线预订</a>
+																	</li>
+															<li>
+									<div class='title' style='height:27px;overflow:hidden;width:405px;'>
+										<h2>
+											<a class='color3' target='_blank' title='艾生普羽毛球馆' href='index-detail_214.html'>艾生普羽毛球馆</a>
+										</h2>
+																																<span>
+												<a target='_blank' href='index-search_22.html' title='羽毛球'>
+													<label>羽毛球</label>
+													<em class='freeTag2'></em>
+												</a>
+											</span>
+																														</div>
+									<p class='mt15'>
+										<em class='freeTag2'></em>
+										<a class='c999' target='_blank' href='index-search_18.html'>九龙坡区</a>
+										<font title='重庆市九龙坡区科园六路奥体运动街奥网中心一号'>重庆市九龙坡区科园六路奥体运动街奥网中心一号</font>
+										<span class="grade">
+											<sub style="margin:0;">9</sub>
+											<sup>.9</sup>
+										</span>
+									</p>
+									<div class='mt5 conditionIco'>
+										<span><em class='freeTag2 sp_tcc'></em>停车场</span>
+										<span><em class='freeTag2 sp_skjs'></em>卖品销售</span>
+										<span><em class='freeTag2 sp_qczj'></em>器材租借</span>
+									</div>
+																			<a href='index-detail_214.html' class='sportBtn indexhotBtn' target='_blank'>在线预订</a>
+																	</li>
+															<li>
+									<div class='title' style='height:27px;overflow:hidden;width:405px;'>
+										<h2>
+											<a class='color3' target='_blank' title='重庆工商大学羽毛球馆' href='index-detail_218.html'>重庆工商大学羽毛球馆</a>
+										</h2>
+																																<span>
+												<a target='_blank' href='index-search_22.html' title='羽毛球'>
+													<label>羽毛球</label>
+													<em class='freeTag2'></em>
+												</a>
+											</span>
+																														</div>
+									<p class='mt15'>
+										<em class='freeTag2'></em>
+										<a class='c999' target='_blank' href='index-search_201.html'>南岸区</a>
+										<font title='六公里融桥苹果城附近'>六公里融桥苹果城附近</font>
+										<span class="grade">
+											<sub style="margin:0;">9</sub>
+											<sup>.9</sup>
+										</span>
+									</p>
+									<div class='mt5 conditionIco'>
+										<span><em class='freeTag2 sp_tcc'></em>停车场</span>
+										<span><em class='freeTag2 sp_skjs'></em>卖品销售</span>
+										<span><em class='freeTag2 sp_qczj'></em>器材租借</span>
+									</div>
+																			<a href='index-detail_218.html' class='sportBtn indexhotBtn' target='_blank'>在线预订</a>
+																	</li>
+															<li>
+									<div class='title' style='height:27px;overflow:hidden;width:405px;'>
+										<h2>
+											<a class='color3' target='_blank' title='棕榈泉运动中心' href='index-detail_221.html'>棕榈泉运动中心</a>
+										</h2>
+																																<span>
+												<a target='_blank' href='index-search_22.html' title='羽毛球'>
+													<label>羽毛球</label>
+													<em class='freeTag2'></em>
+												</a>
+											</span>
+																						<span>
+												<a target='_blank' href='index-search_20.html' title='足球'>
+													<label>足球</label>
+													<em class='freeTag2'></em>
+												</a>
+											</span>
+																						<span>
+												<a target='_blank' href='index-search_21.html' title='篮球'>
+													<label>篮球</label>
+													<em class='freeTag2'></em>
+												</a>
+											</span>
+																						<span>
+												<a target='_blank' href='index-search_24.html' title='网球'>
+													<label>网球</label>
+													<em class='freeTag2'></em>
+												</a>
+											</span>
+																														</div>
+									<p class='mt15'>
+										<em class='freeTag2'></em>
+										<a class='c999' target='_blank' href='index-search_291.html'>渝北区</a>
+										<font title='重庆市渝北区金开大道88号'>重庆市渝北区金开大道88号</font>
+										<span class="grade">
+											<sub style="margin:0;">9</sub>
+											<sup>.9</sup>
+										</span>
+									</p>
+									<div class='mt5 conditionIco'>
+										<span><em class='freeTag2 sp_tcc'></em>停车场</span>
+										<span><em class='freeTag2 sp_skjs'></em>卖品销售</span>
+										<span><em class='freeTag2 sp_qczj'></em>器材租借</span>
+									</div>
+																			<a href='index-detail_221.html' class='sportBtn indexhotBtn' target='_blank'>在线预订</a>
+																	</li>
+															<li>
+									<div class='title' style='height:27px;overflow:hidden;width:405px;'>
+										<h2>
+											<a class='color3' target='_blank' title='重庆融科体育馆' href='index-detail_224.html'>重庆融科体育馆</a>
+										</h2>
+																																<span>
+												<a target='_blank' href='index-search_22.html' title='羽毛球'>
+													<label>羽毛球</label>
+													<em class='freeTag2'></em>
+												</a>
+											</span>
+																						<span>
+												<a target='_blank' href='index-search_27.html' title='桌球'>
+													<label>桌球</label>
+													<em class='freeTag2'></em>
+												</a>
+											</span>
+																														</div>
+									<p class='mt15'>
+										<em class='freeTag2'></em>
+										<a class='c999' target='_blank' href='index-search_291.html'>渝北区</a>
+										<font title='重庆市渝北区金开大道1133号'>重庆市渝北区金开大道1133号</font>
+										<span class="grade">
+											<sub style="margin:0;">9</sub>
+											<sup>.9</sup>
+										</span>
+									</p>
+									<div class='mt5 conditionIco'>
+										<span><em class='freeTag2 sp_tcc'></em>停车场</span>
+										<span><em class='freeTag2 sp_skjs'></em>卖品销售</span>
+										<span><em class='freeTag2 sp_qczj'></em>器材租借</span>
+									</div>
+																			<a href='index-detail_224.html' class='sportBtn indexhotBtn' target='_blank'>在线预订</a>
+																	</li>
+															<li>
+									<div class='title' style='height:27px;overflow:hidden;width:405px;'>
+										<h2>
+											<a class='color3' target='_blank' title='龙湖南苑网球场' href='index-detail_226.html'>龙湖南苑网球场</a>
+										</h2>
+																																<span>
+												<a target='_blank' href='index-search_24.html' title='网球'>
+													<label>网球</label>
+													<em class='freeTag2'></em>
+												</a>
+											</span>
+																														</div>
+									<p class='mt15'>
+										<em class='freeTag2'></em>
+										<a class='c999' target='_blank' href='index-search_291.html'>渝北区</a>
+										<font title='重庆市渝北区龙湖花园内'>重庆市渝北区龙湖花园内</font>
+										<span class="grade">
+											<sub style="margin:0;">9</sub>
+											<sup>.9</sup>
+										</span>
+									</p>
+									<div class='mt5 conditionIco'>
+										<span><em class='freeTag2 sp_tcc'></em>停车场</span>
+										<span><em class='freeTag2 sp_skjs'></em>卖品销售</span>
+										<span><em class='freeTag2 sp_qczj'></em>器材租借</span>
+									</div>
+																			<a href='index-detail_226.html' class='sportBtn indexhotBtn' target='_blank'>在线预订</a>
+																	</li>
+															<li>
+									<div class='title' style='height:27px;overflow:hidden;width:405px;'>
+										<h2>
+											<a class='color3' target='_blank' title='凤凰湾半山俱乐部羽毛球馆' href='index-detail_227.html'>凤凰湾半山俱乐部羽毛球馆</a>
+										</h2>
+																																<span>
+												<a target='_blank' href='index-search_22.html' title='羽毛球'>
+													<label>羽毛球</label>
+													<em class='freeTag2'></em>
+												</a>
+											</span>
+																														</div>
+									<p class='mt15'>
+										<em class='freeTag2'></em>
+										<a class='c999' target='_blank' href='index-search_261.html'>江北区</a>
+										<font title='重庆市江北区石马河宏帆路'>重庆市江北区石马河宏帆路</font>
+										<span class="grade">
+											<sub style="margin:0;">9</sub>
+											<sup>.9</sup>
+										</span>
+									</p>
+									<div class='mt5 conditionIco'>
+										<span><em class='freeTag2 sp_tcc'></em>停车场</span>
+										<span><em class='freeTag2 sp_skjs'></em>卖品销售</span>
+										<span><em class='freeTag2 sp_qczj'></em>器材租借</span>
+									</div>
+																			<a href='index-detail_227.html' class='sportBtn indexhotBtn' target='_blank'>在线预订</a>
+																	</li>
+															<li>
+									<div class='title' style='height:27px;overflow:hidden;width:405px;'>
+										<h2>
+											<a class='color3' target='_blank' title='紫都城网球场' href='index-detail_228.html'>紫都城网球场</a>
+										</h2>
+																																<span>
+												<a target='_blank' href='index-search_24.html' title='网球'>
+													<label>网球</label>
+													<em class='freeTag2'></em>
+												</a>
+											</span>
+																														</div>
+									<p class='mt15'>
+										<em class='freeTag2'></em>
+										<a class='c999' target='_blank' href='index-search_291.html'>渝北区</a>
+										<font title='重庆市渝北区余松一路6号'>重庆市渝北区余松一路6号</font>
+										<span class="grade">
+											<sub style="margin:0;">9</sub>
+											<sup>.9</sup>
+										</span>
+									</p>
+									<div class='mt5 conditionIco'>
+										<span><em class='freeTag2 sp_tcc'></em>停车场</span>
+										<span><em class='freeTag2 sp_skjs'></em>卖品销售</span>
+										<span><em class='freeTag2 sp_qczj'></em>器材租借</span>
+									</div>
+																			<a href='index-detail_228.html' class='sportBtn indexhotBtn' target='_blank'>在线预订</a>
+																	</li>
+															<li>
+									<div class='title' style='height:27px;overflow:hidden;width:405px;'>
+										<h2>
+											<a class='color3' target='_blank' title='香榭街烟灯山公园体育馆' href='index-detail_229.html'>香榭街烟灯山公园体育馆</a>
+										</h2>
+																																<span>
+												<a target='_blank' href='index-search_22.html' title='羽毛球'>
+													<label>羽毛球</label>
+													<em class='freeTag2'></em>
+												</a>
+											</span>
+																						<span>
+												<a target='_blank' href='index-search_24.html' title='网球'>
+													<label>网球</label>
+													<em class='freeTag2'></em>
+												</a>
+											</span>
+																														</div>
+									<p class='mt15'>
+										<em class='freeTag2'></em>
+										<a class='c999' target='_blank' href='index-search_18.html'>九龙坡区</a>
+										<font title='重庆市九龙坡区香榭街烟灯山公园体育馆'>重庆市九龙坡区香榭街烟灯山公园体育馆</font>
+										<span class="grade">
+											<sub style="margin:0;">9</sub>
+											<sup>.9</sup>
+										</span>
+									</p>
+									<div class='mt5 conditionIco'>
+										<span><em class='freeTag2 sp_tcc'></em>停车场</span>
+										<span><em class='freeTag2 sp_skjs'></em>卖品销售</span>
+										<span><em class='freeTag2 sp_qczj'></em>器材租借</span>
+									</div>
+																			<a href='index-detail_229.html' class='sportBtn indexhotBtn' target='_blank'>在线预订</a>
+																	</li>
+															<li>
+
+
+
+																														</div>
+
+
+																														</div>
+
+
+																														</div>
+
+
+
+
+																														</div>
+
+
+
+																														</div>
+
+
+
+																														</div>
+
+
+
+
+
+																														</div>
+
+
+
+																														</div>
+
+
+                        </div>
+                        <div class="clear center mt15">
+                            <a href="index-search.html" class="sportBtn venueBt" target="_blank" title="全部场馆">
+                                全部场馆
+                                <strong>&gt;</strong>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div id="backTopBox"><a class="isGoUp" title="返回顶部" href="javascript:void(0);" style="visibility: visible; zoom: 1; opacity: 0.9;"></a></div>
+        <ul class="hasOption">
+		            <li><a href='javascript:void(0)' class='lisport' onclick='readAt("20")'>足球</a></li>
+		            <li><a href='javascript:void(0)' class='lisport' onclick='readAt("22")'>羽毛球</a></li>
+		            <li><a href='javascript:void(0)' class='lisport' onclick='readAt("24")'>网球</a></li>
+		            <li><a href='javascript:void(0)' class='lisport' onclick='readAt("21")'>篮球</a></li>
+		            <li><a href='javascript:void(0)' class='lisport' onclick='readAt("23")'>乒乓球</a></li>
+		            <li><a href='javascript:void(0)' class='lisport' onclick='readAt("25")'>游泳</a></li>
+		            <li><a href='javascript:void(0)' class='lisport' onclick='readAt("26")'>健身</a></li>
+		            <li><a href='javascript:void(0)' class='lisport' onclick='readAt("27")'>桌球</a></li>
+		            <li><a href='javascript:void(0)' class='lisport' onclick='readAt("45")'>瑜伽</a></li>
+		            <li><a href='javascript:void(0)' class='lisport' onclick='readAt("46")'>搏击</a></li>
+		            <li><a href='javascript:void(0)' class='lisport' onclick='readAt("28")'>溜冰</a></li>
+		            <li><a href='javascript:void(0)' class='lisport' onclick='readAt("31")'>轮滑</a></li>
+		            <li><a href='javascript:void(0)' class='lisport' onclick='readAt("32")'>攀岩</a></li>
+		            <li><a href='javascript:void(0)' class='lisport' onclick='readAt("34")'>壁球</a></li>
+		            <li><a href='javascript:void(0)' class='lisport' onclick='readAt("33")'>射箭</a></li>
+		            <li><a href='javascript:void(0)' class='lisport' onclick='readAt("29")'>高尔夫球</a></li>
+		            <li><a href='javascript:void(0)' class='lisport' onclick='readAt("35")'>射击</a></li>
+		            <li><a href='javascript:void(0)' class='lisport' onclick='readAt("36")'>保龄球</a></li>
+		            <li><a href='javascript:void(0)' class='lisport' onclick='readAt("30")'>马术</a></li>
+		            <li><a href='javascript:void(0)' class='lisport' onclick='readAt("41")'>卡丁车</a></li>
+		            <li><a href='javascript:void(0)' class='lisport' onclick='readAt("40")'>击剑</a></li>
+		        </ul>
+        <div class="optionsPanel">
+            <img src="../demo/templates/index/img/del.gif">
+            <div id="htmlnq" class="selectOptions clear"></div>
+            <div id="qdeta" class="clear">
+                
+            </div>
+        </div>
+        <script src="../demo/templates/index/js/common.js" type="text/javascript"></script>
+        <script>
+            $(function() {
+                $('.iUp').click(function() {
+                    if ($(this).find('em').hasClass('freeTag')) {
+                        $(this).find('em').removeClass('freeTag');
+                        $('.hasHover').slideUp();
+                        $('#itemList_box li:gt(7)').slideUp();
+                    } else {
+                        $(this).find('em').addClass('freeTag');
+                        $('.hasHover').slideDown();
+                        $('#itemList_box li:gt(7)').slideDown();
+						if($(this).parent().find('li').length > 16){
+							$(".itemList_box .hasHover").css("min-height",'300px');
+						}
+                    }
+                    return false;
+                });
+                //返回顶部
+                $('#backTopBox').click(function() {
+                    $('body,html').animate({ scrollTop: 0 }, 500);
+                });
+                sco();
+                $(window).scroll(function() {
+                    sco();
+                });
+
+                $('.speedyReserve .item').click(function() {
+                    $('.hasOption').css('left', $(this).offset().left + 'px').slideToggle();
+                    $('.optionsPanel').slideUp();
+					
+                    return false;
+                });
+                $('.speedyReserve .venue').click(function() {
+                    $('.optionsPanel').css('left', $(this).offset().left + 'px').slideToggle();
+                    $('.hasOption').slideUp();
+                    return false;
+                });
+                $('.optionsPanel img').click(function() {
+                    $('.optionsPanel').slideUp();
+                });
+                $('.optionsPanel,.hasOption').click(function() {
+                    return false;
+                });
+                $('body').click(function() {
+                    $('.optionsPanel,.hasOption').slideUp();
+                    $(this).find('em').removeClass('freeTag');
+                    $('.hasHover').slideUp();
+                    $('#itemList_box li:gt(7)').slideUp();
+                });
+				$('.lisport').click(function(){
+					$('#itemTirger').html($(this).text());
+				});
+            });
+            var sco=function(){
+                var p=$(document).scrollTop();
+                if(p<300){
+                    $('#backTopBox').hide();
+                }else{
+                    $('#backTopBox').show();
+                }
+            }
+            var showTown = function(mycl) {
+                $('.cgtil').hide();
+                $('.cgtil' + mycl).show();
+            }
+            var readAt = function(ty) {
+                $.ajax({
+                    url: 'index.php?a=index&act=search',
+                    type: 'get',
+                    dataType: 'json',
+                    data: 'ty=' + ty,
+                    success: function(data) {
+                        $('#htmlnq').html(data.tag);
+                        $('#qdeta').html(data.para);
+                        $('.hasOption').slideUp();
+                        $('.optionsPanel').css('left', $('.speedyReserve .venue').offset().left + 'px').slideDown();
+                    },
+                    error: ajaxerr
+                });
+            }
+        </script><link href="../demo/templates/index/css/footer.css" rel="stylesheet">
+<style>
+.footer a{color: #555; text-decoration: none;}
+</style>
+<div id="footer" class="clear">
+    	<div class="wrap">
+        	<div class="site-link-wrap clear">
+
+
+            <div class="look-add">
+            新闻投稿热线：15723146510&nbsp;&nbsp;&nbsp;&nbsp;招商热线：13983972602<br>
+招聘电话：15723108929&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;联系电话：023-63655825<br>
+地址：重庆市渝中区大田湾全民健身中心综合楼5楼
+            </div>
+            </div>
+            <div class="footer clear">
+            	<p>
+                <a href="javascript:;" target="_blank">关于我们</a>丨
+                <a href="javascript:;" target="_blank">本站介绍</a>丨
+                <a href="javascript:;" target="_blank">成功案例</a>丨
+                <a href="javascript:;" target="_blank">联系我们</a>丨Copyright © 2012-2015 cqsports.org All Rights Reserved.重庆体育网 版权所有
+            </p>
+            <p class="foot-spons">
+                <a class="foot-spon1" href="javascript:void(0);"><i></i><span>经营性网站备案信息</span></a>
+                <a class="foot-spon2" href="javascript:void(0);"><i></i><span>不良信息举报中心</span></a>
+                <a class="foot-spon3" href="javascript:void(0);"><i></i><span>应用商店自律组</span></a>
+                <a class="foot-spon4" href="javascript:void(0);"><i></i><span>渝ICP备:15002486号</span></a>
+                <a class="foot-spon5" href="javascript:void(0);"><i></i><span>可信网站身份验证</span></a>
+            </p>
+            <p style="margin:10px;color:#555;">
+                未成年人家长监护 丨 渝ICP备15002486号
+            </p>
+            </div>
+        </div>
+    </div>
+    </body>
+</html>

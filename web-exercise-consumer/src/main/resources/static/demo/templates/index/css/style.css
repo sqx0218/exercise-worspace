@@ -1,0 +1,17 @@
+@charset "utf-8";
+/* CSS Document */
+body,h1,h2,h3,h4,h5,h6,hr,p,blockquote,dl,dt,dd,ul,ol,li,pre,form,fieldset,legend,button,input,textarea,th,td{margin:0;padding:0;word-wrap:break-word}
+body, h1, h2, h3, h4, h5, p, form, ul, li, input, table, tr, th, td { margin: 0px; padding: 0px; }
+body,html,input { font-family: "宋体", Tahoma, Helvetica, Arial; font-size:12px; background:#fff; color:#333; }
+input { border: 0px; outline: none; }
+td,th,caption { font-size:14px; }
+h1, h2, h3, h4, h5, h6 { font-weight:normal;}
+address, caption, cite, code, dfn, em, th, var { font-style:normal; font-weight:normal;}
+a { color:#555; text-decoration:none; }
+/*a:hover { text-decoration:underline; }*/
+img { border:none; }
+ol,ul,li { list-style:none; }
+input, textarea, select, button { font:14px Verdana,Helvetica,Arial,sans-serif; }
+table { border-collapse:collapse; }
+html {overflow-y: scroll;} 
+/* css common */

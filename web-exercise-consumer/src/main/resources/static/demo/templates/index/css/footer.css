@@ -1,0 +1,138 @@
+@charset "utf-8";
+/* CSS Document */
+.foot-spon1 i
+{
+	background:url("../img/sponsorship.png") no-repeat 0 0;
+}
+.foot-spon2 i
+{
+	background:url("../img/sponsorship.png") no-repeat -16px 0;
+}
+.foot-spon3 i
+{
+	background:url("../img/sponsorship.png") no-repeat -36px 0;
+}
+.foot-spon4 i
+{
+	background:url("../img/sponsorship.png") no-repeat -57px 0;
+}
+.foot-spon5 i
+{
+	background:url("../img/sponsorship.png") no-repeat -78px 0;
+}
+/*页脚*/
+@media screen and (min-width: 610px) {
+	#footer
+	{
+		margin-top: 30px;
+		border-top: 1px solid #ccc;
+		background-color: #fafafa;
+		color: #737373;
+	}
+	.clear {
+		clear: both;
+		overflow: hidden;
+		zoom: 1;
+	}
+	#footer .wrap{
+		border-top: 1px solid #fff;
+		padding-top: 30px;
+		width: 1200px;
+		margin: 0px auto;
+	}
+	.site-link-wrap {
+		margin: 0 auto 25px;
+	}
+	.look-back {
+		float: left;
+		width: 250px;
+		padding-top:20px;
+		border-right: 1px solid #ebebeb;
+		height: 65px;
+		vertical-align:middle;
+	}
+		.look-qcode {
+		float: left;
+		width: 360px;
+		border-right: 1px solid #ebebeb;
+		padding:0px 0px 0px 20px;
+	}
+	
+	.look-add {
+		float: left;
+		width: 320px;
+		padding:0px 0px 0px 20px;
+		line-height:24px;
+		font-family: "arial","宋体";
+	}
+	.code-box {
+		float:left; 
+		width:180px;
+		height: 85px;
+	}
+	.code-box span {
+		width: 85px;
+		float: left;
+	}
+	.code-box h1 {
+		font-size: 14px;
+		padding-bottom: 5px;
+		padding-top:10px;
+		padding-left:10px;
+		float: left;
+		width: 75px;
+		font-weight:bold;
+	}
+	.code-box h2 {
+		font-size: 12px;
+		font-weight: normal;
+		padding-top:10px;
+		padding-left:10px;
+		color: #999;
+		float: left;
+		width: 75px;
+	}
+	
+	.footer {
+		text-align: center;
+		margin: 0 auto;
+		border-top: 1px solid #ebebeb;
+		padding: 20px 0 12px;
+		line-height: 24px;
+	}
+	.foot-spons i
+	{
+		width:20px;
+		height:20px;
+		position:relative;
+		top:5px;
+		display:inline-block;
+	}
+	.foot-spon1 i
+	{
+		background:url("../img/sponsorship.png") no-repeat 0 0;
+	}
+	.foot-spon2 i
+	{
+		background:url("../img/sponsorship.png") no-repeat -16px 0;
+	}
+	.foot-spon3 i
+	{
+		background:url("../img/sponsorship.png") no-repeat -36px 0;
+	}
+	.foot-spon4 i
+	{
+		background:url("../img/sponsorship.png") no-repeat -57px 0;
+	}
+	.foot-spon5 i
+	{
+		background:url("../img/sponsorship.png") no-repeat -78px 0;
+	}
+	/*页脚完*/
+}
+
+@media screen and (max-width: 600px) {
+	#footer {
+		display:none;	
+	}
+}

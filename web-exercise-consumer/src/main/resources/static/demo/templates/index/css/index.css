@@ -1,0 +1,634 @@
+a{
+    color: #EC4E45;
+}
+a:hover{
+    text-decoration: none;
+}
+.clear{
+    zoom: 1;
+}
+.center{
+    text-align: center;
+}
+.mt5{
+    margin-top: 5px;
+}
+.mt15{
+    margin-top:15px;
+}
+.c999{
+    color: #999;
+}
+.ffst{
+    font-family: '宋体' !important;
+}
+.clear:after, .button:after, .ui_layout:after, .abeam:after, .list li:after, .tales60:after, .tales100:after, .selectOptions:after, .inner:after, .nav_tabs:after{
+    content: 'content';
+    clear: both;
+    display: block;
+    visibility: hidden;
+    height: 0;
+    width: 0;
+    font-size: 0;
+}
+
+.ui_ieUpdate{
+    background: #ffd;
+    border: 1px solid #ffe3bb;
+    height: 30px;
+    line-height: 30px;
+    line-height: 33px\9;
+    overflow: hidden;
+    padding: 20px 10px;
+    text-align: center;
+}
+.splash-wood{
+    width: 100%;
+    height: 600px;
+    margin: 0 auto;
+    background: url(../img/frontpage.jpg) no-repeat center top;
+    overflow: hidden;
+}
+.speedyReserve{
+    margin: auto;
+    margin-top: 260px;
+    width: 1000px;
+    padding: 15px;
+    border-radius: 10px;
+    position: relative;
+    overflow: hidden;
+    z-index: 1;
+    font-size: 20px;
+    font-family: "宋体",'宋体';
+}
+.isMask{
+    display: block;
+    overflow: hidden;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: #000;
+    filter: alpha(opacity = 50);
+    opacity: .5;   
+}
+.speedyReserve ul{
+    width: 1000px;
+    margin: 0 auto;
+    position: relative;
+    z-index: 1;   
+}
+.speedyReserve ul li{
+    margin-left: 25px;
+    width: 140px;
+    background-color: #fff;
+    float: left;
+    height: 50px;
+    line-height: 50px;
+    color: #858585;
+    position:relative;
+}
+.speedyReserve ul li em{
+    background-position: left -184px;
+    width: 67px;
+    text-align: center;
+    float: left;
+    height: 50px;
+    line-height: 50px;
+    color: #858585;
+}
+.speedyReserve ul li.item{
+    width: 300px;
+    margin-left: 0;
+}
+.speedyReserve ul li span, .speedyReserve ul li input{
+    float: left;
+    height: 50px;
+    line-height: 50px;
+    width: 213px;
+    padding: 0 10px;
+    color: #ccc;
+    cursor: pointer;
+    background: url(../img/ico_detail24.png) no-repeat right -324px;
+}
+.speedyReserve ul li.venue span{
+    width: 421px;
+    border: 0;
+}
+.speedyReserve ul li:hover span
+{
+	background-position:right -366px;
+}
+.speedyReserve ul li.venue{
+    width: 508px;
+}
+.speedyReserve ul li.btn{
+    background:0;
+}
+.speedyReserve ul li.btn .sportBtn{
+    background-color: #F56157;
+    font-size: 20px;
+    display: inline-block;
+    height: 50px;
+    line-height: 50px;
+    width: 140px;
+    overflow: hidden;
+    color: #fff;
+    text-align: center;
+    border-radius: 5px;
+}
+.speedyReserve ul li.btn .sportBtn:hover{
+    background-color: #EC4E45;
+    text-decoration: none;
+    color: #fff !important;
+}
+
+/*推荐*/
+.upsell{
+    margin: 0 auto;
+    color: #656565;
+    width: 100%;
+    background: #fff;
+    box-shadow: 0 0 3px #666;
+    position: relative;
+}
+.ui_layout{
+    width: 1200px;
+    margin: 0 auto;
+}
+.itemListTop{
+    position: absolute;
+    top: -52px;
+    width: 1200px;
+    z-index: 2;
+}
+.itemList_box{
+    width: 100%;
+    position: relative;
+    font-size: 14px;
+    font-family: '宋体';
+    color: #666;
+    z-index: 2;
+}
+.itemList_box ul{
+    overflow: hidden;
+    width: 912px;
+    margin: 0 auto;
+    padding: 15px 0;
+    position: relative;
+    z-index: 1;   
+}
+.itemList_box ul li{
+    width: 114px;
+    height: 117px;
+    float: left;
+    text-align: center;
+    position: relative;
+}
+.itemList_box a{
+    color: #666 !important;
+}
+.itemList_box a span{
+    background: url(../img/ui_item_bg.png) no-repeat;
+    width: 75px;
+    height: 75px;
+    display: block;
+    overflow: hidden;
+    margin: 0 auto;
+    text-indent: -999px;
+}
+.itemList_box a:hover span{
+    background-position: 0 -75px;
+}
+.itemList_box a em{
+    width: 75px;
+    height: 75px;
+    display: block;
+    overflow: hidden;
+    margin: 0 auto;
+    text-indent: -999px;
+    background: url(../img/ui_item75.png) no-repeat;
+}
+.itemList_box a:hover em{
+    background: url(../img/ui_item75_hover.png) no-repeat;
+}
+.itemList_box a em.big_si_ymq{
+    background-position: 1px 1px;
+}
+.itemList_box a em.big_si_yy{
+    background-position: -2px -80px;
+}
+.itemList_box a em.big_si_wq{
+    background-position: 0 -149px;
+}
+.itemList_box a em.big_si_ppq{
+    background-position: 0 -223px;
+}
+.itemList_box a em.big_si_fzq{
+    background-position: 0 -300px;
+}
+.itemList_box a em.big_si_lq{
+    background-position: 0 -375px;
+}
+.itemList_box a em.big_si_lb{
+    background-position: 0 -978px;
+}
+.itemList_box a em.big_si_py{
+    background-position: 0 -600px;
+}
+.itemList_box a em.big_si_sj{
+    background-position: 0 -678px;
+}
+.itemList_box a em.big_si_bq{
+    background-position: 2px -450px;
+}
+.itemList_box a em.big_si_zq{
+    background-position: 0 -525px;
+}
+.itemList_box a em.big_si_blq{
+    background-position: 0 -750px;
+}
+.itemList_box a em.big_si_gef{
+    background-position: -2px -820px;
+}
+.itemList_box a em.big_si_sji{
+    background-position: 0 -902px;
+}
+.itemList_box a em.big_si_sc{
+    background-position: 0 -1050px;
+}
+.itemList_box a em.big_si_pq{
+    background-position: 0 -1125px;
+}
+.itemList_box a em.big_si_lh{
+    background-position: 0 -1200px;
+}
+.itemList_box a em.big_si_hb{
+    background-position: 1px -1269px;
+}
+.itemList_box a em.big_si_zxc{
+    background-position: 0 -1350px;
+}
+.itemList_box a em.big_si_hx{
+    background-position: 0 -1423px;
+}
+.itemList_box a em.big_si_kdc{
+    background-position: 0 -1650px;
+}
+.itemList_box a em.big_si_ms{
+    background-position: 0 -1575px;
+}
+.itemList_box a em.big_si_fb{
+    background-position: 0 -1500px;
+}
+.itemList_box a em.big_si_bangq{
+    background-position: 0 -1725px;
+}
+.itemList_box .hasHover{
+    min-height: 150px;
+    width: 910px;
+    top: 52px;
+    left: 50%;
+    margin-left: -456px;
+    background-color: #fff;
+    position: absolute;
+    height: 0;
+    border-radius: 0 0 10px 10px;
+    border: 1px solid #eee;
+    border-top: 0;
+    webkit-box-shadow: 0 0 20px rgba(0,0,0,0.2);
+    -moz-box-shadow: 0 0 20px rgba(0,0,0,0.2);
+    box-shadow: 0 0 20px rgba(0,0,0,0.2);
+}
+.iUp{
+    position: absolute;
+    right: 75px;
+    top: 52px;
+    width: 41px;
+    height: 13px;
+    cursor: pointer;
+    padding: 10px;
+}
+.grade{
+	margin: 0 0 0 9px;
+    font: 12px/22px verdana,Arial,Helvetica,'宋体',sans-serif;
+    vertical-align: 2px;
+}
+.grade sub {
+	font-size: 24px;
+    color: #f60;
+    font-style: italic;
+    vertical-align: middle;
+}
+.grade sup{
+	color: #f60;
+    font-size: 14px;
+    font-style: italic;
+    line-height: 20px;
+    margin-left: -4px;
+    vertical-align: 3px;
+}
+.iUp em{
+    display: block;
+    width: 41px;
+    height: 13px;
+    overflow: hidden;
+    background: url(../img/ico_detail24.png) no-repeat 0 -196px;
+}
+.iUp:hover em{
+    background-position: 0 -209px;
+}
+.iUp em.freeTag{
+    background: url(../img/ico_detail24.png) no-repeat 0 -222px;
+}
+.iUp:hover em.freeTag{
+    background: url(../img/ico_detail24.png) no-repeat 0 -235px;
+}
+.mod_index{
+    margin: 0 30px 60px;
+    padding-top: 110px;
+}
+.mod_index .mod_hd{
+    position: relative;
+    z-index: 1;
+}
+.mod_hd .mod_hd_title
+{
+	font-size: 38px;
+	color: #000;
+	text-align: center;
+}
+.mod_hd .mod_hd_title span
+{
+	position: relative;
+	top: -8px;
+	font-size: 16px;
+	color: #c7c7c7;
+	display: inline-block;
+	margin: 0 20px;
+}
+.mod_index .mod_hd h2.freeTag
+{
+	font-size: 16px;
+	letter-spacing: .2em;
+	padding-top: 12px;
+	color: #555;
+	text-align:center;
+}
+.hotVenue{
+    width: 1140px;
+    height: auto;
+    overflow: hidden;
+    margin: 0 auto;
+    font-family: '宋体';
+    font-size: 14px;
+    color: #999;
+}
+.hotVenue ul li{
+    margin: 0;
+    margin-top: 20px;
+    background-color: #f2f3f2;
+    width: 530px;
+    border-radius: 10px;
+    padding: 15px;
+    overflow: hidden;
+    height: 90px;
+    position: relative;
+    float: left;
+    margin-right: 20px;
+}
+.hotVenue .title a{
+    font-size: 18px;
+    font-weight: normal;
+    color: #333;
+}
+.hotVenue ul li .title h2{
+    display: inline;
+}
+.hotVenue ul li .title span a{
+    font-size: 12px;
+    color: #F56157;
+    border: 1px solid #F56157;
+    display: inline-block;
+    padding: 0 5px;
+    height: 18px;
+    line-height: 18px;
+    border-radius: 4px;
+    margin-left: 5px;
+}
+.hotVenue ul li .title span a label
+{
+	cursor:pointer;
+}
+.hotVenue p em, .conditionIco span em{
+    width: 20px;
+    height: 20px;
+    display: inline-block;
+    padding-right: 3px;
+    vertical-align: middle;
+    background-position: 4px -248px;
+    background: url(../img/ico_detail24.png) no-repeat 4px -248px;
+}
+.freeTag2{
+    background: url(../img/ico_detail24.png) no-repeat;
+}
+.conditionIco span{
+    display: inline-block;
+    height: 20px;
+    padding-right: 15px;
+}
+.conditionIco .sp_tcc{
+    background-position: -27px -250px;
+}
+.conditionIco .sp_skjs{
+    background-position: 1px -275px;
+}
+.conditionIco .sp_qczj{
+    background-position: -28px -272px;
+}
+.hotVenue .indexhotBtn{
+    width: 110px;
+    height: 55px;
+    line-height: 55px;
+    position: absolute;
+    top: 32px;
+    right: 25px;
+}
+.sportBtn{
+    background-color: #EC4E45;
+    font-size: 20px;
+    display: inline-block;
+    height: 50px;
+    line-height: 50px;
+    width: 140px;
+    overflow: hidden;
+    color: #fff;
+    text-align: center;
+    border-radius: 5px;
+}
+.sportBtn:hover
+{
+	background-color:#F56157;
+}
+#backTopBox{
+    width: 41px;
+    position: fixed;
+    left: 50%;
+    margin-left: 610px;
+    bottom: 50px;
+    z-index: 5;
+}
+.isGoUp{
+    background: url(../img/ico_flag.gif) no-repeat #ccc 0 -83px;
+    text-indent: -9999px;
+    overflow: hidden;
+    margin-top: 5px;
+    display: block;
+    opacity: .8;
+    filter: alpha(opacity=80);
+    cursor: pointer;
+    height: 41px;
+    width: 41px;
+    -moz-border-radius: 25px;
+    -webkit-border-radius: 25px;
+    border-radius: 25px;
+    visibility: visible;
+    zoom: 1;
+    opacity: 0.9;
+}
+.venueBt{
+    background-color: #e9f3e4;
+    color: #727070;
+    width: 170px;
+    height: 55px;
+    line-height: 55px;
+    font-size: 18px;
+}
+.venueBt:hover{
+    background-color: #EC4E45;
+    text-decoration: none;
+    color: #fff !important;
+}
+
+.hasOption
+{
+	display:none;
+	position:absolute;
+	width: 300px;
+	top: 375px;
+	left: 452px;
+	background:#f2f3f2;
+	padding:10px 0;
+	z-index:2;
+}
+.hasOption li
+{
+	margin-left:0;
+	height:40px;
+	line-height:40px;
+	float:none;
+	display: block;
+	border-bottom:1px dashed #ddd;
+}
+.hasOption li a
+{
+	display: block;
+	padding-left: 30px;
+	line-height: 40px;
+	color: #333;
+	font-size: 16px;
+}
+.hasOption li a:hover
+{
+	color:#eb6100 !important;
+	background:#fff;
+}
+.optionsPanel
+{
+	display: none;
+	position: absolute;
+	left: 777px;
+	top: 375px;
+	width:630px;
+	padding:10px;
+	border:2px solid #eaeaea;
+	z-index:2;
+	background:#f2f3f2;
+}
+.optionsPanel img
+{
+	cursor: pointer;
+	position: absolute;
+	top: 6px;
+	right: 5px;
+}
+.selectOptions
+{
+	border-bottom: 2px solid #eaeaea;
+	line-height: 30px;
+	padding: 0 15px 10px;
+}
+.optionsPanel a
+{
+	display: inline-block;
+	padding: 0 6px;
+	text-decoration: none !important;
+	line-height: 30px;
+	color: #F56157;
+	font-family: "宋体";
+	font-size: 14px;
+}
+.optionsPanel a:hover
+{
+	background: #fff;
+	color: #eb6100 !important;
+}
+.optionsPanel dl
+{
+	margin: 4px 10px 0;
+}
+.optionsPanel dt
+{
+	float: left;
+	width: 75px;
+	text-align: right;
+	color: #666;
+	font-weight: bold;
+	height: 30px;
+	overflow: hidden;
+}
+.optionsPanel dl dt a{
+	display: inline-block;
+	padding: 0 6px;
+	text-decoration: none !important;
+	line-height: 30px;
+	color: #F56157;
+	font-family: "宋体";
+	font-size: 14px;
+}
+.optionsPanel dd
+{
+	float: left;
+	width: 535px;
+	overflow: hidden;
+}
+.optionsPanel dd span
+{
+	width: 178px;
+	float: left;
+	overflow: hidden;
+	display: inline-block;
+	height: 30px;
+}
+.optionsPanel dd span a
+{
+	color: #333;
+	line-height: 30px;
+	height: 30px;
+	overflow: hidden;display: inline-block;
+	padding: 0 6px;
+	text-decoration: none !important;
+	font-family: "宋体";
+	font-size: 14px;
+}

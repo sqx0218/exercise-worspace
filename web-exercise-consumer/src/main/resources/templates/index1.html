@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <!-- Bootstrap 插件 css -->
+    <link href="/js/bootstrap/css/bootstrap-theme.min.css" rel="stylesheet">
+    <!-- Bootstrap 核心css -->
+    <link href="../js/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Bootstrap TreeView css -->
+    <link href="../js/bootstrap-treeview/dist/bootstrap-treeview.min.css" rel="stylesheet">
+
+    <!-- Bootstrap addTabs css -->
+    <link href="../js/bootStrap-addTabs/bootstrap.addtabs.css" rel="stylesheet">
+
+    <!-- Bootstrap table css -->
+    <link href="../js/bootstrap-table/dist/bootstrap-table.css" rel="stylesheet">
+    <!-- bootstrap-datetimepicker css -->
+    <link href="../js/bootstrap-datetimepicker/css/bootstrap-datetimepicker.css" rel="stylesheet">
+
+    <!-- bootstrap-dialog css -->
+    <link href="../js/bootstrap-dialog/dist/css/bootstrap-dialog.css" rel="stylesheet">
+    <!-- bootstrap-fileinput css -->
+    <link href="../js/bootstrap-fileinput/css/fileinput.css" rel="stylesheet">
+</head>
+<body>
+<div class="container">
+    <div class="row clearfix">
+        <div class="col-md-12 column">
+<input type="hidden" value="足球" id="hidden-football">
+            <input type="hidden" value="足球" id="hidden-userId-football">
+<div id="carousel-example-generic" class="carousel slide" data-ride="carousel">
+    <!-- Indicators -->
+    <ol class="carousel-indicators">
+        <li data-target="#carousel-example-generic" data-slide-to="0" class="active"></li>
+        <li data-target="#carousel-example-generic" data-slide-to="1"></li>
+        <li data-target="#carousel-example-generic" data-slide-to="2"></li>
+    </ol>
+
+    <!-- Wrapper for slides -->
+    <div class="carousel-inner" role="listbox" style="height: 600px">
+        <div class="item active" style="background: #a2958a ">
+
+            <img class="img-responsive center-block" src="../img/11.jpg">
+        </div>
+        <div class="item" style="background: #f0ad4e">
+            <img class="img-responsive center-block" src="../img/22.jpg">
+        </div>
+        <div class="item" style="background: darkred">
+            <img class="img-responsive center-block" src="../img/33.jpg">
+        </div>
+        <div class="item" style="background: darkred">
+            <img class="img-responsive center-block" src="../img/44.jpg">
+        </div>
+    </div>
+
+
+            </div>
+
+            <div class="row">
+                <div class="col-md-4">
+                    <div class="thumbnail">
+                        <img alt="300x200" src="../img/11.jpg" />
+                        <div class="caption">
+                            <h3>
+                                山东足球俱乐部
+                            </h3>
+                            <p>
+                                山东鲁能泰山足球俱乐部，简称鲁能队或者泰山队，是一支位于山东省济南市的足球队。1993年12月2日，经职业化改组正式成立山东泰山足球俱乐部，1998年1月5日更名为山东鲁能泰山足球俱乐部。
+                            </p>
+                            <p>
+                                <a class="btn btn-primary" href="#">立即预约</a>
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="thumbnail">
+                        <img alt="300x200" src="../img/22.jpg" />
+                        <div class="caption">
+                            <h3>
+                                上港集团足球俱乐部
+                            </h3>
+                            <p>
+                                上海上港集团足球俱乐部（Shanghai SIPG Football Club）是一家位于中国上海的职业足球俱乐部，简称“上海上港”，现参加中国足球协会超级联赛，主场设在上海体育。
+                            <p>
+                                <a class="btn btn-primary" href="#">立即预约</a>
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="thumbnail">
+                        <img alt="300x200" src="../img/11.jpg" />
+                        <div class="caption">
+                            <h3>
+                                恒大足球俱乐部
+                            </h3>
+                            <p>
+                                广州市恒大淘宝足球俱乐部（Guangzhou Evergrande Taobao FC）是中国广州的一所职业足球俱乐部，现参加中国足球协会超级联赛。2011赛季启用广州天河体育场作为主场。
+                            </p>
+                            <p>
+                                <a class="btn btn-primary" href="javascript:onMake()">立即预约</a>
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!--jQuery核心js  -->
+<script src="../js/jquery.min.js"></script>
+<!-- bootstrap 核心js文件 -->
+<script src="../js/bootstrap/js/bootstrap.min.js"></script>
+<!-- bootStrap TreeView -->
+<script src="../js/bootstrap-treeview/dist/bootstrap-treeview.min.js"></script>
+
+<!-- bootStrap addTabs -->
+<script src="../js/bootStrap-addTabs/bootstrap.addtabs.js"></script>
+
+<!-- bootStrap table -->
+<script src="../js/bootstrap-table/dist/bootstrap-table.js"></script>
+<!-- bootStrap table 语言包中文-->
+<script src="../js/bootstrap-table/dist/locale/bootstrap-table-zh-CN.js"></script>
+
+<!-- bootstrap-datetimepicker -->
+<script src="../js/bootstrap-datetimepicker/js/bootstrap-datetimepicker.js"></script>
+<script src="../js/bootstrap-datetimepicker/js/locales/bootstrap-datetimepicker.zh-CN.js"></script>
+
+<!-- bootstrap-dialog -->
+<script src="../js/bootstrap-dialog/dist/js/bootstrap-dialog.js"></script>
+<!-- bootstrap-fileinput -->
+<script src="../js/bootstrap-fileinput/js/fileinput.js"></script>
+<script src="../js/bootstrap-fileinput/js/locales/zh.js"></script>
+
+<script>
+    $(function () {
+        $.ajax({
+            url:'../page/queryFootBallVenue',
+            type:'post',
+            data:{typeName:$("#hidden-football").val()},
+            success:function () {
+
+            },
+            error:function () {
+                alert("网络异常");
+            }
+        })
+    })
+
+    $(function () {
+
+    })
+
+
+</script>
+
+
+
+</body>
+</html>
