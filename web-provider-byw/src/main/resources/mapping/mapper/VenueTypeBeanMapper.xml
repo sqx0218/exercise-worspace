@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.jk.mapper.VenueTypeBeanMapper" >
+  <resultMap id="BaseResultMap" type="com.jk.model.VenueTypeBean" >
+    <id column="typeId" property="typeId" jdbcType="INTEGER" />
+    <result column="typeName" property="typeName" jdbcType="VARCHAR" />
+  </resultMap>
+
+  <select id="queryVenueType" resultMap="BaseResultMap">
+select typeId ,typeName from t_venue_type
+  </select>
+
+
+  <select id="queryVenue" resultType="com.jk.model.VenueBean">
+    select *  from t_venue v left join t_venue_type vt
+     on v.venueTypeId = vt.typeId
+      where vt.typeId=#{typeId}
+      </select>
+</mapper>
