@@ -1,0 +1,483 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+        <title>运动场地场馆预订</title>
+        <meta name="keywords" content="运动场,运动馆,运动教练,羽毛球,乒乓球,游泳,场馆预订,场馆信息查询,场馆信息">
+        <meta name="description" content="格瓦拉生活网提供运动场地场馆,羽毛球馆,羽毛球场地,游泳馆查询预订,运动场馆价格表,运动场馆优惠信息,运动场馆教练,运动场所会员卡转让等信息.">
+        <script src="../demo/resources/js/hDialog/jquery.hDialog.js" type="text/javascript"></script>
+        <link href="../demo/templates/index/css/ue_gridheader.css" rel="stylesheet">
+		<link href="../demo/templates/index/css/styleheader.css" rel="stylesheet">
+		<link href="../demo/templates/index/css/style2header.css" rel="stylesheet">
+		<link href="../demo/resources/js/hDialog/animate.css" rel="stylesheet">
+		<script src="../demo/resources/js/jquery-1.9.1.min.js" type="text/javascript"></script>
+		<link rel="stylesheet" type="text/css" href="http://cloud.cloudcq.com/templates/index/css/login.css">		
+		<script src="../demo/templates/index/js/jquery.easing.min.js" type="text/javascript"></script>
+		<script src="../demo/templates/index/js/custom.js" type="text/javascript"></script>
+        <script src="../js/jquery.min.js"></script>
+
+
+    </head>
+    <body>
+
+
+
+
+
+    <!-- 登录 注册-->
+<div id="HBox" style='display:none;'>
+		<div class="pd20 loginpd">
+			<div class="loginwrap">
+				<div class="loginh">
+					<div class="fl">会员登录</div>
+					<div class="clear"></div>
+				</div>
+				<div class="loginbtn">
+						<div class="loginsubmit fl">
+							<input type="button" value="动态登录" id="dongtai" class="flag on" style="background-color:red;">
+						</div>
+						<div class="loginsubmit fl">
+							<input type="button" value="密码登录" id="mima" class="flag off">
+						</div>
+						<div class="clear"></div>
+				</div>
+				<div class="clear"></div>
+				<form action="index.php?a=vip_login" method="post" id="login_form" onsubmit='return false'>
+					<div class="logininput">
+						<input type="hidden" name="id_d" id="hide_id_d">
+						<input type="text" name="userid" id="phone_l" maxlength="11" class="loginusername" placeholder="手机号">
+						<input style='width:80px;margin-top:10px;' maxlength="6" name="verification_d" placeholder="验证码" id="yzm_phone_d">
+						<input type="button" id="send_d" style="margin-left:10px;position:relative;top:-40px;left:90px; font-size:10px;width:120px;height:40px;border:1px;cursor:pointer;background:#10c766;color: white;" onclick='send_code_d()' value='发送验证码'>
+						<input type="password" class="loginuserpasswordt" style='display:none;' maxlength="20" id="password" placeholder="密码">
+						<input type='text' id='vcode' style='width:80px;margin-top:10px;display:none;' maxlength="4" class="loginusername3" placeholder="验证码"><img style='position:relative;top:-40px;left:90px;cursor:pointer;display:none;' src="admin-user_vcode58.jpg" id='yanzhengma' title='看不清？换一张'>
+					</div>
+					<div class="loginbtn">
+						<div class="loginsubmit fl">
+							<input type="button" value="登录" onclick="login()">
+						</div>
+						<div class="loginsubmit fl">
+							<input type="button" value="立即注册" id="lijizhuce">
+						</div>
+						<div class="clear"></div>
+					</div>
+				</form>
+			</div>
+  </div>
+</div>
+    <!-- HBox end -->
+<div id="rBox" style='display:none;'>
+	  <div class="pd20 loginpd">
+		<div class="loginwrap">
+		  <div class="loginh">
+			<div class="fl">会员注册</div>
+			<div class="clear"></div>
+		  </div>
+		  <div class="clear"></div>
+			<form action="index.php?a=vip_add" method="post" id='addform'>
+			  <div class="logininput">
+					<input type="hidden" name="id" id="hide_id">
+					<input type="text" rel="phone" maxlength="11" placeholder="输入手机号码" class="loginusername" id="phone_r" name="phone" value="">
+					<input type="password" id="one_pwd" name="user_pwd" maxlength="20" class="loginusername" rel="lock" placeholder="填写密码">
+					<input type="password" id="two_pwd" name="user_pwd_o" maxlength="20" class="loginusername" rel="lock" placeholder="确认密码">
+					<input style='width:80px;margin-top:10px;' maxlength="6" name="verification" placeholder="验证码" id="yzm_phone">
+					<input type="button" id="send" style="margin-left:10px;position:relative;top:-40px;left:90px; font-size:10px;width:120px;height:40px;border:1px;cursor:pointer;background:#10c766;color: white;" onclick='send_code()' value='发送验证码'>
+					<input type="hidden" id="phone_id">
+			</div>
+			 <div class="loginbtn">
+				<div class="loginsubmit fl">
+					<input type="button" value="立即注册" onclick="do_phone()">
+				</div>
+				<div class="clear"></div>
+			</div>
+		</form>
+		</div>
+	</div>
+</div>
+<!-- HBox end -->
+
+
+		<link href="../demo/templates/index/css/style.css" rel="stylesheet">
+        <link href="../demo/templates/index/css/index.css" rel="stylesheet">
+
+		<div class="splash-wood ipadWidht" id="splash-wood">
+
+            <div class="login_tip" style="float:right;">
+                <div class="log_box">
+                    <b><a href="javascript:;"  class="head-mime-text" ><font size="5">订单中心</font></a>
+                        <font size="5" color="orange" > &nbsp; &nbsp;  </font>
+                    </b>
+                    <b><a href="javascript:;"  class="head-mime-text" ><font size="5">登录</font></a>
+                        <font size="5" color="orange" > |  </font>
+                        <a href="javascript:;"  class="head-mime-text" ><font size="5" >注册</font></a>
+                    </b>
+
+
+                </div>
+                <div>&nbsp;</div>
+            </div>
+
+
+            <div class="tip">
+                <div class="box">
+                    <b><a href="javascript:;"  class="head-mime-text" ><font size="5"color="gray"> &nbsp; &nbsp; </font></a>
+
+                        <a href="javascript:;"  class="head-mime-text" ><font size="5" color="#deb887">我是场馆</font></a>
+                    </b>
+                </div>
+
+            </div>
+
+            <div class="speedyReserve">
+                <div class="isMask"></div>
+                <ul class="clear">
+                    <li class="item"><em>项目</em><span id="itemTirger" class="freeTag2"></span>
+                        <input type="hidden" name="itemvalueid" id="itemvalueid" value=""></li>
+                    <li class="venue"><em>场馆</em>
+                        <span id="fast_tirger" onclick="searchSport(this)" class="freeTag2"></span>
+                        <input type="hidden" name="areavalueid" id="areavalueid" value=""></li>
+                    <li class="btn"><a id="" href="../page/tosearch" class="sportBtn" target="_blank" title="预定">快速预定</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="upsell">
+            <div class="ui_layout">
+                <div class="itemListTop">
+                    <div class="itemList_box">
+                        <ul class="clear" id="itemList_box">
+						                          <li>
+								<a target="_blank" href="../page/tosearch_20">
+									<span><em style="background-position:0 -300px;"></em></span>
+									<p>足球</p>
+								</a>
+							</li>
+						                          <li>
+								<a target="_blank" href="../page/tosearch_22">
+									<span><em style="background-position:1px 1px;"></em></span>
+									<p>羽毛球</p>
+								</a>
+							</li>
+						                          <li>
+								<a target="_blank" href="../page/tosearch_24">
+									<span><em style="background-position:0 -149px;"></em></span>
+									<p>网球</p>
+								</a>
+							</li>
+						                          <li>
+								<a target="_blank" href="../page/tosearch_21">
+									<span><em style="background-position:0 -375px;"></em></span>
+									<p>篮球</p>
+								</a>
+							</li>
+						                          <li>
+								<a target="_blank" href="index-search_23.html">
+									<span><em style="background-position:0 -223px;"></em></span>
+									<p>乒乓球</p>
+								</a>
+							</li>
+						                          <li>
+								<a target="_blank" href="index-search_25.html">
+									<span><em style="background-position:-2px -80px;"></em></span>
+									<p>游泳</p>
+								</a>
+							</li>
+						                          <li>
+								<a target="_blank" href="index-search_26.html">
+									<span><em style="background-position:0 -1875px;"></em></span>
+									<p>健身</p>
+								</a>
+							</li>
+						                          <li>
+								<a target="_blank" href="index-search_27.html">
+									<span><em style="background-position:0 -525px;"></em></span>
+									<p>桌球</p>
+								</a>
+							</li>
+						                          <li style='display:none;'>
+								<a target="_blank" href="index-search_45.html">
+									<span><em style="background-position:0 -1950px;"></em></span>
+									<p>瑜伽</p>
+								</a>
+							</li>
+						                          <li style='display:none;'>
+								<a target="_blank" href="index-search_46.html">
+									<span><em style="background-position:0 -2025px;"></em></span>
+									<p>搏击</p>
+								</a>
+							</li>
+						                          <li style='display:none;'>
+								<a target="_blank" href="index-search_28.html">
+									<span><em style="background-position:0 -978px;"></em></span>
+									<p>溜冰</p>
+								</a>
+							</li>
+						                          <li style='display:none;'>
+								<a target="_blank" href="index-search_31.html">
+									<span><em style="background-position:0 -1200px;"></em></span>
+									<p>轮滑</p>
+								</a>
+							</li>
+						                          <li style='display:none;'>
+								<a target="_blank" href="index-search_32.html">
+									<span><em style="background-position:0 -600px;"></em></span>
+									<p>攀岩</p>
+								</a>
+							</li>
+
+						                          <li style='display:none;'>
+								<a target="_blank" href="index-search_33.html">
+									<span><em style="background-position:0 -678px;"></em></span>
+									<p>射箭</p>
+								</a>
+							</li>
+						                          <li style='display:none;'>
+								<a target="_blank" href="index-search_29.html">
+									<span><em style="background-position:-2px -820px;"></em></span>
+									<p>高尔夫球</p>
+								</a>
+							</li>
+						                          <li style='display:none;'>
+								<a target="_blank" href="index-search_35.html">
+									<span><em style="background-position:0 -902px;"></em></span>
+									<p>射击</p>
+								</a>
+							</li>
+						                          <li style='display:none;'>
+								<a target="_blank" href="index-search_36.html">
+									<span><em style="background-position:0 -750px;"></em></span>
+									<p>保龄球</p>
+								</a>
+							</li>
+						                          <li style='display:none;'>
+								<a target="_blank" href="index-search_30.html">
+									<span><em style="background-position:0 -1575px;"></em></span>
+									<p>马术</p>
+								</a>
+							</li>
+						                          <li style='display:none;'>
+								<a target="_blank" href="index-search_41.html">
+									<span><em style="background-position:0 -1650px;"></em></span>
+									<p>卡丁车</p>
+								</a>
+							</li>
+						                          <li style='display:none;'>
+								<a target="_blank" href="index-search_40.html">
+									<span><em style="background-position:0 -2100px;"></em></span>
+									<p>击剑</p>
+								</a>
+							</li>
+						                        </ul>
+                        <div class="hasHover" style="display:none;"></div>
+                        <div class="iUp"><em></em></div>
+                    </div>
+                </div>
+                <div class="mod_index">
+                    <div class="mod_hd">
+                        <div class="mod_hd_title">
+					        <span>|</span>推<span>|</span>荐<span>|</span>场<span>|</span>馆<span>|</span>
+				        </div>
+                        <h2 class="freeTag" style="background-position:center 0;">热门场馆推荐</h2>
+                    </div>
+                    <div class="mod_bd">
+                        <div class="hotVenue">
+                            <ul class="clear" style="width:1160px;" id="hotVenueShow">
+
+
+							                            </ul>
+                        </div>
+                        <div class="clear center mt15">
+                            <a href="../page/tosearch" class="sportBtn venueBt" target="_blank" title="全部场馆">
+                                全部场馆
+                                <strong>&gt;</strong>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div id="backTopBox"><a class="isGoUp" title="返回顶部" href="javascript:void(0);" style="visibility: visible; zoom: 1; opacity: 0.9;"></a></div>
+        <ul class="hasOption">
+		            <li><a href='javascript:void(0)' class='lisport' onclick='readAt("20")'>足球</a></li>
+		            <li><a href='javascript:void(0)' class='lisport' onclick='readAt("22")'>羽毛球</a></li>
+		            <li><a href='javascript:void(0)' class='lisport' onclick='readAt("24")'>网球</a></li>
+		            <li><a href='javascript:void(0)' class='lisport' onclick='readAt("21")'>篮球</a></li>
+		            <li><a href='javascript:void(0)' class='lisport' onclick='readAt("23")'>乒乓球</a></li>
+		            <li><a href='javascript:void(0)' class='lisport' onclick='readAt("25")'>游泳</a></li>
+		            <li><a href='javascript:void(0)' class='lisport' onclick='readAt("26")'>健身</a></li>
+		            <li><a href='javascript:void(0)' class='lisport' onclick='readAt("27")'>桌球</a></li>
+		            <li><a href='javascript:void(0)' class='lisport' onclick='readAt("45")'>瑜伽</a></li>
+		            <li><a href='javascript:void(0)' class='lisport' onclick='readAt("46")'>搏击</a></li>
+		            <li><a href='javascript:void(0)' class='lisport' onclick='readAt("28")'>溜冰</a></li>
+		            <li><a href='javascript:void(0)' class='lisport' onclick='readAt("31")'>轮滑</a></li>
+		            <li><a href='javascript:void(0)' class='lisport' onclick='readAt("32")'>攀岩</a></li>
+		            <li><a href='javascript:void(0)' class='lisport' onclick='readAt("34")'>壁球</a></li>
+		            <li><a href='javascript:void(0)' class='lisport' onclick='readAt("33")'>射箭</a></li>
+		            <li><a href='javascript:void(0)' class='lisport' onclick='readAt("29")'>高尔夫球</a></li>
+		            <li><a href='javascript:void(0)' class='lisport' onclick='readAt("35")'>射击</a></li>
+		            <li><a href='javascript:void(0)' class='lisport' onclick='readAt("36")'>保龄球</a></li>
+		            <li><a href='javascript:void(0)' class='lisport' onclick='readAt("30")'>马术</a></li>
+		            <li><a href='javascript:void(0)' class='lisport' onclick='readAt("41")'>卡丁车</a></li>
+		            <li><a href='javascript:void(0)' class='lisport' onclick='readAt("40")'>击剑</a></li>
+		        </ul>
+        <div class="optionsPanel">
+            <img src="../demo/templates/index/img/del.gif">
+            <div id="htmlnq" class="selectOptions clear"></div>
+            <div id="qdeta" class="clear">
+                
+            </div>
+        </div>
+        <script src="../demo/templates/index/js/common.js" type="text/javascript"></script>
+        <script>
+            $(function() {
+                $('.iUp').click(function() {
+                    if ($(this).find('em').hasClass('freeTag')) {
+                        $(this).find('em').removeClass('freeTag');
+                        $('.hasHover').slideUp();
+                        $('#itemList_box li:gt(7)').slideUp();
+                    } else {
+                        $(this).find('em').addClass('freeTag');
+                        $('.hasHover').slideDown();
+                        $('#itemList_box li:gt(7)').slideDown();
+						if($(this).parent().find('li').length > 16){
+							$(".itemList_box .hasHover").css("min-height",'300px');
+						}
+                    }
+                    return false;
+                });
+                //返回顶部
+                $('#backTopBox').click(function() {
+                    $('body,html').animate({ scrollTop: 0 }, 500);
+                });
+                sco();
+                $(window).scroll(function() {
+                    sco();
+                });
+
+                $('.speedyReserve .item').click(function() {
+                    $('.hasOption').css('left', $(this).offset().left + 'px').slideToggle();
+                    $('.optionsPanel').slideUp();
+					
+                    return false;
+                });
+                $('.speedyReserve .venue').click(function() {
+                    $('.optionsPanel').css('left', $(this).offset().left + 'px').slideToggle();
+                    $('.hasOption').slideUp();
+                    return false;
+                });
+                $('.optionsPanel img').click(function() {
+                    $('.optionsPanel').slideUp();
+                });
+                $('.optionsPanel,.hasOption').click(function() {
+                    return false;
+                });
+                $('body').click(function() {
+                    $('.optionsPanel,.hasOption').slideUp();
+                    $(this).find('em').removeClass('freeTag');
+                    $('.hasHover').slideUp();
+                    $('#itemList_box li:gt(7)').slideUp();
+                });
+				$('.lisport').click(function(){
+					$('#itemTirger').html($(this).text());
+				});
+            });
+            var sco=function(){
+                var p=$(document).scrollTop();
+                if(p<300){
+                    $('#backTopBox').hide();
+                }else{
+                    $('#backTopBox').show();
+                }
+            }
+            var showTown = function(mycl) {
+                $('.cgtil').hide();
+                $('.cgtil' + mycl).show();
+            }
+            var readAt = function(ty) {
+                $.ajax({
+                    url: 'index.php?a=index&act=search',
+                    type: 'get',
+                    dataType: 'json',
+                    data: 'ty=' + ty,
+                    success: function(data) {
+                        $('#htmlnq').html(data.tag);
+                        $('#qdeta').html(data.para);
+                        $('.hasOption').slideUp();
+                        $('.optionsPanel').css('left', $('.speedyReserve .venue').offset().left + 'px').slideDown();
+                    },
+                    error: ajaxerr
+                });
+            }
+        </script><link href="../demo/templates/index/css/footer.css" rel="stylesheet">
+<style>
+.footer a{color: #555; text-decoration: none;}
+</style>
+<div id="footer" class="clear">
+    	<div class="wrap">
+        	<div class="site-link-wrap clear">
+
+
+            <div class="look-add">
+            新闻投稿热线：15723146510&nbsp;&nbsp;&nbsp;&nbsp;招商热线：13983972602<br>
+招聘电话：15723108929&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;联系电话：023-63655825<br>
+地址：重庆市渝中区大田湾全民健身中心综合楼5楼
+            </div>
+            </div>
+            <div class="footer clear">
+            	<p>
+                <a href="javascript:;" target="_blank">关于我们</a>丨
+                <a href="javascript:;" target="_blank">本站介绍</a>丨
+                <a href="javascript:;" target="_blank">成功案例</a>丨
+                <a href="javascript:;" target="_blank">联系我们</a>丨Copyright © 2012-2015 cqsports.org All Rights Reserved.重庆体育网 版权所有
+            </p>
+            <p class="foot-spons">
+                <a class="foot-spon1" href="javascript:void(0);"><i></i><span>经营性网站备案信息</span></a>
+                <a class="foot-spon2" href="javascript:void(0);"><i></i><span>不良信息举报中心</span></a>
+                <a class="foot-spon3" href="javascript:void(0);"><i></i><span>应用商店自律组</span></a>
+                <a class="foot-spon4" href="javascript:void(0);"><i></i><span>渝ICP备:15002486号</span></a>
+                <a class="foot-spon5" href="javascript:void(0);"><i></i><span>可信网站身份验证</span></a>
+            </p>
+            <p style="margin:10px;color:#555;">
+                未成年人家长监护 丨 渝ICP备15002486号
+            </p>
+            </div>
+        </div>
+    </div>
+    </body>
+
+<script>
+    $(function(){
+        queryVenue();
+    })
+    function queryVenue(){
+    $.ajax({
+        url:"../exercise/queryVenue",
+        success:function (data) {
+            var aa="";
+            for (var i = 0; i < data.length; i++) {
+           aa+=
+               "<li>+"+
+           "<div class='title' style='height:27px;overflow:hidden;width:405px;'>" +
+           "<h2><a class='color3' target='_blank'>"+data[i].venueName+"</a>"+
+           "</h2>"+
+               "<span><a target='_blank' title='网球'><label>"+data[i].venueTypeName+"</label><em class='freeTag2'></em></a></span>"+
+           "</div>" +
+           "<p class='mt15'>"+
+           "<em class='freeTag2'></em>"+
+           "<font>"+data[i].venueAddress+"</font>"+
+           "</p>"+
+           "<div class='mt5 conditionIco'>"+
+           "<span><em class='freeTag2 sp_tcc'></em>停车场</span>"+
+           "<span><em class='freeTag2 sp_skjs'></em>卖品销售</span>"+
+            "<span><em class='freeTag2 sp_qczj'></em>器材租借</span>"+
+               "</div>"+
+                "<a href='../page/getReserve' class='sportBtn indexhotBtn' target='_blank'>在线预订</a>"
+                +"</li>"
+            }
+
+            $("#hotVenueShow").html(aa)
+
+        }
+      })
+    }
+</script>
+
+</html>

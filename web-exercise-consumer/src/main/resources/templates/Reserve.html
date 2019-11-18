@@ -1,0 +1,1498 @@
+
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <!--<meta name="viewport" content="initial-scale=1.0, user-scalable=no" />-->
+    <title>运动场地场馆预订</title>
+    <meta name="keywords" content="运动场,运动馆,运动教练,羽毛球,乒乓球,游泳,场馆预订,场馆信息查询,场馆信息">
+    <meta name="description" content="格瓦拉生活网提供运动场地场馆,羽毛球馆,羽毛球场地,游泳馆查询预订,运动场馆价格表,运动场馆优惠信息,运动场馆教练,运动场所会员卡转让等信息.">
+    <link href="../demo/templates/index/css/ue_gridheader.css" rel="stylesheet">
+    <link href="../demo/templates/index/css/styleheader.css" rel="stylesheet">
+    <link href="../demo/templates/index/css/style2header.css" rel="stylesheet">
+    <link href="../demo/resources/js/hDialog/animate.css" rel="stylesheet">
+    <script src="../demo/resources/js/jquery-1.9.1.min.js" type="text/javascript"></script>
+    <link rel="stylesheet" type="text/css" href="http://cloud.cloudcq.com/templates/index/css/login.css">
+    <script src="../demo/templates/index/js/jquery.easing.min.js" type="text/javascript"></script>
+    <script src="../demo/templates/index/js/custom.js" type="text/javascript"></script>
+    <script src="../js/jquery.min.js"></script>
+    <script src="../demo/resources/js/hDialog/jquery.hDialog.js" type="text/javascript"></script>
+</head>
+<body>
+
+<![endif]-->
+<div id="header">
+    <div class="login_tip" style="float:right;">
+        <div class="log_box">
+            		<a href="javascript:;" class = "bounceInDown login" title="登录">登录</a><b>  |  </b>
+                    <a href="javascript:;" class = "bounceInDown register" title="注册">注册</a>
+
+        </div>
+    </div>
+
+</div>
+
+
+<link href="../demo/templates/index/css/cqsport.css" rel="stylesheet">
+<link href="../demotemplates/index/css/details.css" rel="stylesheet">
+<link href="../demotemplates/index/css/content.css" rel="stylesheet">
+<script src="../demoresources/js/venues/ydx.core.js"></script>
+<!-- 引用控制层插件样式 -->
+<link rel="stylesheet" href="../demoresources/styles/venues/zyUpload.css" type="text/css">
+<!-- 引用核心层插件 -->
+<script src="../demoresources/js/venues/zyFile.js"></script>
+<!-- 引用控制层插件 -->
+<script src="../demoresources/js/venues/zyUpload.js"></script>
+<!-- 引用初始化JS -->
+<script src="../demoresources/js/venues/jq22.js"></script>
+<style>
+
+    html,body{height:100%;font:12px/22px "宋体","宋体";}
+    .ui_layout .inner{padding:20px;}
+    .topimagecontainer {height:40%;width:100%;margin:0 auto;}
+    .topimage {width:100%;height:100%;position:relative;overflow:hidden;}
+    .detail_index{margin:0 30px!important;width:1140px!important;}
+    .fs12 {font-size:12px;}
+
+    .detail_head,.detail_body{margin:0 auto;width:1200px;}
+    .detail_head{color:#fff;position:relative;height:135px;margin-top:195px;border-radius:5px 5px 0 0;overflow:hidden;z-index:0;}
+    .detail_head .icon_Sale{background:url(http://static5.gewara.com/css/sport/new/icon_Sale.png) no-repeat;width:46px;height:46px;display:block;position:absolute;overflow:hidden;top:0;left:0;z-index:2;}
+    .detail_head .isMask {height:140px;}
+    .detail_head dl{z-index:1;position:relative;}
+    .detail_head h1{font:30px/45px "宋体","宋体";}
+    .detail_head dt.ui_pic {margin-right:0;padding:20px 30px 20px 70px;overflow:hidden;}
+    .detail_head dd{padding:20px;line-height:24px;font:14px/24px "宋体","宋体";}
+    .detail_head dd ul li{height:24px;padding-left:24px;text-shadow:1px 1px 3px #000;overflow:hidden;}
+    .detail_head dd ul li a {color:#fff;}
+    .detail_head dd ul li.iAddr {background-position:left 4px;}
+    .detail_head dd ul li.iCall {background-position:left -20px;}
+    .detail_head dd ul li.iBus {background-position:left -42px;}
+    .detail_head dd a.cou{height:30px;line-height:30px;background-color:#fff;background-position:10px -63px;color:#044a28;padding:0 10px 0 26px;border-radius:6px;font-size:12px;}
+    .detail_head dd a.cou:hover{box-shadow:0 0 5px #fff;color:#044a28!important;}
+
+    .detail_body_item {position:relative;margin-top:-40px;height:115px;width:100%;}
+    .detail_body_item dl{overflow:hidden;}
+    .detail_body_item dt span.ui_items_big{height:110px;width:75px;display:block;overflow:hidden;margin-left:40px;text-align:center;float:left;}
+    .detail_body_item dt span.ui_items_big b{font-size:18px;font-weight:normal;color:#999;display:block;line-height:35px;}
+    .detail_body_item dt .serveInfo{color:#333;font-size:12px;margin-left:10px;margin-top:50px;float:left;height:57px;line-height:22px;font-weight:bold;}
+    .detail_body_item dt font{height:57px;display:block;}
+    .detail_body_item dt font span{background-position:0 0;background:url("http://static5.gewara.com/css/sport/new/serveInfo_bg.jpg") no-repeat;height:57px;display:block;overflow:hidden;}
+    .detail_body_item dt font span.s1{background-color:#fce9dc}
+    .detail_body_item dt font span.s2{background-position:right -57px;padding:0 10px 0 19px;}
+    .detail_body_item dt font span em {display:inline-block;padding:6px 20px;text-align:center;float:left;}
+    .detail_body_item dt font span b {color:#eb6100;display:block;font-size:14px;}
+    .detail_body_item dt font span i{font-style:normal;float:left;display:inline-block;line-height:57px;color:#999;}
+
+
+    .detail_body_item dd {position:absolute;right:0;top:0;}
+    .selectItems {float:right;margin:17px 30px 0 0;}
+    .selectItems a {width:45px;height:45px;display:inline-block;border-radius:50%;float:left;margin-left:10px;} /*90c9f2*/
+    .selectItems a:hover,.selectItems a.select {background-position:0 -102px;} /*-1 -49 -102*/
+    /*评分五星*/
+    .initRating span{background:url("http://static5.gewara.com/css/sport/new/ico_star.png") no-repeat -20px 0;}
+    .initRating span.half{background-position:0 0;}
+    .initRating span.on{background-position:-8px 0;}
+    .initRating span.no{background-position:-28px 0;}
+    /*收藏关注哇啦*/
+    .movieCountList{height:50px;background-color:#fff;border-radius:5px 5px 0 0;padding:5px;float:right;margin-right:15px;}
+    .movieCountList ul li{width:auto; border-left:1px solid #ccc; color:#999; padding:0 15px;font-size:14px;color:#333;font-family:'宋体';}
+    .movieCountList ul li.first{border-left:none;}
+    .movieCountList ul li b,.movieCountList ul li span{display:block; text-align:center;}
+    .movieCountList ul li span.sc {cursor:pointer;width:60px;}
+    .movieCountList ul li span.sc i{background-position:1px -93px;width:18px;height:18px;display:inline-block;vertical-align:-3px;}
+    .movieCountList ul li span.se i{background-position:1px -173px;color:#017fbc;}
+    /**/
+    .mod_detail {margin-bottom:30px;}
+    .mod_detail .mod_hd{position:relative;}
+    .mod_detail .mod_hd h2{border-left:9px solid #ecebeb; font:normal 21px/33px verdana,'宋体'; padding:0 15px; display:inline-block; *display:inline; zoom:1; height:33px;margin:5px 0;background-color:#fff;position:relative;z-index:1;color:#6bb156;}
+    .mod_detail .mod_hd i {width:100%;border-top:1px solid #ecebeb;height:0;overflow:hidden;position:absolute;top:50%;left:0;}
+    /*周边场馆*/
+    .evenBox .even_move{position:relative; width:100%; overflow:hidden;}
+    .evenBox .even_move .even_center{width:1139px;height:120px; overflow:hidden; position:relative; margin:0 auto;}
+    .evenBox .even_left,.evenBox .even_right{position:absolute; z-index:3; width:18px; height:40px; top:40px;}
+    .evenBox .even_left{left:0;}
+    .evenBox .even_right{right:0;}
+    .evenBox .orientation{display:block; cursor:pointer; width:18px; height:40px; overflow:hidden; background:url("http://static5.gewara.com/css/sport/new/arror.png?v=1010") no-repeat;  _background:url("http://static5.gewara.com/css/sport/new/arror_8.png?v=1010") no-repeat;}
+    .evenBox .orientation{background-position:0 -177px;}
+    .evenBox .even_right .orientation{background-position:-30px -177px;}
+
+    .evenBox .even_center ul{position:absolute;}
+    .evenBox .even_left .disable{background-position:0 -59px!important;}
+    .evenBox .even_right .disable{background-position:-30px -59px!important;}
+
+    .hotVenue,.hotVenue ul{margin:0;width:100%;height:auto;visibility:inherit;color:#9d9d9d;}
+    .hotVenue ul li {margin:10px 0;border-right:1px solid #d3d3d3;padding:5px 0 5px 15px;width:369px;}
+    .hotVenue ul li.first{border-right-color:#fff;}
+    .hotVenue p em.iaddr{background-position:1px -121px;}
+    .hotVenue p em.idis{background-position:1px -147px;}
+    .hotVenue p.mt10 a.c333:hover{color:#6bb156 !important;}
+    /*场馆简介*/
+    .detail_intro{}
+    .detail_intro .ui_pic{width:850px;margin-right:35px;}
+    .detail_intro .ui_pic .ui_summary{font-size:16px;line-height:26px;color:#333;}
+    .detail_intro .ui_pic ul li{height:30px;line-height:30px;font-size:14px;border:1px solid #f4a36b;color:#f4a36b;float:left;margin:10px 20px 0;width:240px;overflow:hidden;}
+    .detail_intro .ui_pic ul li span {width:110px;display:inline-block;background-color:#f4a36b; color:#fff;margin-right:10px;text-align:center;}
+
+    .detail_picGallery {border:1px solid #ccc;padding:10px;width:223px;border-radius:10px;}
+    .ui_movieBigType{width:223px;height:165px;margin-bottom:8px;overflow:hidden;}
+    .ui_movieBigType ul{position:absolute;top:0;left:0;}
+    .ui_movieBigType ul li{width:223px;height:165px;float:left;overflow:hidden;}
+    .picListControl{width:223px;}
+    .picListControl ul li{float:left;width:68px;height:50px;display:inline;margin-right:6px;border:1px solid #dddddd;position:relative;cursor:pointer;}
+    .picListControl ul li span{position:absolute;width:25px;font-size:21px;height:11px;color:#ff8822;overflow:hidden;top:-12px;left:50%;display:none;margin-left:-5px;}
+    .picListControl ul li.select span{display:block;}
+    .picListControl ul li.select {border-color:#ff8822;}
+    .morePic{position:absolute; display:inline-block; padding:0 10px 0 12px; right:0; bottom:0; height:28px; line-height:28px; background:#000; opacity:0.8; filter:alpha(opacity = 80); color:#fff !important;}
+    .morePic:hover{text-decoration:none;}
+    /*场馆评测*/
+    .detail_pince {font-size:16px;color:#333;text-indent:30px;}
+    .detail_pince img{float:left;margin:3px 9px 0 0;}
+
+    /*新版评论弹窗*/
+    .colseMark {position:absolute; top:7px; right:15px; cursor:pointer; display:block; height:18px; width:34px; background:url(http://static5.gewara.com/css/home/exit.png) no-repeat 0px 7px; z-index:2;}
+    .colseMark:hover {background-position:0 bottom;}
+    .newMovieMark .title{text-align:center;}
+    .newMovieMark h2 {font-size:12px;font-weight:normal !important;color:#999; line-height:30px;}
+    .newMovieMark .title h2 {font-family:'宋体',verdana,'宋体'; font-size:25px;color:#333;}
+
+    .evaluate,.evaluateWala{width:492px;height:152px; margin:0 auto; position:relative;overflow:hidden;}
+    .evaluate{height:182px;}
+    .evaluate ul,.evalDes{width:490px;position:absolute;top:31px;left:1px;}
+    .evaluate ul {height:150px;background:url(http://static5.gewara.com/css/movie/evaluate-bg.png?v=20130107) no-repeat center center;}
+    .evaluateBg {height:150px;width:100%;background-color:#FFF6EF;border:1px dashed #f90;display:none;}
+    .evaluate .bR{border-width:1px 0 1px 1px;}
+    .evaluate li {float:left;height:150px;width:49px;}
+    .evalDes {top:121px;}
+    .evalDes span{width:98px; _width:97px; float:left; font-size:14px;text-align:center;font-family:'宋体','宋体';display:inline-block;color:#333;}
+    .evalDes span em{font-size:12px; color:#999;}
+
+    .evaluateWala {height:100%;}
+    .evaluateWala p{color:#333;}
+    .evaluateWala .title {text-align:left;}
+
+    .newMovieMark .panel {width:520px;margin:0 auto; padding-bottom:27px;}
+    .newMovieMark .panel .clear{position:relative;height:46px;}
+    .newMovieMark .panel .tales60{ padding:0 0 0 60px;}
+    .newMovieMark .panel dt{margin-top:0;font-family:'宋体','宋体'; color:#333;font-size:13px;}
+    .newMovieMark .panel .more {right:0;}
+    .newMovieMark .panel .more span{color:#fff;background-color:#ddd;display:block;width:72px; height:20px;overflow:hidden;text-align:center;line-height:20px;}
+    .newMovieMark .panel .inner{border:1px solid #ddd;width:100%;
+        background: #ebebeb; /* Old browsers */
+        background: -moz-linear-gradient(top, #ffffff 45%, #ebebeb 100%); /* FF3.6+ */
+        background: -webkit-gradient(linear, left top, left bottom, color-stop(45%,#ffffff), color-stop(100%,#ebebeb)); /* Chrome,Safari4+ */
+        background: -webkit-linear-gradient(top, #ffffff 45%,#ebebeb 100%); /* Chrome10+,Safari5.1+ */
+        background: -o-linear-gradient(top, #ffffff 45%,#ebebeb 100%); /* Opera11.10+ */
+        background: -ms-linear-gradient(top, #ffffff 45%,#ebebeb 100%); /* IE10+ */
+        filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', endColorstr='#ebebeb',GradientType=0 ); /* IE6-9 */
+        background: linear-gradient(top, #ffffff 45%,#ebebeb 100%); /* W3C */
+    }
+    .newMovieMark .panel table {width:420px;overflow:hidden;margin:20px auto…}
+
+
+
+</style>
+<div class="clear ipadWidht" style="margin-top:50px">
+    <div style="height: 330px;" class="topimagecontainer">
+        <div style="background: url(http://static5.gewara.com/css/sport/new/detail/si_other_1.jpg?v=1023) 50% 0% no-repeat rgb(239, 199, 113);" class="topimage" id="topimagePic">
+            <div style="margin-top: 195px;" class="detail_head">
+                <div class="isMask">
+                </div>
+                <dl class="ui_media">
+                    <dt class="ui_pic">
+                        <h1>
+                            <input type="hidden" value="45" id="venues_id">
+                            江南旱冰场                        </h1>
+                        <div class="clear mt10 ml30">
+                            <!-- 传评分数gmark -->
+                            <em class="initRating cursor_auto">
+                                <!-- 小评分 -->
+                                <span class="half">
+								</span>
+                                <span class="on">
+								</span>
+                                <span class="half">
+								</span>
+                                <span class="on">
+								</span>
+                                <span class="half">
+								</span>
+                                <span class="on">
+								</span>
+                                <span class="half">
+								</span>
+                                <span class="on">
+								</span>
+                                <span class="half">
+								</span>
+                                <span class="no">
+								</span>
+                            </em>
+                            <span style="margin-top:-5px;" class="left">
+								<sub id="mark_integer">
+									8
+								</sub>
+								<sup id="mark_decimal">
+									.9
+								</sup>
+							</span>
+                        </div>
+                    </dt>
+                    <dd class="ui_text">
+
+                        <ul class="left">
+                            <li class="iAddr">
+                                <a target="_blank" title="南岸区" href="index-search_201.html">南岸区</a>重庆市南岸区江南体育馆高尔夫球场傍边
+                            </li>
+                            <li class="iCall">
+                                0								</li>
+                            <li class="iBus">
+                                873&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                            </li>
+                        </ul>
+                    </dd>
+                </dl>
+            </div>
+        </div>
+    </div>
+    <div class="detail_body">
+        <div class="detail_body_item ">
+            <dl class="ui_media">
+                <dt class="ui_pic">
+                    <span class="ui_items_big">
+                        <span id="itemsType">
+                            <strong lang="" class="big_si_ymq">
+								<em class="item_ico_big detail_itype" style="background-position:;">
+								</em>
+							</strong>
+                        </span>
+                        <b id="itemsTypeName"></b>
+                    </span>
+                    <div class="serveInfo">
+                        <font style="width: 413px;" id="serve_288732">
+                            <span class="s1">
+                                <span class="s2">
+									<em>
+										<b class="num">1</b>
+										场地数量
+									</em>
+									<i>
+										|
+									</i>
+									<em>
+										<b class="material">&nbsp;</b>
+										场地材质
+									</em>
+									<i>
+										|
+									</i>
+									<em>
+										<b class="illumination">&nbsp;</b>
+										灯光效果
+									</em>
+									<i>
+										|
+									</i>
+									<em>
+										<b class="ceilinged">&nbsp;</b>
+										场地挑高
+									</em>
+                                </span>
+                            </span>
+                        </font>
+                    </div>
+                </dt>
+                <dd class="ui_text">
+                    <div class="movieCountList">
+                        <ul class="ui_inline">
+                            <li class="first">
+                                <b id="collectedTimes">
+                                    797
+                                </b>
+                                <span onclick="addCollection();_gaq.push(['_trackEvent','sportdetails','clickbannerlove','love']);" class="sc" id="nCollect">
+									<i>
+									</i>
+									喜欢
+								</span>
+                                <span onclick="cancelTreasure();" class="sc se none" id="hCollect">
+									<i>
+									</i>
+									已喜欢
+								</span>
+                            </li>
+                            <li>
+                                <b>
+                                    143
+                                </b>
+                                <span>
+									哇啦
+								</span>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="selectItems ui_items">
+                        <a onclick="getOpenTypeList(288732,156161175);_gaq.push(['_trackEvent','sportdetails','clickbanneritem','288732']);" href="javascript:void(0);" plugs-tips="羽毛球" id="si288732" style="visibility:hidden;width:0;margin-left:0;">
+							<span class="si_ymq">
+								<em class="item_ico">
+								</em>
+							</span>
+                        </a>
+                    </div>
+                </dd>
+            </dl>
+        </div>
+        <div class="site-head mt20" id="field-list">
+            <!--<div ty="100001" aid="100411" class="sel">室外5人制足球场</div>-->
+        </div>
+        <div class="loading" style="display: none;">
+        </div>
+        <div id="selectSession" style="display: block;">
+            <div class="session_order clear mt30">
+                <input type="hidden" value="" id="curOttid">
+                <div class="session_hd clear">
+                    <div class="session_left">
+                        <ul class="nav_tabs ">
+                            <li class="select" onclick="loadWeak(&quot;1&quot;,this,&quot;2015-9-15&quot;)" weak="1" date="2015-9-15"> <font class="s1">周二</font> <font class=" s2">今天</font> <font class="s3">&nbsp;</font> <span> </span> </li>
+                        </ul>
+                    </div>
+                    <div class="session_right">
+                        <div class="seatViewInfo">
+                            <ul class="clear">
+                                <li>
+									<span class="hasSeat">
+									</span>
+                                    可预订
+                                </li>
+                                <li>
+									<span class="sellSeat">
+									</span>
+                                    不可预订
+                                </li>
+                                <li>
+									<span class="checkSeat">
+									</span>
+                                    已选场次
+                                </li>
+                            </ul>
+                            <p class="fs14">
+                                预订项目：
+                                <b id="item">
+                                    羽毛球
+                                </b>
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                <div class="session_bd clear">
+                    <input type="hidden" id="ottUnitMinute" value="60">
+                    <div class="session_area session_left">
+                        <div style="" class="spNoticeBox mt20">
+                            <a href="javascript:void(0);" id="clsoeSpecNotice" title="关闭" class="more">
+                            </a>
+                            <dl class="clear tales100">
+                                <dt>
+                                    场次说明：
+                                </dt>
+                                <dd class="ui_privilege">
+                                    <em class="j" title="支持积分抵值">
+                                        积
+                                    </em>
+                                    <em class="q" title="支持票券抵值">
+                                        券
+                                    </em>
+                                    <em class="y" title="支持优惠预定">
+                                        惠
+                                    </em>
+                                </dd>
+                            </dl>
+                        </div>
+                        <div style="overflow: hidden;" id="wrapper" class="inningTable nonseptateTable mt10">
+                            <dl class="has_pk clear">
+                                <dt class="fieName"></dt>
+                                <dd id="pk_table">
+                                    <div class="pk_table" id="wrapperd" style="width: 725px;">
+                                    </div>
+                                </dd>
+                            </dl>
+                            <div style="visibility: hidden; opacity: 0;" class="scroller horizontal">
+								<span class="decrease">
+								</span>
+                                <div style="width: 798px;" class="scroll">
+                                    <div style="width: 887px; left: 0px;" class="handle">
+                                        <div class="handleL">
+                                            <div class="handleR">
+                                                <div class="handleC">
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <span class="increase">
+								</span>
+                            </div>
+                            <div style="visibility: hidden; zoom: 1; opacity: 0;" class="scroller horizontal">
+								<span class="decrease">
+								</span>
+                                <div style="width: 900px;" class="scroll">
+                                    <div style="width: 1294px; left: 0px;" class="handle">
+                                        <div class="handleL">
+                                            <div class="handleR">
+                                                <div class="handleC">
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <span class="increase">
+								</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="session_right">
+                        <form method="post" name="myform" id="orderForm">
+                            <div class="inner">
+                                <div class="pewSeat">
+                                    <div class="ui_media mt10">
+                                        <div class="ui_pic mr0">
+                                            场次：
+                                        </div>
+                                        <div class="ui_text">
+                                            <div id="cancelSite">
+                                                <div class="clear">
+													<span class="pews">
+														还未选择场次
+													</span>
+                                                </div>
+                                                <p style="font-size:12px;">
+                                                    请
+                                                    <span class="cSport ml5 mr5">
+														单击左侧选择场次
+													</span>
+                                                    ，再次单击取消。
+                                                </p>
+                                            </div>
+                                            <div class="clear" style="display:none;" id="hasSiteBox"></div>
+                                            <div style="display:none;" id="hasSiteInfo">
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div style="display:none;" id="pubType" class="mt15">
+                                        <p>
+                                            <em>
+                                                总计：
+                                            </em>
+                                            <span class="ui_price countPrice">
+												¥
+												<b>
+													0
+												</b>
+													<b>元</b>
+											</span>
+                                        </p>
+                                    </div>
+                                </div>
+                                <input type="hidden" musttxt="请先选择时间段！" value="" id="fieldid" name="fieldid">
+                                <input type="hidden" value="240806585" id="ottid" name="ottid">
+                                <input type="hidden" value="0" id="timesInput" name="timesInput">
+                                <input type="hidden" value="0" id="priceInput" name="priceInput">
+                                <div class="rightBox">
+                                    <p class="c999">
+                                        输入接收短信的手机号码
+                                    </p>
+                                    <div class="mobileInfo">
+                                        <ul class="clear">
+                                            <li>
+                                                <p>
+                                                    <em>
+                                                        手机号&nbsp;&nbsp;&nbsp;
+                                                    </em>
+                                                    <input type="text" name="mobile" id="mobile" maxlength="11" class="texta" value="">
+                                                </p>
+                                                <span class="cred ffst ml5">
+													*
+												</span>
+                                            </li>
+                                            <li class="mt10">
+                                                <p style="width:160px;">
+                                                    <input type="hidden" value="8UNvfkrQwVVCFzV6222aef33" id="captcha" name="captchaId">
+                                                    <em>
+                                                        验证码&nbsp;&nbsp;&nbsp;
+                                                    </em>
+                                                    <input type="text" maxlength="4" name="captcha" id="captchaInput" class="texta" style="width:60px;">
+                                                </p>
+                                                <span class="cred ffst ml5 left">
+													*
+												</span>
+                                                <img width="65" onclick="f_refreshtype()" src="index-detail_captcha.jpg" title="" style="cursor:pointer;" class="left" id="captchaImg">
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </div>
+                                <p class="clear">
+                                    <a onclick="submitOrder()" href="javascript:void(0);" class="deatail_btn">
+                                        提交订单
+                                    </a>
+                                </p>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div style="display: block;" class="mod_line mod_detail">
+            <div class="mod_hd">
+                <h2>
+                    周边场馆
+                </h2>
+                <i>
+                </i>
+            </div>
+            <div id="nearSportList">
+                <div class="mod_bd hotVenue evenBox">
+                    <div class="even_move" id="menu_box_sport">
+                        <input type="hidden" value="10" id="nearSportListSize">
+                        <div class="even_center">
+                            <ul style="width: 3850px;" id="menu_box_sport_inner" class="clear">
+                                <li><div class="title"><h2><a target="_blank" title="大田湾全民健身中心乒乓球场" href="javascript:;">大田湾全民健身中心乒乓球场</a></h2></div><p class="mt10"><em class="freeTag2 iaddr"></em><a href="javascript:;" target="_blank" class="c333">重庆市渝中区</a><font title="两路口大田湾全民健身中心一楼">两路口大田湾全民健身中心一楼</font></p></li>
+                                <li><div class="title"><h2><a target="_blank" title="大田湾全民健身中心室内网球场" href="javascript:;">大田湾全民健身中心室内网球场</a></h2></div><p class="mt10"><em class="freeTag2 iaddr"></em><a href="javascript:;" target="_blank" class="c333">重庆市渝中区</a><font title="两路口大田湾全民健身中心三楼">两路口大田湾全民健身中心三楼</font></p></li>
+                                <li><div class="title"><h2><a target="_blank" title="大田湾全民健身中心室外网球场" href="javascript:;">大田湾全民健身中心室外网球场</a></h2></div><p class="mt10"><em class="freeTag2 iaddr"></em><a href="javascript:;" target="_blank" class="c333">重庆市渝中区</a><font title="两路口大田湾全民健身中心广场旁">两路口大田湾全民健身中心广场旁</font></p></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="mod_line mod_detail">
+            <div class="mod_hd">
+                <h2>
+                    场馆简介
+                </h2>
+                <i>
+                </i>
+            </div>
+            <div class="mod_bd">
+                <div class="ui_media detail_intro detail_index">
+                    <div class="ui_pic">
+                        <p class="ui_summary">
+							<span class="first">
+							</span>
+                        </p>
+                        <p><br></p><p>江南旱冰场坐落于重庆市江南体育馆旁，面积200㎡，环境优美，有很多高难度滑道</p><p><br></p>								<p>
+                        <br>
+                    </p>
+                        <span>
+							</span>
+                        <p></p>
+                        <ul class="clear">
+
+                        </ul>
+                    </div>
+                    <div class="ui_text">
+                        <div class="detail_picGallery">
+                            <div class="ui_movieBigType">
+                                <ul style="width: 669px;" id="move_box">
+                                    <li><img width="223" height="165" src="upload/field/144662440146567993.jpg"></li>
+                                    <li><img width="223" height="165" src="upload/field/144662440689505310.jpg"></li>
+                                    <li><img width="223" height="165" src="upload/field/144662440932016601.jpg"></li>
+                                </ul>
+                                <a href="javascript:void(0);" class="morePic" id="morePicture">共3张
+                                    <em class="ffst">>></em>
+                                </a>
+                            </div>
+                            <div class="picListControl">
+                                <ul class="clear" id="move_tag">
+                                    <li style="" class="select"><span>◆</span><img width="68" height="50" src="upload/field/144662440146567993.jpg"></li>
+                                    <li style="" class=""><span>◆</span><img width="68" height="50" src="upload/field/144662440689505310.jpg"></li>
+                                    <li style="" class=""><span>◆</span><img width="68" height="50" src="upload/field/144662440932016601.jpg"></li>
+                                    <!--<li style="" class="select"><span>◆</span><img width="68" height="50" src=""></li>-->
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- 星级评论开始 -->
+        <div class="mod_line mod_detail" id="walaContent">
+            <div class="mod_hd"><h2>评论</h2><i></i></div>
+            <div class="mod_bd">
+                <div class="mt20" id="WalaDetail">
+                    <div>
+                        <div class="ui_wala ">
+                            <dl class="ui_wala_listing ui_media clear">
+                                <dt class="ui_pic" style="margin-top:35px;">
+                                    <a href="javascript:void(0);" class="pubpic" id="logonMember"><img src="http://static5.gewara.com/cw50h50/img/default_head.png" id="logonMemberPic" width="50" height="50"></a>
+                                </dt>
+                                <dd class="ui_text" style="position:relative;  _width:700px; ">
+                                    <form id="bodyForm" action="index.php?c=index&a=comment_add" method="post" enctype="multipart/form-data">
+                                        <div class="page_wala" id="isModify">
+                                            <i class="l" style="top:45px;">◆<i>◆</i></i>
+                                            <div class="modify_alt">
+                                                <b class="left">我要评分：</b>
+                                                <ul id="walageneralmark" class="ui_big_ratings">
+                                                    <li id="1" lang="不推荐，不考虑"></li>
+                                                    <li id="2" lang="不推荐，不考虑" class="no"></li>
+                                                    <li id="3" lang="不推荐，不考虑"></li>
+                                                    <li id="4" lang="凑合，别无选择可考虑" class="no"></li>
+                                                    <li id="5" lang="凑合，别无选择可考虑"></li>
+                                                    <li id="6" lang="不错，值得考虑" class="no"></li>
+                                                    <li id="7" lang="不错，值得考虑"></li>
+                                                    <li id="8" lang="很棒，推荐大家去" class="no"></li>
+                                                    <li id="9" lang="很棒，推荐大家去"></li>
+                                                    <li id="10" lang="最佳，绝对首选" class="no"></li>
+                                                </ul>
+                                                <sub id="walageneralmarkPoint" class="ml10 mr10 left"></sub>
+                                                <span class="brown left" id="walageneralmarkDesc"></span>
+                                            </div>
+                                            <div class="ui_wala_textArea">
+                                                <label class="issueTips" for="say_area" id="issueTips" style="display: block;"></label>
+                                                <textarea name="replycontent" id="replycontent" lang="default"></textarea>
+                                            </div>
+                                            <div class="page_modify_dialog  page_modify_dialog_mini hid">
+                                                <!--<span class="iserm hid" id="faceTags" lang="default">表情<em class="dmore"></em></span>
+                                                <span id="ispic" class="ispic" lang="default">图片</span>	-->
+                                                <label class="wb" lang="default" for="Wb" style="display:none;">
+                                                    <em>同步到：<input id="Wb" type="checkbox" title="新浪微博" lang="/home/bind/sina/userApp.xhtml?source=close"></em>
+                                                    <span>新浪微博</span>
+                                                </label>
+                                                <em class="right">
+                                                    <a href="javascript:submitMicro();" class="button redBt bigBt right"><span>发&nbsp;&nbsp;布</span></a>
+                                                    <b class="isfont" id="isFont">140</b>
+                                                </em>
+                                            </div>
+                                        </div>
+                                    </form>
+                                </dd>
+                            </dl>
+                            <!-- 表情表 -->
+                            <div tabindex="1" style="width: 422px; display:none; height: auto; visibility: visible; zoom: 1; opacity: 1; position: absolute; top: 1736px; z-index: 10; left: 420px;" id="selficon">
+                                <table cellspacing="0" cellpadding="0" border="0" width="100%" class="tableLayer fixTableLayer">
+                                    <tbody>
+                                    <tr>
+                                        <td class="t_l"></td>
+                                        <td class="t_c"></td>
+                                        <td class="t_r"></td>
+                                    </tr>
+                                    <tr>
+                                        <td class="m_l"></td>
+                                        <td class="m_c" style="padding: 1px; background: rgb(170, 170, 170);">
+                                            <div style="padding: 10px; width: auto; line-height: 22px; color: rgb(102, 102, 102); font-size: 12px; font-weight: normal; height: auto; overflow: hidden; background-color: rgb(255, 255, 255);">
+                                                <div class="dalogIcon uidialog clear" id="uidialog" style="visibility: visible; zoom: 1; opacity: 1;">
+                                                    <ul class="dalogIconTags clear hid" id="dalogIconTags">
+                                                        <li class="select" id="select" style="z-index:5"><a href="javascript:void(0);">云动</a></li>
+                                                        <li class="" id="jingdian" style="z-index:5"><a href="javascript:void(0);">经典</a></li>
+                                                    </ul>
+                                                    <div class="dalogIconConts clear" id="dalogIconConts">
+                                                        <div class="dalogIconBox clear" style="display:none;" id="dalogIconBox1">
+                                                            <a href="javascript:;" rel="`5`"><img src="resources/expression_img/1442991907.gif" width="32" height="32" title="点头" class="hid"></a>
+                                                            <a href="javascript:;" rel="`6`"><img src="resources/expression_img/1442992118.gif" width="32" height="32" title="发飙" class="hid"></a>
+                                                            <a href="javascript:;" rel="`7`"><img src="resources/expression_img/1442992143.gif" width="32" height="32" title="发呆" class="hid"></a>
+                                                            <a href="javascript:;" rel="`8`"><img src="resources/expression_img/1442992196.gif" width="32" height="32" title="呵呵" class="hid"></a>
+                                                            <a href="javascript:;" rel="`9`"><img src="resources/expression_img/1442992214.gif" width="32" height="32" title="黑线" class="hid"></a>
+                                                            <a href="javascript:;" rel="`10`"><img src="resources/expression_img/1442992292.gif" width="32" height="32" title="贱贱" class="hid"></a>
+                                                            <a href="javascript:;" rel="`11`"><img src="resources/expression_img/1442992309.gif" width="32" height="32" title="惊讶" class="hid"></a>
+                                                            <a href="javascript:;" rel="`12`"><img src="resources/expression_img/1442992403.gif" width="32" height="32" title="可怜" class="hid"></a>
+                                                            <a href="javascript:;" rel="`13`"><img src="resources/expression_img/1442992446.gif" width="32" height="32" title="哭" class="hid"></a>
+                                                            <a href="javascript:;" rel="`14`"><img src="resources/expression_img/1442992472.gif" width="32" height="32" title="酷" class="hid"></a>
+                                                            <a href="javascript:;" rel="`15`"><img src="resources/expression_img/1442992495.gif" width="32" height="32" title="狂汗" class="hid"></a>
+                                                            <a href="javascript:;" rel="`16`"><img src="resources/expression_img/1442992515.gif" width="32" height="32" title="喷" class="hid"></a>
+                                                            <a href="javascript:;" rel="`17`"><img src="resources/expression_img/1442992591.gif" width="32" height="32" title="期待" class="hid"></a>
+                                                            <a href="javascript:;" rel="`18`"><img src="resources/expression_img/1442992616.gif" width="32" height="32" title="亲亲" class="hid"></a>
+                                                            <a href="javascript:;" rel="`19`"><img src="resources/expression_img/1442992637.gif" width="32" height="32" title="色眯眯" class="hid"></a>
+                                                            <a href="javascript:;" rel="`20`"><img src="resources/expression_img/1442992658.gif" width="32" height="32" title="微笑" class="hid"></a>
+                                                            <a href="javascript:;" rel="`21`"><img src="resources/expression_img/1442992679.gif" width="32" height="32" title="笑" class="hid"></a>
+                                                            <a href="javascript:;" rel="`22`"><img src="resources/expression_img/1442992702.gif" width="32" height="32" title="笑cry" class="hid"></a>
+                                                            <a href="javascript:;" rel="`23`"><img src="resources/expression_img/1442992720.gif" width="32" height="32" title="疑问" class="hid"></a>
+                                                            <a href="javascript:;" rel="`24`"><img src="resources/expression_img/1442992738.gif" width="32" height="32" title="晕" class="hid"></a>
+                                                        </div>
+                                                        <div class="dalogIconBox clear" style="display:none;" id="dalogIconBox2">
+                                                            <a href="" rel="`25`"><img src="resources/expression_img/1442993795.gif" width="20" height="20" title="害羞" class="hid"></a>
+                                                            <a href="" rel="`26`"><img src="resources/expression_img/1442993818.gif" width="20" height="20" title="可爱" class="hid"></a>
+                                                            <a href="" rel="`27`"><img src="resources/expression_img/1442993941.gif" width="20" height="20" title="呵呵" class="hid"></a>
+                                                            <a href="" rel="`28`"><img src="resources/expression_img/1442993962.gif" width="20" height="20" title="花心" class="hid"></a>
+                                                            <a href="" rel="`29`"><img src="resources/expression_img/1442993979.gif" width="20" height="20" title="嘻嘻" class="hid"></a>
+                                                            <a href="" rel="`30`"><img src="resources/expression_img/1442993997.gif" width="20" height="20" title="亲亲" class="hid"></a>
+                                                            <a href="" rel="`31`"><img src="resources/expression_img/1442994019.gif" width="20" height="20" title="噢耶" class="hid"></a>
+                                                            <a href="" rel="`32`"><img src="resources/expression_img/1442994034.gif" width="20" height="20" title="懒得理你" class="hid"></a>
+                                                            <a href="" rel="`33`"><img src="resources/expression_img/1442994049.gif" width="20" height="20" title="抱抱" class="hid"></a>
+                                                            <a href="" rel="`34`"><img src="resources/expression_img/1442994099.gif" width="20" height="20" title="鄙视" class="hid"></a>
+                                                            <a href="" rel="`35`"><img src="resources/expression_img/1442994114.gif" width="20" height="20" title="汗" class="hid"></a>
+                                                            <a href="" rel="`36`"><img src="resources/expression_img/1442994130.gif" width="20" height="20" title="晕" class="hid"></a>
+                                                            <a href="" rel="`37`"><img src="resources/expression_img/1442994151.gif" width="20" height="20" title="泪" class="hid"></a>
+                                                            <a href="" rel="`38`"><img src="resources/expression_img/1442994171.gif" width="20" height="20" title="悲伤" class="hid"></a>
+                                                            <a href="" rel="`39`"><img src="resources/expression_img/1442994192.gif" width="20" height="20" title="闭嘴" class="hid"></a>
+                                                            <a href="" rel="`40`"><img src="resources/expression_img/1442994211.gif" width="20" height="20" title="吃惊" class="hid"></a>
+                                                            <a href="" rel="`41`"><img src="resources/expression_img/1442994238.gif" width="20" height="20" title="酷" class="hid"></a>
+                                                            <a href="" rel="`42`"><img src="resources/expression_img/1442994258.gif" width="20" height="20" title="哈哈" class="hid"></a>
+                                                            <a href="" rel="`43`"><img src="resources/expression_img/1442994281.gif" width="20" height="20" title="困" class="hid"></a>
+                                                            <a href="" rel="`44`"><img src="resources/expression_img/1442994302.gif" width="20" height="20" title="花" class="hid"></a>
+                                                            <a href="" rel="`45`"><img src="resources/expression_img/1442994319.gif" width="20" height="20" title="伤心" class="hid"></a>
+                                                            <a href="" rel="`46`"><img src="resources/expression_img/1442994342.gif" width="20" height="20" title="邮件" class="hid"></a>
+                                                            <a href="" rel="`47`"><img src="resources/expression_img/1442994359.gif" width="20" height="20" title="电话" class="hid"></a>
+                                                            <a href="" rel="`48`"><img src="resources/expression_img/1442994384.gif" width="20" height="20" title="干杯" class="hid"></a>
+                                                            <a href="" rel="`49`"><img src="resources/expression_img/1442994410.gif" width="20" height="20" title="调谢" class="hid"></a>
+                                                            <a href="" rel="`50`"><img src="resources/expression_img/1442994426.gif" width="20" height="20" title="握手" class="hid"></a>
+                                                            <a href="" rel="`51`"><img src="resources/expression_img/1442994444.gif" width="20" height="20" title="good" class="hid"></a>
+                                                            <a href="" rel="`52`"><img src="resources/expression_img/1442994463.gif" width="20" height="20" title="唱歌" class="hid"></a>
+                                                            <a href="" rel="`53`"><img src="resources/expression_img/1442994481.gif" width="20" height="20" title="得意" class="hid"></a>
+                                                            <a href="" rel="`54`"><img src="resources/expression_img/1442994497.gif" width="20" height="20" title="疑问" class="hid"></a>
+                                                            <a href="" rel="`55`"><img src="resources/expression_img/1442994513.gif" width="20" height="20" title="便便" class="hid"></a>
+                                                            <a href="" rel="`56`"><img src="resources/expression_img/1442994531.gif" width="20" height="20" title="呆" class="hid"></a>
+                                                            <a href="" rel="`57`"><img src="resources/expression_img/1442994549.gif" width="20" height="20" title="河蟹" class="hid"></a>
+                                                            <a href="" rel="`58`"><img src="resources/expression_img/1442994564.gif" width="20" height="20" title="囧" class="hid"></a>
+                                                            <a href="" rel="`59`"><img src="resources/expression_img/1442994584.gif" width="20" height="20" title="咖啡" class="hid"></a>
+                                                            <a href="" rel="`60`"><img src="resources/expression_img/1442994598.gif" width="20" height="20" title="礼花" class="hid"></a>
+                                                            <a href="" rel="`61`"><img src="resources/expression_img/1442994616.gif" width="20" height="20" title="礼物" class="hid"></a>
+                                                            <a href="" rel="`62`"><img src="resources/expression_img/1442994633.gif" width="20" height="20" title="篮球" class="hid"></a>
+                                                            <a href="" rel="`63`"><img src="resources/expression_img/1442994647.gif" width="20" height="20" title="骷髅" class="hid"></a>
+                                                            <a href="" rel="`64`"><img src="resources/expression_img/1442994664.gif" width="20" height="20" title="闪电" class="hid"></a>
+                                                            <a href="" rel="`65`"><img src="resources/expression_img/1442994685.gif" width="20" height="20" title="弱" class="hid"></a>
+                                                            <a href="" rel="`66`"><img src="resources/expression_img/1442994711.gif" width="20" height="20" title="怒" class="hid"></a>
+                                                            <a href="" rel="`67`"><img src="resources/expression_img/1442994731.gif" width="20" height="20" title="衰" class="hid"></a>
+                                                            <a href="" rel="`68`"><img src="resources/expression_img/1442994749.gif" width="20" height="20" title="失望" class="hid"></a>
+                                                            <a href="" rel="`69`"><img src="resources/expression_img/1442994765.gif" width="20" height="20" title="生病" class="hid"></a>
+                                                            <a href="" rel="`70`"><img src="resources/expression_img/1442994796.gif" width="20" height="20" title="睡觉" class="hid"></a>
+                                                            <a href="" rel="`71`"><img src="resources/expression_img/1442994818.gif" width="20" height="20" title="太阳" class="hid"></a>
+                                                            <a href="" rel="`72`"><img src="resources/expression_img/1442994835.gif" width="20" height="20" title="下雨" class="hid"></a>
+                                                            <a href="" rel="`73`"><img src="resources/expression_img/1442994851.gif" width="20" height="20" title="心" class="hid"></a>
+                                                            <a href="" rel="`74`"><img src="resources/expression_img/1442994869.gif" width="20" height="20" title="星" class="hid"></a>
+                                                            <a href="" rel="`75`"><img src="resources/expression_img/1442994886.gif" width="20" height="20" title="药" class="hid"></a>
+                                                            <a href="" rel="`76`"><img src="resources/expression_img/1442994912.gif" width="20" height="20" title="月亮" class="hid"></a>
+                                                            <a href="" rel="`77`"><img src="resources/expression_img/1442994930.gif" width="20" height="20" title="钟" class="hid"></a>
+                                                            <a href="" rel="`78`"><img src="resources/expression_img/1442994944.gif" width="20" height="20" title="抓狂" class="hid"></a>
+                                                            <a href="" rel="`79`"><img src="resources/expression_img/1442994960.gif" width="20" height="20" title="足球" class="hid"></a>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </td>
+                                        <td class="m_r"></td>
+                                    </tr>
+                                    <tr>
+                                        <td class="b_l"></td>
+                                        <td class="b_c"></td>
+                                        <td class="b_r"></td>
+                                    </tr>
+                                    </tbody>
+                                </table>
+                                <div style="height: 15px; width: 33px; overflow: hidden; position: absolute; top: -9px; left: 20px; background: url(http://static5.gewara.com/css/home/opt.png) -13px 0px no-repeat;"></div>
+                            </div>
+
+                            <!-- 图片上传 -->
+                            <div style="width: 340px; display: none; height: auto; visibility: visible; zoom: 1; opacity: 1; position: absolute; top: 1736px; z-index: 301; left: 489px;" id="selfdailogpic">
+                                <table cellspacing="0" cellpadding="0" border="0" width="100%" class="tableLayer fixTableLayer">
+                                    <tbody>
+                                    <tr>
+                                        <td class="t_l"></td>
+                                        <td class="t_c"></td>
+                                        <td class="t_r"></td>
+                                    </tr>
+                                    <tr>
+                                        <td class="m_l"></td>
+                                        <td class="m_c" style="padding: 1px; background: rgb(170, 170, 170);">
+                                            <div id="ceshi1" style="padding: 10px; width: auto; line-height: 22px; color: rgb(102, 102, 102); font-size: 12px; font-weight: normal; height: auto; overflow: hidden; background-color: rgb(255, 255, 255);">
+                                                <div style="display: block; visibility: visible; zoom: 1; opacity: 1;">
+
+                                                    <div id="demo" class="demo"></div>
+                                                    <input type="button" value="关闭" id="cancel" style="float:right;">
+                                                </div>
+                                            </div>
+                                        </td>
+                                        <td class="m_r"></td>
+                                    </tr>
+                                    <tr>
+                                        <td class="b_l"></td>
+                                        <td class="b_c"></td>
+                                        <td class="b_r"></td>
+                                    </tr>
+                                    </tbody>
+                                </table>
+                                <div style="height: 15px; width: 33px; overflow: hidden; position: absolute; top: -9px; left: 20px; background: url(http://static5.gewara.com/css/home/opt.png) -13px 0px no-repeat;"></div>
+                            </div>
+                            <!-- 评论开始 -->
+                            <div data-first="walalist" class="ui_wala_comment">
+
+
+
+
+                            </div>
+                        </div>
+                    </div>
+                    <div class="ui_loading" style="text-align: center; cursor: pointer; visibility: visible; zoom: 1; opacity: 1;">共0条评论</div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div id="showCardInfo">
+    </div>
+</div>
+<div id="backTopBox" style="display: none;">
+    <a style="visibility: visible; zoom: 1; opacity: 0.9;" href="javascript:void(0);" title="返回顶部" class="isGoUp">
+    </a>
+</div>
+<div style="display: none; visibility: hidden; zoom: 1; opacity: 0;" id="lbOverlay">
+</div>
+<img style="width: 1px; height: 1px; position: fixed; left: -9999em;" src="http://pi.gewara.com/pi.gif?uk=1426472744792_xFj4_8ed5&t=1428905991491" id="gwtc">
+<script type="text/javascript" src="templates/index/js/common.js"></script>
+<script>
+    var time = null,
+        current = 0;
+    $(function() {
+        starComments();
+        drawWeak();
+        $('#move_box').css('width',($('#move_box li').length)*223+'px');
+        slider("move_box", "move_tag");
+        $('#clsoeSpecNotice').click(function() {
+            $('.spNoticeBox').slideUp();
+        });
+        $('#backTopBox').click(function() {
+            $('html,body').animate({
+                    scrollTop: 0
+                },
+                300);
+        });
+        scroll();
+        $(window).scroll(function() {
+            scroll();
+        });
+        callLoad();
+        $("#field-list div").click(function() {
+            $("#field-list .sel").removeClass("sel");
+            $(this).addClass("sel");
+            $(".nav_tabs .select").removeClass("select");
+            $(".nav_tabs li:eq(0)").addClass("select");
+            callLoad();
+            drawWeak();
+        });
+        inputNum("#mobile");
+        replycontent();
+        //加载更多评论
+        var i = 6;
+        $(".ui_loading").click(function(){
+
+            i+=6;
+            var venues_id = $("#venues_id").val();
+            url = "index.php?a=detail&isajax=1&id="+venues_id+"&comment="+i;
+            $.ajax({
+                type:"get",
+                url:url,
+                success: function (msg){
+                    $(".ui_wala_comment").html(msg);
+                    return false;
+                }
+            });
+            return false;
+        });
+
+        //评论表情添加
+        $("#faceTags").click(function(){
+            $("#selficon").show();
+            $("#dalogIconBox1").show();
+            $("#dalogIconBox2").hide();
+            $("#selfdailogpic").hide();
+            return false;
+        });
+        //提交表情
+        $("#dalogIconConts a").click(function(){
+
+            /*var s =$(this).find('img:eq(0)').attr('src');
+                var replycontent=$("#replycontent");
+                var objNewImg = $('<img>',{'class':'newimg','src':s});
+                replycontent.append(objNewImg);
+                console.log(objNewImg); */
+            var comment_body = $("#replycontent").val();
+            var body_a = $(this).attr("rel");
+            comment_body += body_a;
+            $("#replycontent").val(comment_body);
+            return false;
+        });
+        $("#jingdian").click(function(){
+            $("#dalogIconBox2").show();
+            $("#dalogIconBox1").hide();
+            $("#select").removeClass("select");
+            $("#jingdian").addClass("select");
+            return false;
+        });
+        $("#select").click(function(){
+            $("#dalogIconBox1").show();
+            $("#dalogIconBox2").hide();
+            $("#select").addClass("select");
+            $("#jingdian").removeClass("select");
+            return false;
+        });
+
+        <!-- 图片上传 -->
+        $("#ispic").click(function(){
+            $("#selficon").hide();
+            $("#selfdailogpic").show();
+            $("#dalogIconBox1").hide();
+            $("#dalogIconBox2").hide();
+            return false;
+        });
+        /*$("#selficon").blur(function(){
+            alert();return false;
+            //$("#selfdailogpic").hide();
+            $("#selficon").hide();
+            $("#dalogIconBox1").hide();
+            $("#dalogIconBox2").hide();
+            //return false;
+        });*/
+        $("#walaContent").click(function(){
+
+            //$("#selfdailogpic").hide();
+            $("#selficon").hide();
+            $("#dalogIconBox1").hide();
+            $("#dalogIconBox2").hide();
+            //return false;
+        });
+        $("#cancel").click(function(){
+
+            $("#selfdailogpic").hide();
+            return false;
+        });
+        /*
+        $('div:not(.ispic,.hid)').click(function(){
+
+            var ceshi = $(this).attr('class');
+            if(ceshi!='hid' && ceshi!='ispic' && ceshi!='demo'){
+
+                $("#selfdailogpic").hide();
+                $("#selficon").hide();
+                $("#dalogIconBox1").hide();
+                $("#dalogIconBox2").hide();
+            }
+        });
+        */
+
+    });
+    //监听评论内容长度！
+    var replycontent = function(){
+        $("#replycontent").keyup(function(){
+            var content = $(this).val();
+            var isFont = 140;
+            var num = isFont - content.length;
+            if(num >= 0){
+                $("#isFont").html(num);
+            }else{
+                $("#isFont").html('0');
+                $(this).val(content.substr(0,140));
+            }
+
+        });
+    }
+    var callLoad = function() {
+        var time = new Date(), date = "";
+        nweak = time.getDay();
+        date = "" + time.getFullYear() + "-" + (1 + time.getMonth()) + '-' + time.getDate();
+        load(nweak, date);
+    }
+
+    var scroll = function() {
+        var p = $(document).scrollTop();
+        if (p < 500) {
+            $('#backTopBox').fadeOut(200);
+        } else {
+            $('#backTopBox').fadeIn(200);
+        }
+    }
+    //图片
+    var slider = function(id, tid) {
+        var n = $("#" + id + " li").length,		//图片数
+            distance = 0;
+        distance = $("#move_box").width() / n;	//图片的宽度
+        time = setInterval("carousel('" + id + "','" + tid + "', " + distance + "," + n + ")", 5000);	//每5秒调用方法
+        //鼠标移上去暂停
+        $("#" + id).hover(function() {
+                clearInterval(time);
+            },
+            function() {
+                time = setInterval("carousel('" + id + "','" + tid + "', " + distance + "," + n + ")", 5000);
+            });
+        //鼠标点击
+        $("#" + tid + " li").hover(function() {
+                clearInterval(time);
+                var index = $(this).index();
+                current = index;
+                $("#" + id).animate({
+                    "left": "-" + (distance * index)
+                });
+                $("#" + tid + " .select").removeClass("select");
+                $(this).addClass('select');
+            },
+            function() {
+                time = setInterval("carousel('" + id + "','" + tid + "', " + distance + "," + n + ")", 5000);
+            });
+    }
+
+    var carousel = function(id, tid, distance, n) {
+        var obj = $("#" + id);
+        if (obj.width() > distance + (0 - parseInt(obj.css("left").replace("px", "")))) {
+            $("#" + id).animate({
+                "left": "-=" + distance
+            });
+            current += 1;
+        } else {
+            $("#" + id).animate({
+                "left": "0"
+            });
+            current = 0;
+        }
+        $("#" + tid + " .select").removeClass("select");
+        $("#" + tid + " li:eq(" + current + ")").addClass("select");
+    }
+
+    var typeChange = function(name) {
+        var pt = "";
+        if (name == "羽毛球") {
+            pt = "1px 1px";
+        } else if (name == "游泳") {
+            pt = "-2px -80px";
+        } else if (name == "网球") {
+            pt = "0 -149px";
+        } else if (name == "篮球") {
+            pt = "0 -375px";
+        } else if (name == "乒乓球") {
+            pt = "0 -223px";
+        } else if (name == "足球") {
+            pt = "0 -300px";
+        } else if (name == "壁球") {
+            pt = "2px -450px";
+        } else if (name == "桌球") {
+            pt = "0 -525px";
+        } else if (name == "攀岩") {
+            pt = "0 -600px";
+        } else if (name == "射箭") {
+            pt = "0 -678px";
+        } else if (name == "保龄球") {
+            pt = "0 -750px";
+        } else if (name == "高尔夫") {
+            pt = "-2px -820px";
+        } else if (name == "射击") {
+            pt = "0 -902px";
+        } else if (name == "溜冰") {
+            pt = "0 -978px";
+        } else if (name == "赛车") {
+            pt = "0 -1050px";
+        } else if (name == "排球") {
+            pt = "0 -1125px";
+        } else if (name == "轮滑") {
+            pt = "0 -1200px";
+        } else if (name == "滑板") {
+            pt = "1px -1269px";
+        } else if (name == "自行车") {
+            pt = "0 -1350px";
+        } else if (name == "滑雪") {
+            pt = "0 -1423px";
+        } else if (name == "卡丁车") {
+            pt = "0 -1650px";
+        } else if (name == "马术") {
+            pt = "0 -1575px";
+        } else if (name == "飞镖") {
+            pt = "0 -1500px";
+        } else if (name == "棒球") {
+            pt = "0 -1725px";
+        } else {
+            pt = "1px 1px";
+        }
+        $(".detail_itype").css("background-position", pt);
+        $("#itemsTypeName").html(name);
+        $("#item").html(name);
+    }
+
+    var load = function(weak, date) {
+        var id = $("#field-list .sel").attr("aid");  //体育类型id
+        var name = $("#field-list .sel").text();
+        $("#hasSiteBox").html("").hide();
+        $("#hasSiteInfo").hide();
+        $("#pubType").hide();
+        $('#pubType').find("b:eq(0)").html("0");
+        $("#cancelSite").show();
+        //$(".loading").show();
+        //$("#selectSession").hide();
+        var para = "a=detail&act=load&vid="+ getQueryString('id') +"&itemid=" + id + "&weak=" + weak + "&date=" + date;
+        $.ajax({
+            url: 'index.php',
+            type: 'get',
+            dataType: 'json',
+            data: para,
+            success: function(data) {
+                //alert(data);return false;
+                if (data.suc) {
+                    var width = "100%";
+                    if (data.para[0] != null) {
+                        width = data.para[0].item.length * 60 + 25 + "px";
+                    }
+                    document.getElementById("wrapperd").style.width = width;
+                    var seat = "",
+                        timeline = "",
+                        fieName = "",
+                        para = data.para,
+                        item = null;
+                    //seat = reline(data.fstime, data.fetime, data.ftimeline);
+                    seat = "<div class='pk_rows time_rows'>";
+                    for(var y = 0;y< data.para[0].item.length; y++ ){
+                        seat += "<div class='pk_cols'"+ (y==0?"style='margin-left:24px'":"") +"><em>" + data.para[0].item[y].sTime + "-"+ data.para[0].item[y].eTime +"</em><i></i></div>";
+                    }
+                    seat += "</div>";
+                    for (var i = 0,
+                             k = para.length; i < k; i++) {
+                        seat += "<div class='pk_rows table_rows'>";
+                        fieName += "<span title='" + para[i].name + "'>" + para[i].name + "</span>";
+                        item = para[i].item;
+                        for (var j = 0,
+                                 l = item.length; j < l; j++) {
+                            seat += "<div class='pk_cols table_cols_0'>";
+                            if (item[j].state != 1 || item[j].price == "" || parseFloat(item[j].price) == 0 || parseFloat(item[j].price) == 0.5
+                                || !data.open) {
+                                seat += '<span class="overSeat">';
+                                if( parseFloat(item[j].price) == 0){
+                                    seat += '未营业';
+                                }else if( parseFloat(item[j].price) == 0.5){
+                                    seat += '免费';
+                                }else{
+                                    seat += item[j].price +'元';
+                                }
+                                seat += ' </span>';
+                            } else {
+                                seat += "<span class='hasSeat' fieName='" + item[j].fieName + "' id='" + item[j].id + "' price='" + item[j].price + "' sTime='" + item[j].sTime + "' eTime='" + item[j].eTime + "' lang='" + item[j].lang + "'>" + item[j].price + "</span>";
+                            }
+                            seat += "</div>";
+                        }
+                        seat += "</div>";
+                    }
+                    $(".num").html(data.num == "" ? "&nbsp;" : data.num);//场地数量
+                    $(".material").html(data.material == "" ? "&nbsp;" : data.material);//材质
+                    $(".illumination").html(data.illumination == "" ? "&nbsp;" : data.illumination);//照明
+                    $(".ceilinged").html(data.ceilinged == "" ? "&nbsp;" : data.ceilinged);	//挑高
+                    $(".nav_tabs .select .s3").html(data.remainNum <= 0 ? "已满" : "剩余:"+data.remainNum);
+                    $(".fieName").html(fieName);
+                    $("#wrapperd").html(seat);
+                    //$(".loading").hide();
+                    $("#selectSession").show();
+                    clickPrice();
+                } else {
+                    //$(".loading").hide();
+                    $("#selectSession").show();
+                }
+                typeChange(data.typeName);
+            },
+            error: ajaxerr
+        });
+        return false;
+    }
+
+    var reline = function(sTime, eTime, timeline) {
+        sTime = parseInt(sTime);
+        eTime = parseInt(eTime);
+        timeline = parseInt(timeline);
+        html = "<div class='pk_rows time_rows'>";
+        for (; sTime < eTime; sTime += timeline) {
+            html += "<div class='pk_cols'><em>" + sTime + ":00</em><i></i></div>";
+        }
+        html += "</div>";
+        return html;
+    }
+
+    var drawWeak = function() {
+        var time = new Date(), html = "", weak = "", now = "", date = "";
+        for (var i = 0; i < 7; i++) {
+            if (i == 0) {
+                now = "今天";
+            } else if (i == 1) {
+                now = "明天";
+            } else {
+                now = time.getMonth() + 1 + '/' + time.getDate();
+            }
+            weak = time.getDay();
+            nweak = time.getDay();
+            if (weak == "0") {
+                weak = "周日";
+            } else if (weak == "1") {
+                weak = "周一";
+            } else if (weak == "2") {
+                weak = "周二";
+            } else if (weak == "3") {
+                weak = "周三";
+            } else if (weak == "4") {
+                weak = "周四";
+            } else if (weak == "5") {
+                weak = "周五";
+            } else if (weak == "6") {
+                weak = "周六";
+            }
+            var id = $("#field-list .sel").attr("aid");
+            date = ""+time.getFullYear() + "-" + (1 + time.getMonth()) + '-' + time.getDate();
+            var num = '';
+
+            html += "<li date='" + date + "' weak='" + nweak + "' onclick='loadWeak(\"" + nweak + "\",this,\"" + date + "\")' class='" + (i == 0 ? "select" : "") + "'> <font class='s1'>" + weak + "</font> <font class=' s2'>" + now + "</font> <font class='s3' ></font> <span> </span> </li>";
+
+            $(".nav_tabs ").html(html);
+            time.setDate(time.getDate() + 1);
+        }
+    }
+
+    var loadWeak = function( weak, obj,date) {
+        $(".nav_tabs .select").removeClass("select");
+        $(obj).addClass("select");
+        load(weak,date);
+    }
+
+    var clickPrice = function() {
+        $('#wrapperd .hasSeat').click(function() {
+            if(!checkLogin())return false;
+            var len = $('.isSite').length;
+            if (len <= 0) {
+                $('#cancelSite').hide();
+                $('#hasSiteBox,#hasSiteInfo').show();
+                $('#pubType').hide();
+                $('#pubType').find("b:eq(0)").html('0');
+            }
+            var name = $(this).attr('id');
+            var price = $('#pubType').find("b:eq(0)").html();
+            price = Math.ceil(price*100);
+            var newprice = $(this).attr("price");
+            newprice = Math.ceil(newprice*100);
+            if ($('.' + name).length > 0) {
+                $('.' + name).remove();
+                $(this).removeClass('checkSeat');
+                $('#pubType').find("b:eq(0)").html((price - newprice)/100);
+                $('.c39c').text(len-1);
+            } else {
+                if (len >= 4) {
+                    alert('最多只能选择四块场地');
+                } else {
+                    var html = '<div aid="' + name + '" class="isSite ' + name + '"><span>' + $(this).attr("stime") + ':00-' + $(this).attr("etime") + ':00 ' + $(this).attr("fiename") + ' ' + $(this).attr("price") + '元</span><span class="cs"></span></div>';
+                    $('#hasSiteBox').append(html);
+                    html = '<div id="hasSiteInfo" style="display: block;">已选择<b class="m5 c39c">' + (len + 1) + '</b>个场地，再次单击取消</div>';
+                    $('#pubType').find("b:eq(0)").html((price + newprice)/100);
+                    $('#hasSiteInfo').html(html);
+                    $(this).addClass('checkSeat');
+                    $('#pubType').show();
+                }
+            }
+
+            len = $('.isSite').length;
+            if (len <= 0) {
+                $('#cancelSite').show();
+                $('#hasSiteBox,#hasSiteInfo').hide();
+                $('#pubType').hide();
+            }
+        });
+    }
+    var submitOrder = function() {
+        if(!checkLogin())return false;
+        var isSite = $(".isSite "), ids = "", mobile = "", randomCode = "", item = "";
+        item = $("#field-list .sel").attr("aid");
+        if (isSite.length < 1) {
+            alert("尚未选择场次!");
+            return;
+        }
+        mobile = document.getElementById("mobile").value;
+        randomCode = document.getElementById("captchaInput").value;
+        if (randomCode == "") {
+            alert("请输入验证码");
+            return;
+        }
+        if (mobile != "") {
+            for (var i = 0, k = isSite.length; i < k; i++) {
+                ids += isSite[i].getAttribute("aid") + ",";
+            }
+            var para = "id=" + ids + "&date=" + $(".nav_tabs .select").attr("date") + "&weak=" + $(".nav_tabs .select").attr("weak") + "&mobile=" + mobile + "&vid=" + getQueryString("id") + "&randomCode=" + randomCode + "&item=" + item;
+            $.ajax({
+                url: 'index.php?a=order&act=ordersave',
+                type: 'post',
+                dataType: 'json',
+                timeout: '30000',
+                data: para,
+                success: function(data) {
+                    //document.write(data);return false;
+                    if (data.suc) {
+                        if (data.orderid != null) {
+                            window.location.href = "index.php?a=order&orderid=" + data.orderid;
+                        } else {
+                            alert("订购失败,请重试");
+                        }
+                    } else {
+                        alert(data.msg);
+                        f_refreshtype();
+                    }
+                },
+                error: ajaxerr
+            });
+        } else {
+            alert("尚未输入手机号码");
+            return;
+        }
+    }
+
+    var f_refreshtype = function() {
+        var Image1 = document.getElementById("captchaImg");
+        if (Image1 != null) {
+            $("#captchaImg").attr('src',"index.php?a=detail&act=captcha&"+ Math.random());
+        }
+    }
+
+</script>
+<script>
+    // 评星！！
+    var star = 0;
+    var starComments = function(){
+        $("#walageneralmark li").mouseover(function(){
+            var id = parseInt($(this).attr("id"));
+            var lang = $(this).attr("lang");
+            $("#walageneralmark li").each(function(){
+                var ids = parseInt($(this).attr("id"));
+                if(ids <= id){
+                    if(ids%2 != 0){
+                        $(this).attr('class','half');
+                    }else{
+                        $(this).attr('class','on');
+                    }
+                    $("#walageneralmarkPoint").html(id+".0");
+                    $("#walageneralmarkDesc").html(lang);
+                }else{
+                    if(ids%2 != 0){
+                        $(this).attr('class','');
+                    }else{
+                        $(this).attr('class','no');
+                    }
+                }
+            });
+        });
+        $("#walageneralmark li").mouseleave(function(){
+            $("#walageneralmark li").each(function(){
+                var ids = $(this).attr("id");
+                if(ids%2 !=0){
+                    $(this).attr('class','');
+                }else{
+                    $(this).attr('class','no');
+                }
+            });
+            $("#walageneralmarkPoint").html("");
+            $("#walageneralmarkDesc").html("");
+            if($("#"+star).length > 0 ){
+                var langs = $("#"+star).attr("lang");
+                $("#walageneralmark li").each(function(){
+                    var ida = parseInt($(this).attr("id"));
+                    if(ida <= star){
+                        if(ida%2 != 0){
+                            $(this).attr('class','half');
+                        }else{
+                            $(this).attr('class','on');
+                        }
+                    }else{
+                        return false;
+                    }
+                });
+                $("#walageneralmarkPoint").html(star+".0");
+                $("#walageneralmarkDesc").html(langs);
+            }
+        });
+        $("#walageneralmark li").click(function(){
+            if(!checkLogin())return false;
+            star = parseInt($(this).attr('id'));
+        });
+    }
+    //评论
+    var submitMicro = function(){
+        var content = $("#replycontent").val();
+        if(content.trim() == ''){
+            $("#replycontent").css('background-color','rgb(255,204,153)');
+            //setTimeout("$('#replycontent').removeAttr('style')",500);
+            $("#replycontent").animate({"opacity":"0"});
+            setTimeout("$('#replycontent').removeAttr('style')",500);
+        }
+    }
+
+    //检查登录
+    var checkLogin = function(){
+        if($(".login").length > 0){
+            $(".login").click();
+            return false;
+        }else{
+            return true;
+        }
+    }
+
+    var submitMicro = function(){
+        var img = $(".imgname");
+        var imgname = '';
+        img.each(function(){
+            imgname += $(this).html()+',';
+        });
+        var star = $("#walageneralmarkPoint").html();
+        var con_b = $("#replycontent").val();
+        var venues_id = $("#venues_id").val();
+        if(con_b==''){
+            alert("请填写评论内容");
+            return false;
+
+
+        }
+        data = {'ajax':1,'imgname':imgname,'star':star,'con_b':con_b,'venues_id':venues_id}
+        url = "index.php?a=comment_add";
+        $.ajax({
+            type:"post",
+            url:url,
+            data:data,
+            success: function (msg){
+                //document.write(msg);return false;
+                if(msg==1){
+                    alert("评论成功");
+                    window.location.href="index.php?a=detail&id="+venues_id;
+                }else{
+                    alert(msg);
+                    return false;
+                }
+            }
+        });
+        return false;
+    }
+</script><link href="templates/index/css/footer.css" rel="stylesheet">
+<style>
+    .footer a{color: #555; text-decoration: none;}
+</style>
+<div id="footer" class="clear">
+    <div class="wrap">
+        <div class="site-link-wrap clear">
+            <div class="look-back"><img src="static/images/2015newlogo.png" width="250"></div>
+            <div class="look-qcode" style="width:390px;">
+                <div class="code-box">
+                    <span><img src="static/images/code-weibo.png" width="85" height="85"></span>
+                    <h1>官方微博</h1>
+                    <h2>@重庆体育网</h2>
+                </div>
+                <div class="code-box">
+                    <span><img src="static/images/code-weixin.png" width="85" height="85"></span>
+                    <h1>官方微信</h1>
+                    <h2>云动重庆</h2>
+                </div>
+            </div>
+            <div class="look-add">
+                新闻投稿热线：15723146510&nbsp;&nbsp;&nbsp;&nbsp;招商热线：13983972602<br>
+                招聘电话：15723108929&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;联系电话：023-63655825<br>
+                地址：重庆市渝中区大田湾全民健身中心综合楼5楼
+            </div>
+        </div>
+        <div class="footer clear">
+            <p>
+                <a href="javascript:;" target="_blank">关于我们</a>丨
+                <a href="javascript:;" target="_blank">本站介绍</a>丨
+                <a href="javascript:;" target="_blank">成功案例</a>丨
+                <a href="javascript:;" target="_blank">联系我们</a>丨Copyright © 2012-2015 cqsports.org All Rights Reserved.重庆体育网 版权所有
+            </p>
+            <p class="foot-spons">
+                <a class="foot-spon1" href="javascript:void(0);"><i></i><span>经营性网站备案信息</span></a>
+                <a class="foot-spon2" href="javascript:void(0);"><i></i><span>不良信息举报中心</span></a>
+                <a class="foot-spon3" href="javascript:void(0);"><i></i><span>应用商店自律组</span></a>
+                <a class="foot-spon4" href="javascript:void(0);"><i></i><span>渝ICP备:15002486号</span></a>
+                <a class="foot-spon5" href="javascript:void(0);"><i></i><span>可信网站身份验证</span></a>
+            </p>
+            <p style="margin:10px;color:#555;">
+                未成年人家长监护 丨 渝ICP备15002486号
+            </p>
+        </div>
+    </div>
+</div>
+</body>
+</html>
