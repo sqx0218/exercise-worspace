@@ -5,7 +5,6 @@ import com.jk.model.Venueb;
 import java.util.List;
 
 public interface ZhyMapper {
-
     int insert(Venueb venueb);
 
     int update(Venueb venueb);
