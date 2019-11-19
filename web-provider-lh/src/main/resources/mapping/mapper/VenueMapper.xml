@@ -2,28 +2,41 @@
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
 <mapper namespace="com.jk.mapper.VenueMapper" >
   <resultMap id="VenueBaseResultMap" type="com.jk.model.Venue" >
-    <id column="venueId" property="venueid" jdbcType="INTEGER" />
-    <result column="venueName" property="venuename" jdbcType="VARCHAR" />
-    <result column="venueAddress" property="venueaddress" jdbcType="VARCHAR" />
+    <id column="venueId" property="venueId" jdbcType="INTEGER" />
+    <result column="venueName" property="venueName" jdbcType="VARCHAR" />
+    <result column="venueAddress" property="venueAddress" jdbcType="VARCHAR" />
     <result column="price" property="price" jdbcType="DOUBLE" />
-    <result column="doTime" property="dotime" jdbcType="DATE" />
+    <result column="doTime" property="doTime" jdbcType="DATE" />
     <result column="img" property="img" jdbcType="VARCHAR" />
-    <result column="venueServer" property="venueserver" jdbcType="VARCHAR" />
-    <result column="venueMetro" property="venuemetro" jdbcType="VARCHAR" />
-    <result column="venueCar" property="venuecar" jdbcType="VARCHAR" />
-    <result column="venueLease" property="venuelease" jdbcType="VARCHAR" />
-    <result column="venueMaintain" property="venuemaintain" jdbcType="VARCHAR" />
-    <result column="venueMore" property="venuemore" jdbcType="VARCHAR" />
-    <result column="venueBath" property="venuebath" jdbcType="VARCHAR" />
-    <result column="venueGoods" property="venuegoods" jdbcType="VARCHAR" />
-    <result column="venueInvoice" property="venueinvoice" jdbcType="VARCHAR" />
-    <result column="venuePark" property="venuepark" jdbcType="VARCHAR" />
-    <result column="venueHint" property="venuehint" jdbcType="VARCHAR" />
-    <result column="vipId" property="vipid" jdbcType="INTEGER" />
-    <result column="venuePhone" property="venuephone" jdbcType="INTEGER" />
-    <result column="venueTypeName" property="venuetypename" jdbcType="VARCHAR" />
+    <result column="venueServer" property="venueServer" jdbcType="VARCHAR" />
+    <result column="venueMetro" property="venueMetro" jdbcType="VARCHAR" />
+    <result column="venueCar" property="venueCar" jdbcType="VARCHAR" />
+    <result column="venueLease" property="venueLease" jdbcType="VARCHAR" />
+    <result column="venueMaintain" property="venueMaintain" jdbcType="VARCHAR" />
+    <result column="venueMore" property="venueMore" jdbcType="VARCHAR" />
+    <result column="venueBath" property="venueBath" jdbcType="VARCHAR" />
+    <result column="venueGoods" property="venueGoods" jdbcType="VARCHAR" />
+    <result column="venueInvoice" property="venueInvoice" jdbcType="VARCHAR" />
+    <result column="venuePark" property="venuePark" jdbcType="VARCHAR" />
+    <result column="venueHint" property="venueHint" jdbcType="VARCHAR" />
+    <result column="vipId" property="vipId" jdbcType="INTEGER" />
+    <result column="venuePhone" property="venuePhone" jdbcType="INTEGER" />
+    <result column="venueTypeName" property="venueTypeName" jdbcType="VARCHAR" />
   </resultMap>
   <select id="queryFootballVenue" resultMap="VenueBaseResultMap">
     select * from t_venue where venueTypeName =  #{typeName}
+  </select>
+
+  <insert id="addOrderInfo">
+    insert into t_order_info(userId,venueId,orderTime,orderNum,orderStatus,orderPrice,orderInfo)
+    values (#{userId},#{venueId},#{orderTime},#{orderNum},#{orderStatus},#{orderPrice},#{orderInfo})
+  </insert>
+
+  <select id="queryVenueById" resultMap="VenueBaseResultMap">
+    select * from  t_venue where venueId = #{venueId}
+  </select>
+
+  <select id="queryVenue" resultMap="VenueBaseResultMap">
+    select * from  t_venue
   </select>
 </mapper>
