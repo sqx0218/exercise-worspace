@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.jk.mapper.ZhyMapper" >
+  <resultMap id="ZhyBaseResultMap" type="com.jk.model.Venueb" >
+    <id column="venueid" property="venueid" jdbcType="INTEGER" />
+    <result column="venuename" property="venuename" jdbcType="VARCHAR" />
+    <result column="venuephone" property="venuephone" jdbcType="VARCHAR" />
+    <result column="venuearea" property="venuearea" jdbcType="VARCHAR" />
+    <result column="venueaddress" property="venueaddress" jdbcType="VARCHAR" />
+    <result column="venueastatus" property="venueastatus" jdbcType="INTEGER" />
+  </resultMap>
+
+
+  <insert id="insert"  parameterType="int" >
+
+  INSERT  INTO  t_venue_b (venuename,venuephone,venuearea,venueaddress,venueastatus)VALUES(#{venuename},#{venuephone},#{venuearea},#{venueaddress},0)
+
+  </insert>
+
+  <!--通过 -->
+  <update id="update" parameterType="int" >
+    update t_venue_b set venueastatus=1
+  </update>
+
+  <!--未通过 -->
+  <update id="update" parameterType="int" >
+    update t_venue_b set venueastatus=2
+  </update>
+
+  <select id="query" resultMap="ZhyBaseResultMap" >
+SELECT venueid,venuename,venuephone,venuearea,venueaddress  from t_venue_b WHERE  venueastatus=#{venueastatus}
+  </select>
+
+</mapper>
