@@ -6,12 +6,11 @@ import org.springframework.data.mongodb.core.mapping.Document;
 import java.io.Serializable;
 import java.util.Date;
 
-@Document(collection="orderInfo")
 public class OrderInfo implements Serializable {
     private Integer userId;
 
-    private Integer venueName;
     private Integer venueId;
+
     private Date orderTime;
 
     private String orderNum;
@@ -19,23 +18,8 @@ public class OrderInfo implements Serializable {
     private Double orderPrice;
 
     private Integer orderStatus;
-    private Integer orderId;
 
-    public Integer getOrderId() {
-        return orderId;
-    }
-
-    public Integer getVenueId() {
-        return venueId;
-    }
-
-    public void setVenueId(Integer venueId) {
-        this.venueId = venueId;
-    }
-
-    public void setOrderId(Integer orderId) {
-        this.orderId = orderId;
-    }
+    private String orderInfo;
 
     public Integer getUserId() {
         return userId;
@@ -45,12 +29,12 @@ public class OrderInfo implements Serializable {
         this.userId = userId;
     }
 
-    public Integer getVenueName() {
-        return venueName;
+    public Integer getVenueId() {
+        return venueId;
     }
 
-    public void setVenueName(Integer venueName) {
-        this.venueName = venueName;
+    public void setVenueId(Integer venueId) {
+        this.venueId = venueId;
     }
 
     public Date getOrderTime() {
@@ -66,6 +50,7 @@ public class OrderInfo implements Serializable {
     }
 
     public void setOrderNum(String orderNum) {
+
         this.orderNum = orderNum == null ? null : orderNum.trim();
     }
 
@@ -83,5 +68,13 @@ public class OrderInfo implements Serializable {
 
     public void setOrderStatus(Integer orderStatus) {
         this.orderStatus = orderStatus;
+    }
+
+    public String getOrderInfo() {
+        return orderInfo;
+    }
+
+    public void setOrderInfo(String orderInfo) {
+        this.orderInfo = orderInfo;
     }
 }

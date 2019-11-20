@@ -1,0 +1,134 @@
+<!DOCTYPE html >
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <!-- Bootstrap 插件 css -->
+    <link href="../js/bootstrap/css/bootstrap-theme.min.css" rel="stylesheet">
+    <!-- Bootstrap 核心css -->
+    <link href="../js/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Bootstrap TreeView css -->
+    <link href="../js/bootstrap-treeview/dist/bootstrap-treeview.min.css" rel="stylesheet">
+
+    <!-- Bootstrap addTabs css -->
+    <link href="../js/bootStrap-addTabs/bootstrap.addtabs.css" rel="stylesheet">
+
+    <!-- Bootstrap table css -->
+    <link href="../js/bootstrap-table/dist/bootstrap-table.css" rel="stylesheet">
+    <!-- bootstrap-datetimepicker css -->
+    <link href="../js/bootstrap-datetimepicker/css/bootstrap-datetimepicker.css" rel="stylesheet">
+
+    <!-- bootstrap-dialog css -->
+    <link href="/js/bootstrap-dialog/dist/css/bootstrap-dialog.css" rel="stylesheet">
+    <!-- bootstrap-fileinput css -->
+    <link href="../js/bootstrap-fileinput/css/fileinput.css" rel="stylesheet">
+</head>
+
+
+
+<!--jQuery核心js  -->
+<script src="../js/jquery.min.js"></script>
+<!-- bootstrap 核心js文件 -->
+<script src="../js/bootstrap/js/bootstrap.min.js"></script>
+<!-- bootStrap TreeView -->
+<script src="../js/bootstrap-treeview/dist/bootstrap-treeview.min.js"></script>
+
+<!-- bootStrap addTabs -->
+<script src="../js/bootStrap-addTabs/bootstrap.addtabs.js"></script>
+
+<!-- bootStrap table -->
+<script src="../js/bootstrap-table/dist/bootstrap-table.js"></script>
+<!-- bootStrap table 语言包中文-->
+<script src="../js/bootstrap-table/dist/locale/bootstrap-table-zh-CN.js"></script>
+
+<!-- bootstrap-datetimepicker -->
+<script src="../js/bootstrap-datetimepicker/js/bootstrap-datetimepicker.js"></script>
+<script src="../js/bootstrap-datetimepicker/js/locales/bootstrap-datetimepicker.zh-CN.js"></script>
+
+<!-- bootstrap-dialog -->
+<script src="../js/bootstrap-dialog/dist/js/bootstrap-dialog.js"></script>
+<!-- bootstrap-fileinput -->
+<script src="../js/bootstrap-fileinput/js/fileinput.js"></script>
+<script src="../js/bootstrap-fileinput/js/locales/zh.js"></script>
+<body>
+<div class="container">
+    <div class="row clearfix">
+        <div class="col-md-12 column">
+            <dl>
+                <dt>
+                    <div>
+                        <img src="../img/11.jpg" th:value="${venue.img}" height="200px">
+                    </div>
+                </dt>
+                <dt>
+
+                    <span th:text="${venue.venueName}"></span>
+
+                </dt><br>
+                <dt>
+                    预约电话：<span th:text="${venue.venuePhone}"></span>
+                </dt><br>
+                <dt>
+                    场馆地址：<span th:text="${venue.venueAddress}"></span>
+                </dt><br>
+                <dt>
+                    价格：<span th:text="${venue.price}" id="price"></span>起
+                </dt><br>
+                <dt>
+                    地铁：<span th:text="${venue.venueMetro}"></span><br>
+                    公交：<span th:text="${venue.venueCar}"></span><br>
+                </dt><br>
+                <dt>
+                    场地类型：<span th:text="${venue.venueTypeName}"></span>
+                </dt><br>
+                <dt>
+                    洗浴：<span th:text="${venue.venueBath}"></span>
+                </dt><br>
+                <dt>
+                   发票： <span th:text="${venue.venueInvoice}"></span>
+                </dt><br>
+
+                <dt>
+                    营业时间： <span th:text="${venue.doTime}"></span>
+                </dt><br>
+
+
+                <dt>
+                    温馨提示：<span th:text="${venue.venueHint}"></span>
+                </dt><br>
+                <dt>
+                    <button type="button" class="btn btn-danger" onclick="goPayment('+${venue.price}+')">提交订单</button>
+                </dt>
+            </dl>
+        </div>
+    </div>
+</div>
+<script>
+    function goPayment() {
+
+       alert($("#price").text())
+
+
+    }
+    function makerOrede(venueId) {
+        location.href = "?venueId="+venueId;
+        $.ajax({
+            url:'../page/makeOrder',
+            data:{userId:$("#userId"),venueId:venueId},
+            type:'post',
+            success:function (msg) {
+                if(msg == 'error'){
+                    alert("预约失败")
+                    location.href = "../login/login";
+
+                }
+                if (msg == 'success'){
+                    alert("预约成功")
+                    location.href = "../Order";
+                }
+            }
+        })
+    }
+</script>
+</body>
+</html>

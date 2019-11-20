@@ -213,4 +213,6 @@ public class Venue implements Serializable {
     public void setVenuePhone(Integer venuePhone) {
         this.venuePhone = venuePhone;
     }
+
+
 }
