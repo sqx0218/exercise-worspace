@@ -464,16 +464,13 @@ $(function(){
 					<label class="col-sm-3 control-label">
 						<font color="red">项目</font>：<select class="form-control"  style = "width:150px;background-color: rgba(0,0,0,0)" name="xmId" id="xm" onchange="changguan(this.value)" ></select>
 					</label>
-					<label for="lastname" class="col-sm-3 control-label">
+					<label  class="col-sm-3 control-label">
 						<font color="red">场馆</font>：<select class="form-control"  style = "width:500px;background-color: rgba(0,0,0,0)"  name="cgId" id="cg"  ></select>
 						</label>
-					<br>
-						&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-						<button type="button" class="btn btn-primary" onclick="toYuDing()">快速预定</button>
-
+                    <br>
+                    &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
+                        <button type="button" class="btn btn-primary" onclick="queryVenueName()">快速预定</button>
 				</ul>
-
-
 			</div>
 
 				<!--项目：<select class="form-control" name="xmId" id="xm" onchange="changguan(this.value)" ></select>
@@ -981,7 +978,13 @@ $(function(){
         <script>
 			$(function(){
 				xiangmu();
+
 			})
+
+
+
+
+
 
 		xiangmu=function(){
 				//alert(222);
@@ -1022,7 +1025,7 @@ $(function(){
 
 							str+="<option value='"+data[i].venueId+"'>"+data[i].venueName+"</option>";
 						//alert(str)
-							//alert(111);
+						//alert(111);
 						}
 					}
 
@@ -1032,6 +1035,27 @@ $(function(){
 			})
 		}
 
+        function queryVenueName() {
+          zhi1 = $("#xm").val();
+            zhi2 = $("#cg").val();
+			alert(zhi1);
+
+			alert(zhi2);
+            $.ajax({
+                url:"../page/queryVenueName",
+
+                date:{zhi1:zhi1,zhi2:zhi2},
+
+                success:function () {
+
+                	if(zhi2==1){
+						location.href="../page/toIndex2";
+					}else{
+						location.href="../page/toIndex3";
+					}
+                }
+            })
+            }
 
 
 

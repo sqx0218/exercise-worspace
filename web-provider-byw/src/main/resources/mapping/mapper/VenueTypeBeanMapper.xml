@@ -16,4 +16,12 @@ select typeId ,typeName from t_venue_type
      on v.venueTypeId = vt.typeId
       where vt.typeId=#{typeId}
       </select>
+
+
+
+   <select id="queryVenueName" resultType="com.jk.model.VenueBean" >
+     select *  from t_venue v left join t_venue_type vt
+     on v.venueTypeId = vt.typeId
+      where v.venueId=#{zhi2}
+    </select>
 </mapper>

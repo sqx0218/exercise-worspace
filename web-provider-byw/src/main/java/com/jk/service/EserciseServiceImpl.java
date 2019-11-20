@@ -31,4 +31,9 @@ public class EserciseServiceImpl implements  EserciseService{
         }
         return Venuelis;
     }
+
+    @Override
+    public List<VenueBean> queryVenueName(Integer zhi1,Integer zhi2) {
+        return venueTypeBeanMapper.queryVenueName(zhi1,zhi2);
+    }
 }
