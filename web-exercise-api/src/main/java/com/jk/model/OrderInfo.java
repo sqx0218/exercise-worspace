@@ -1,12 +1,17 @@
 package com.jk.model;
 
+
+import org.springframework.data.mongodb.core.mapping.Document;
+
+import java.io.Serializable;
 import java.util.Date;
 
-public class OrderInfo {
+@Document(collection="orderInfo")
+public class OrderInfo implements Serializable {
     private Integer userId;
 
     private Integer venueName;
-
+    private Integer venueId;
     private Date orderTime;
 
     private String orderNum;
@@ -14,6 +19,23 @@ public class OrderInfo {
     private Double orderPrice;
 
     private Integer orderStatus;
+    private Integer orderId;
+
+    public Integer getOrderId() {
+        return orderId;
+    }
+
+    public Integer getVenueId() {
+        return venueId;
+    }
+
+    public void setVenueId(Integer venueId) {
+        this.venueId = venueId;
+    }
+
+    public void setOrderId(Integer orderId) {
+        this.orderId = orderId;
+    }
 
     public Integer getUserId() {
         return userId;

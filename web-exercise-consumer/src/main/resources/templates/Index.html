@@ -21,78 +21,6 @@
     <body>
 
 
-
-
-
-    <!-- 登录 注册-->
-<div id="HBox" style='display:none;'>
-		<div class="pd20 loginpd">
-			<div class="loginwrap">
-				<div class="loginh">
-					<div class="fl">会员登录</div>
-					<div class="clear"></div>
-				</div>
-				<div class="loginbtn">
-						<div class="loginsubmit fl">
-							<input type="button" value="动态登录" id="dongtai" class="flag on" style="background-color:red;">
-						</div>
-						<div class="loginsubmit fl">
-							<input type="button" value="密码登录" id="mima" class="flag off">
-						</div>
-						<div class="clear"></div>
-				</div>
-				<div class="clear"></div>
-				<form action="index.php?a=vip_login" method="post" id="login_form" onsubmit='return false'>
-					<div class="logininput">
-						<input type="hidden" name="id_d" id="hide_id_d">
-						<input type="text" name="userid" id="phone_l" maxlength="11" class="loginusername" placeholder="手机号">
-						<input style='width:80px;margin-top:10px;' maxlength="6" name="verification_d" placeholder="验证码" id="yzm_phone_d">
-						<input type="button" id="send_d" style="margin-left:10px;position:relative;top:-40px;left:90px; font-size:10px;width:120px;height:40px;border:1px;cursor:pointer;background:#10c766;color: white;" onclick='send_code_d()' value='发送验证码'>
-						<input type="password" class="loginuserpasswordt" style='display:none;' maxlength="20" id="password" placeholder="密码">
-						<input type='text' id='vcode' style='width:80px;margin-top:10px;display:none;' maxlength="4" class="loginusername3" placeholder="验证码"><img style='position:relative;top:-40px;left:90px;cursor:pointer;display:none;' src="admin-user_vcode58.jpg" id='yanzhengma' title='看不清？换一张'>
-					</div>
-					<div class="loginbtn">
-						<div class="loginsubmit fl">
-							<input type="button" value="登录" onclick="login()">
-						</div>
-						<div class="loginsubmit fl">
-							<input type="button" value="立即注册" id="lijizhuce">
-						</div>
-						<div class="clear"></div>
-					</div>
-				</form>
-			</div>
-  </div>
-</div>
-    <!-- HBox end -->
-<div id="rBox" style='display:none;'>
-	  <div class="pd20 loginpd">
-		<div class="loginwrap">
-		  <div class="loginh">
-			<div class="fl">会员注册</div>
-			<div class="clear"></div>
-		  </div>
-		  <div class="clear"></div>
-			<form action="index.php?a=vip_add" method="post" id='addform'>
-			  <div class="logininput">
-					<input type="hidden" name="id" id="hide_id">
-					<input type="text" rel="phone" maxlength="11" placeholder="输入手机号码" class="loginusername" id="phone_r" name="phone" value="">
-					<input type="password" id="one_pwd" name="user_pwd" maxlength="20" class="loginusername" rel="lock" placeholder="填写密码">
-					<input type="password" id="two_pwd" name="user_pwd_o" maxlength="20" class="loginusername" rel="lock" placeholder="确认密码">
-					<input style='width:80px;margin-top:10px;' maxlength="6" name="verification" placeholder="验证码" id="yzm_phone">
-					<input type="button" id="send" style="margin-left:10px;position:relative;top:-40px;left:90px; font-size:10px;width:120px;height:40px;border:1px;cursor:pointer;background:#10c766;color: white;" onclick='send_code()' value='发送验证码'>
-					<input type="hidden" id="phone_id">
-			</div>
-			 <div class="loginbtn">
-				<div class="loginsubmit fl">
-					<input type="button" value="立即注册" onclick="do_phone()">
-				</div>
-				<div class="clear"></div>
-			</div>
-		</form>
-		</div>
-	</div>
-</div>
 <!-- HBox end -->
 
 
@@ -144,128 +72,133 @@
                 <div class="itemListTop">
                     <div class="itemList_box">
                         <ul class="clear" id="itemList_box">
-						                          <li>
-								<a target="_blank" href="../page/tosearch_20">
-									<span><em style="background-position:0 -300px;"></em></span>
-									<p>足球</p>
-								</a>
-							</li>
-						                          <li>
-								<a target="_blank" href="../page/tosearch_22">
-									<span><em style="background-position:1px 1px;"></em></span>
-									<p>羽毛球</p>
-								</a>
-							</li>
-						                          <li>
-								<a target="_blank" href="../page/tosearch_24">
-									<span><em style="background-position:0 -149px;"></em></span>
-									<p>网球</p>
-								</a>
-							</li>
-						                          <li>
-								<a target="_blank" href="../page/tosearch_21">
-									<span><em style="background-position:0 -375px;"></em></span>
-									<p>篮球</p>
-								</a>
-							</li>
-						                          <li>
-								<a target="_blank" href="index-search_23.html">
-									<span><em style="background-position:0 -223px;"></em></span>
-									<p>乒乓球</p>
-								</a>
-							</li>
-						                          <li>
-								<a target="_blank" href="index-search_25.html">
-									<span><em style="background-position:-2px -80px;"></em></span>
-									<p>游泳</p>
-								</a>
-							</li>
-						                          <li>
-								<a target="_blank" href="index-search_26.html">
-									<span><em style="background-position:0 -1875px;"></em></span>
-									<p>健身</p>
-								</a>
-							</li>
-						                          <li>
-								<a target="_blank" href="index-search_27.html">
-									<span><em style="background-position:0 -525px;"></em></span>
-									<p>桌球</p>
-								</a>
-							</li>
-						                          <li style='display:none;'>
-								<a target="_blank" href="index-search_45.html">
-									<span><em style="background-position:0 -1950px;"></em></span>
-									<p>瑜伽</p>
-								</a>
-							</li>
-						                          <li style='display:none;'>
-								<a target="_blank" href="index-search_46.html">
-									<span><em style="background-position:0 -2025px;"></em></span>
-									<p>搏击</p>
-								</a>
-							</li>
-						                          <li style='display:none;'>
-								<a target="_blank" href="index-search_28.html">
-									<span><em style="background-position:0 -978px;"></em></span>
-									<p>溜冰</p>
-								</a>
-							</li>
-						                          <li style='display:none;'>
-								<a target="_blank" href="index-search_31.html">
-									<span><em style="background-position:0 -1200px;"></em></span>
-									<p>轮滑</p>
-								</a>
-							</li>
-						                          <li style='display:none;'>
-								<a target="_blank" href="index-search_32.html">
-									<span><em style="background-position:0 -600px;"></em></span>
-									<p>攀岩</p>
-								</a>
-							</li>
-
-						                          <li style='display:none;'>
-								<a target="_blank" href="index-search_33.html">
-									<span><em style="background-position:0 -678px;"></em></span>
-									<p>射箭</p>
-								</a>
-							</li>
-						                          <li style='display:none;'>
-								<a target="_blank" href="index-search_29.html">
-									<span><em style="background-position:-2px -820px;"></em></span>
-									<p>高尔夫球</p>
-								</a>
-							</li>
-						                          <li style='display:none;'>
-								<a target="_blank" href="index-search_35.html">
-									<span><em style="background-position:0 -902px;"></em></span>
-									<p>射击</p>
-								</a>
-							</li>
-						                          <li style='display:none;'>
-								<a target="_blank" href="index-search_36.html">
-									<span><em style="background-position:0 -750px;"></em></span>
-									<p>保龄球</p>
-								</a>
-							</li>
-						                          <li style='display:none;'>
-								<a target="_blank" href="index-search_30.html">
-									<span><em style="background-position:0 -1575px;"></em></span>
-									<p>马术</p>
-								</a>
-							</li>
-						                          <li style='display:none;'>
-								<a target="_blank" href="index-search_41.html">
-									<span><em style="background-position:0 -1650px;"></em></span>
-									<p>卡丁车</p>
-								</a>
-							</li>
-						                          <li style='display:none;'>
-								<a target="_blank" href="index-search_40.html">
-									<span><em style="background-position:0 -2100px;"></em></span>
-									<p>击剑</p>
-								</a>
-							</li>
-						                        </ul>
+                            <li>
+                                <a target="_blank" href="../skip/getReserve">
+                                    <span><em style="background-position:0 -300px;"></em></span>
+                                    <p>足球</p>
+                                </a>
+                            </li>
+                            <li>
+                                <a target="_blank" href="../skip/toIndex2">
+                                    <span><em style="background-position:1px 1px;"></em></span>
+                                    <p>羽毛球</p>
+                                </a>
+                            </li>
+                            <li>
+                                <a target="_blank" href="../skip/toIndex3">
+                                    <span><em style="background-position:0 -149px;"></em></span>
+                                    <p>网球</p>
+                                </a>
+                            </li>
+                            <li>
+                                <a target="_blank" href="../skip/toIndex4">
+                                    <span><em style="background-position:0 -375px;"></em></span>
+                                    <p>篮球</p>
+                                </a>
+                            </li>
+                            <li>
+                                <a target="_blank" href="../skip/toIndex5">
+                                    <span><em style="background-position:0 -223px;"></em></span>
+                                    <p>乒乓球</p>
+                                </a>
+                            </li>
+                            <li>
+                                <a target="_blank" href="../skip/toIndex6">
+                                    <span><em style="background-position:-2px -80px;"></em></span>
+                                    <p>游泳</p>
+                                </a>
+                            </li>
+                            <li>
+                                <a target="_blank" href="../skip/toIndex7">
+                                    <span><em style="background-position:0 -1875px;"></em></span>
+                                    <p>健身</p>
+                                </a>
+                            </li>
+                            <li>
+                                <a target="_blank" href="../skip/toIndex8">
+                                    <span><em style="background-position:0 -525px;"></em></span>
+                                    <p>桌球</p>
+                                </a>
+                            </li>
+                            <li style='display:none;'>
+                                <a target="_blank" href="../skip/toIndex9">
+                                    <span><em style="background-position:0 -1950px;"></em></span>
+                                    <p>瑜伽</p>
+                                </a>
+                            </li>
+                            <li style='display:none;'>
+                                <a target="_blank" href="../skip/toIndex10">
+                                    <span><em style="background-position:0 -2025px;"></em></span>
+                                    <p>搏击</p>
+                                </a>
+                            </li>
+                            <li style='display:none;'>
+                                <a target="_blank" href="../skip/toIndex11">
+                                    <span><em style="background-position:0 -978px;"></em></span>
+                                    <p>溜冰</p>
+                                </a>
+                            </li>
+                            <li style='display:none;'>
+                                <a target="_blank" href="../skip/toIndex12">
+                                    <span><em style="background-position:0 -1200px;"></em></span>
+                                    <p>轮滑</p>
+                                </a>
+                            </li>
+                            <li style='display:none;'>
+                                <a target="_blank" href="../skip/toIndex13">
+                                    <span><em style="background-position:0 -600px;"></em></span>
+                                    <p>攀岩</p>
+                                </a>
+                            </li>
+                            <li style='display:none;'>
+                                <a target="_blank" href="../skip/toIndex314">
+                                    <span><em style="background-position:2px -450px;"></em></span>
+                                    <p>壁球</p>
+                                </a>
+                            </li>
+                            <li style='display:none;'>
+                                <a target="_blank" href="../skip/toIndex315">
+                                    <span><em style="background-position:0 -678px;"></em></span>
+                                    <p>射箭</p>
+                                </a>
+                            </li>
+                            <li style='display:none;'>
+                                <a target="_blank" href="../skip/toIndex16">
+                                    <span><em style="background-position:-2px -820px;"></em></span>
+                                    <p>高尔夫球</p>
+                                </a>
+                            </li>
+                            <li style='display:none;'>
+                                <a target="_blank" href="../skip/toIndex17">
+                                    <span><em style="background-position:0 -902px;"></em></span>
+                                    <p>射击</p>
+                                </a>
+                            </li>
+                            <li style='display:none;'>
+                                <a target="_blank" href="../skip/toIndex18">
+                                    <span><em style="background-position:0 -750px;"></em></span>
+                                    <p>保龄球</p>
+                                </a>
+                            </li>
+                            <li style='display:none;'>
+                                <a target="_blank" href="../skip/toIndex19">
+                                    <span><em style="background-position:0 -1575px;"></em></span>
+                                    <p>马术</p>
+                                </a>
+                            </li>
+                            <li style='display:none;'>
+                                <a target="_blank" href="../skip/toIndex20">
+                                    <span><em style="background-position:0 -1650px;"></em></span>
+                                    <p>卡丁车</p>
+                                </a>
+                            </li>
+                            <li style='display:none;'>
+                                <a target="_blank" href="../skip/toIndex21">
+                                    <span><em style="background-position:0 -2100px;"></em></span>
+                                    <p>击剑</p>
+                                </a>
+                            </li>
+                        </ul>
                         <div class="hasHover" style="display:none;"></div>
                         <div class="iUp"><em></em></div>
                     </div>
@@ -441,6 +374,7 @@
             </div>
         </div>
     </div>
+    <input id="Lease">
     </body>
 
 <script>
@@ -454,7 +388,7 @@
             var aa="";
             for (var i = 0; i < data.length; i++) {
            aa+=
-               "<li>+"+
+               "<li>"+
            "<div class='title' style='height:27px;overflow:hidden;width:405px;'>" +
            "<h2><a class='color3' target='_blank'>"+data[i].venueName+"</a>"+
            "</h2>"+
@@ -469,14 +403,27 @@
            "<span><em class='freeTag2 sp_skjs'></em>卖品销售</span>"+
             "<span><em class='freeTag2 sp_qczj'></em>器材租借</span>"+
                "</div>"+
-                "<a href='../page/getReserve' class='sportBtn indexhotBtn' target='_blank'>在线预订</a>"
+               "<a  id='aa' href='javascript:yuDing(\""+data[i].venueLease+"\",\""+data[i].venueId+"\")' class='sportBtn indexhotBtn' target='_blank'>"+data[i].venueLease+"</a>"
                 +"</li>"
+
             }
 
             $("#hotVenueShow").html(aa)
 
         }
       })
+    }
+
+    function yuDing(venueLease,venueId){
+        if(venueLease=="在线预订"){
+                location.href="../exercise/toMakeInfo?venueId="+venueId;
+        }
+        else if (venueLease=="场馆维护"){
+           alert("场馆维护")
+            return ;
+        }
+
+
     }
 </script>
 

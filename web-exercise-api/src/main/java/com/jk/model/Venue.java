@@ -12,7 +12,7 @@ public class Venue implements Serializable {
 
     private Double price;
 
-    private Date doTime;
+    private String doTime;
 
     private String img;
 
@@ -43,6 +43,16 @@ public class Venue implements Serializable {
     private Integer venuePhone;
 
     private String venueTypeName;
+
+    private String venueLike;
+
+    public String getVenueLike() {
+        return venueLike;
+    }
+
+    public void setVenueLike(String venueLike) {
+        this.venueLike = venueLike;
+    }
 
     public String getVenueTypeName() {
         return venueTypeName;
@@ -84,11 +94,11 @@ public class Venue implements Serializable {
         this.price = price;
     }
 
-    public Date getDoTime() {
+    public String getDoTime() {
         return doTime;
     }
 
-    public void setDoTime(Date doTime) {
+    public void setDoTime(String doTime) {
         this.doTime = doTime;
     }
 

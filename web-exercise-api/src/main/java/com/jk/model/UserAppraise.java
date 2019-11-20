@@ -1,18 +1,32 @@
 package com.jk.model;
 
-public class UserAppraise {
-    private Integer userId;
+import org.springframework.data.mongodb.core.mapping.Document;
+
+import java.io.Serializable;
+@Document(collection="AppraiseInfo")
+public class UserAppraise implements Serializable {
+    private Integer infoId;
 
     private Integer venueId;
 
     private String praiseInfo;
+    private Integer pid;
 
-    public Integer getUserId() {
-        return userId;
+
+    public Integer getInfoId() {
+        return infoId;
     }
 
-    public void setUserId(Integer userId) {
-        this.userId = userId;
+    public void setInfoId(Integer infoId) {
+        this.infoId = infoId;
+    }
+
+    public Integer getPid() {
+        return pid;
+    }
+
+    public void setPid(Integer pid) {
+        this.pid = pid;
     }
 
     public Integer getVenueId() {
