@@ -14,6 +14,7 @@
         <module name="web-exercise" />
         <module name="web-provider-zyc" />
         <module name="web-provider-sqx" />
+        <module name="exercise-worspace" />
         <module name="web-exercise-api" />
       </profile>
     </annotationProcessing>
