@@ -1,0 +1,694 @@
+
+.ui_wala {
+    height: 100%;
+    overflow: hidden;
+    width: 100%;
+}
+.ui_wala_listing {
+    position: relative;
+    vertical-align: top;
+}
+.ui_wala_listing .ui_wala_aside {
+    left: 10px;
+    position: absolute;
+    top: 0;
+}
+.ui_wala_listing .page_wala {
+    padding-left: 10px;
+}
+.ui_wala_listing .page_wala i.l {
+    color: #a8a8a8;
+    left: 3px;
+}
+.ui_wala_listing .page_wala i.l i {
+    color: #fff;
+}
+.ui_wala_listing .ui_wala_wrap .page_wala i.l {
+    color: #a8a8a8;
+    left: 62px;
+}
+.ui_wala_listing .ui_wala_wrap .page_wala i.l i {
+    color: #fff;
+}
+.page_modify_dialog span.iserm, .page_modify_dialog span.ispic, .page_modify_dialog .wb span, .review .iserm, .page_replay .forwards, .page_replay .comment, .ico_buyTicket, .page_replay .useful {
+    background: rgba(0, 0, 0, 0) url("../img/wala.gif") no-repeat scroll 0 0;
+}
+.ico_buyTicket {
+    background-position: 0 -79px;
+    bottom: 4px;
+    display: block;
+    height: 16px;
+    position: absolute;
+    right: 4px;
+    width: 14px;
+}
+.ui_wala_comment {
+    padding-left: 70px;
+}
+.ui_wala_original {
+    border-top: 1px solid #f2f2f2;
+    clear: both;
+    overflow: hidden;
+    padding: 10px 0 10px 60px;
+}
+.ui_wala_original .uipic {
+    float: left;
+    height: 60px;
+    margin-left: -60px;
+    margin-right: 0;
+    overflow: hidden;
+    position: relative;
+    width: 60px;
+}
+.ui_wala_original .uipic a {
+    float: left;
+}
+.ui_view_solide {
+    float: left;
+    position: relative;
+    width: 100%;
+}
+.page_replay {
+    color: #999;
+    height: 24px;
+    line-height: 24px;
+    position: relative;
+    width: 100%;
+    z-index: 1;
+}
+.page_wala i {
+    display: inline-block;
+    font-family: "SimSun";
+    font-size: 16px;
+    font-style: normal;
+    height: 22px;
+    line-height: 26px;
+    overflow: hidden;
+    position: absolute;
+    width: 15px;
+    z-index: 5;
+}
+.page_wala i.l {
+    color: #dfdfdf;
+    left: -8px;
+    top: 10px;
+}
+.ui_wala .hover i.l {
+    color: #ffe3bd;
+}
+.page_wala i.l i {
+    color: #fff;
+    left: 1px;
+    top: 0;
+}
+.page_wala .t {
+    color: #ddd;
+    left: 20px;
+    top: -13px;
+}
+.page_wala i.t i {
+    color: #fff;
+    left: 0;
+    top: 1px;
+}
+.ui_wala .hover i.t {
+    color: #ddd;
+    left: 20px;
+    top: -13px;
+}
+.ui_wala .hover i.t i {
+    color: #fff;
+    left: 0;
+    top: 1px;
+}
+.page_ico i.t {
+    color: #e9e9e9;
+    left: 0;
+    top: 19px;
+}
+.page_ico i.t i {
+    color: #fff;
+}
+.ui_wala .hover .page_ico i.t {
+    left: 0;
+    top: 19px;
+}
+.page_wala_talk {
+    overflow: hidden;
+}
+.ui_wala a:hover {
+    color: #f60;
+    text-decoration: none;
+}
+.page_replay_opt {
+    float: right;
+}
+.page_replay a {
+    color: #999;
+    position: relative;
+}
+.page_replay .page_ico {
+    display: inline-block;
+    margin-left: 10px;
+    padding-left: 20px;
+}
+.page_replay .useful {
+    background-position: 3px -104px;
+}
+.page_replay .useful span {
+    display: none;
+}
+.page_replay .editor {
+    visibility: hidden;
+}
+.page_replay .delete {
+    visibility: hidden;
+}
+.page_replay .forwards {
+    background-position: 0 -130px;
+}
+.page_replay .comment {
+    background-position: 0 -182px;
+}
+.page_replay_my {
+    margin-top: 10px;
+}
+.ui_wala .hover .page_replay_my a {
+    color: #ea6;
+}
+.ui_wala .hover .editor {
+    background-position: 0 -904px;
+    visibility: visible;
+}
+.ui_wala .hover .delete {
+    background-position: 7px -932px;
+    visibility: visible;
+}
+.ui_wala .hover .forwards {
+    background-position: 0 -157px;
+}
+.ui_wala .hover .comment {
+    background-position: 0 -209px;
+}
+.page_wala_talkreplay {
+    background: #fff none repeat scroll 0 0;
+    border: 1px solid #d2d2d2;
+    border-radius: 5px;
+    margin: 10px 0 5px;
+    padding: 5px 10px;
+    position: relative;
+    z-index: 0;
+}
+.ui_wala_textArea textArea:focus {
+    outline: 0 none;
+}
+.wala_buyTags {
+    padding: 0 0 5px 69px;
+}
+.wala_buyTags label {
+    cursor: pointer;
+}
+.wala_buyTags input {
+    vertical-align: -2px;
+}
+.walaFloor {
+    color: #36c;
+    position: absolute;
+    right: 0;
+    top: 0;
+}
+.replayNode {
+    overflow: hidden;
+    width: 100%;
+}
+.replayNode textarea {
+    background: #fff none repeat scroll 0 0;
+    border: 1px solid #ccc;
+    box-shadow: 1px 1px 2px #efefef inset;
+    color: #333;
+    float: left;
+    font-size: 12px;
+    height: 22px;
+    line-height: 22px;
+    overflow: hidden;
+    padding: 0 3px;
+    resize: none;
+    width: 86%;
+}
+.replayNode textarea.onFocus {
+    border: 1px solid #ff9934;
+}
+.ui_wala_modify .page_wala {
+    padding: 0;
+}
+.ui_wala_modify i.l {
+    color: #a8a8a8;
+    left: -7px;
+}
+.ui_wala_modify i.l i {
+    color: #fff;
+}
+.ui_wala_textArea {
+    background-color: #fff;
+    border: 1px solid #a8a8a8;
+    border-radius: 5px;
+    height: 60px;
+    padding: 4px;
+    position: relative;
+    width: auto;
+}
+.ui_wala_textArea .issueTips {
+    color: #999;
+    font-size: 14px;
+    left: 4px;
+    position: absolute;
+    top: 2px;
+    z-index: 6;
+}
+.ui_wala_textArea textarea {
+    background: #fff none repeat scroll 0 0;
+    border: 0 none;
+    display: block;
+    font-size: 14px;
+    height: 55px;
+    line-height: 20px;
+    margin: 0;
+    overflow-y: auto;
+    position: relative;
+    resize: none;
+    width: 100%;
+    z-index: 5;
+}
+.modify_alt input {
+    background-color: #fafafa;
+    border: 1px solid #a8a8a8;
+    border-radius: 5px;
+    display: block;
+    font-size: 14px;
+    height: 60px;
+    overflow-y: auto;
+    padding: 3px 8px;
+    resize: none;
+    width: 96.8%;
+}
+.modify_alt .ui_big_ratings li {
+    cursor: pointer;
+}
+.page_modify_dialog {
+    height: 30px;
+    line-height: 12px;
+    margin: 5px 0 10px;
+    position: relative;
+    width: 100%;
+}
+.page_modify_dialog span.isvideo, .page_modify_dialog span.istokll, .replayNode button.button, .loadup .loadRo, .loadup .loadRp {
+    background: rgba(0, 0, 0, 0) url("../../..../../../css/home/body_tool_24.png") no-repeat scroll 0 0;
+}
+.isfont {
+    display: inline-block;
+    float: right;
+    font-family: Constantia,Georgia;
+    font-size: 14px;
+    font-weight: bold;
+    height: 28px;
+    line-height: 28px;
+    margin-right: 10px;
+}
+.refresh, .personCount, .loadup .loadRo, .loadup .loadRp, .ope button, .isMenber, .accost, .isqa, .addnew, .uppic {
+    border: 0 none;
+    border-radius: 0;
+    height: 22px;
+    line-height: 22px;
+    outline: 0 none;
+    padding-left: 20px;
+    text-decoration: none !important;
+}
+.preson_link a, .rMore a, .facks a, .personCount, .loadup .loadRo, .loadup a, .loadup .loadRp, .ope button, .isMenber, .accost {
+    color: #d96 !important;
+}
+.page_modify_dialog span.iserm, .page_modify_dialog span.ispic, .page_modify_dialog span.isvideo, .page_modify_dialog span.istokll, .page_modify_dialog span.tsina, .page_modify_dialog .wb, .page_modify_dialog .wb span {
+    cursor: pointer;
+    display: inline-block;
+    float: left;
+    height: 12px;
+    line-height: 12px;
+    margin-right: 10px;
+    margin-top: 6px;
+    padding: 3px 0 3px 20px;
+}
+.page_modify_dialog span.iserm {
+    background-position: 0 2px;
+}
+.page_modify_dialog span.ispic {
+    background-position: 0 -25px;
+}
+.page_modify_dialog span.isvideo {
+    background-position: 0 -652px;
+}
+.page_modify_dialog span.istokll {
+    background-position: 0 -683px;
+}
+.page_modify_dialog .wb {
+    height: 20px;
+    line-height: 18px;
+    padding: 0;
+}
+.page_modify_dialog .wb em {
+    float: left;
+    margin-right: 3px;
+}
+.page_modify_dialog .wb span {
+    background-position: 0 -51px;
+    color: #c30;
+    margin-top: 0;
+}
+.replayNode dl, .replayAll {
+    border-bottom: 1px solid #e9e9e9;
+    margin: 10px 0 0;
+    overflow: hidden;
+    padding: 8px 0 5px 40px;
+    position: relative;
+}
+.replayNode dl.isFirstNode {
+    border-bottom: 0 none;
+    border-top: 1px solid #e9e9e9;
+    margin-bottom: 0;
+    padding: 8px 0 5px 40px;
+}
+.replayNode dt {
+    float: left;
+    height: 30px;
+    margin-left: -40px;
+    overflow: hidden;
+    width: 30px;
+}
+.replayNode dd {
+    float: left;
+    height: 100%;
+    overflow: hidden;
+    width: 100%;
+}
+.replayNode button.button {
+    background-position: 0 -143px;
+    border: 0 none;
+    border-radius: 0;
+    clear: right;
+    color: #999;
+    float: right;
+    font-size: 12px;
+    height: 25px;
+    line-height: 25px;
+    overflow: hidden;
+    position: relative;
+    width: 50px;
+    z-index: 5;
+}
+.replayNode button.onButton {
+    background-position: 0 -73px;
+    color: #fff;
+}
+.replayAll {
+    padding: 2px 10px;
+    text-align: center;
+}
+.replayAll a {
+    text-decoration: none !important;
+}
+.readyMore {
+    background: #f9f9f9 none repeat scroll 0 0;
+    border: 1px solid #ddd;
+    cursor: pointer;
+    height: 30px;
+    line-height: 30px;
+    position: relative;
+    text-align: center;
+    width: 728px;
+    z-index: 3;
+}
+.review {
+    height: 22px;
+    overflow: hidden;
+    padding: 5px 0 0;
+    width: 100%;
+}
+.review a {
+    background: #fff6dd none repeat scroll 0 0;
+    border: 1px solid #fc8;
+    border-radius: 3px;
+    color: #d96;
+    display: inline-block;
+    float: left;
+    height: 22px;
+    line-height: 22px;
+    text-align: center;
+    text-decoration: none !important;
+    width: 78px;
+}
+.review .personCount {
+    margin: 0 10px 0 0;
+}
+.review .iserm {
+    background-position: 0 3px;
+    cursor: pointer;
+    display: inline-block;
+    float: left;
+    height: 12px;
+    line-height: 12px;
+    margin-right: 10px;
+    padding: 5px 0 4px 20px;
+}
+.dalogIconConts a {
+    border: 1px solid #eee;
+    display: inline-block;
+    margin: 1px;
+    padding: 1px;
+    text-decoration: none !important;
+}
+.dalogIconConts a:hover {
+    border-color: #c03b0c;
+}
+.dalogIconTags li, .dalogIconBox li {
+    display: inline;
+    float: left;
+    margin-right: 5px;
+}
+.dalogIconTags li a {
+    color: #c30;
+    display: inline-block;
+    height: 22px;
+    line-height: 22px;
+    padding: 0 10px;
+}
+.dalogIconTags li.select a {
+    background: #ddd none repeat scroll 0 0;
+    border-radius: 2px;
+    color: #666;
+    cursor: default;
+}
+.dalogIconTags li.select a:hover {
+    text-decoration: none;
+}
+.dalogIconBox {
+    margin-top: 5px;
+}
+.modify_alt {
+    height: 30px;
+    margin-bottom: 5px;
+    overflow: hidden;
+    position: relative;
+    width: 100%;
+}
+.modify_alt input {
+    font-size: 14px;
+    height: 20px;
+}
+.modify_alt .switch {
+    background-position: 0 -982px;
+    cursor: pointer;
+    display: inline-block;
+    height: 21px;
+    position: absolute;
+    right: 0;
+    top: 3px;
+    width: 22px;
+}
+.modify_alt .langth {
+    background-position: 0 -962px;
+}
+.modify_alt .overTxtLabel {
+    background: #3769c2 none repeat scroll 0 0;
+    color: #fff !important;
+    height: 16px !important;
+    line-height: 16px !important;
+    top: 6px !important;
+    width: auto !important;
+}
+#cke_replycontent {
+}
+.switch_notice {
+    background: #ffd none repeat scroll 0 0;
+    border: 1px solid #edae7b;
+    color: #333;
+    height: 20px;
+    padding: 3px 10px;
+    position: absolute;
+    right: 30px;
+    top: 0;
+}
+.switch_notice i.r {
+    color: #edae7b;
+    left: auto;
+    right: -9px;
+    top: 1px;
+}
+.switch_notice i.r i {
+    color: #ffd;
+    left: -1px;
+    top: 0;
+}
+.ui_view_solide .replayNode dl {
+    margin-top: 7px !important;
+    padding: 8px 0 5px 40px !important;
+}
+.body_left .person_t {
+    margin-top: 20px;
+}
+.w90Bt {
+    background: rgba(0, 0, 0, 0) url("../../..../../../css/global/ui_btn.png") no-repeat scroll 0 0;
+    color: #fff !important;
+    font-size: 14px;
+    font-weight: bold;
+    height: 26px;
+    line-height: 26px;
+    overflow: hidden;
+    text-decoration: none !important;
+    width: 90px;
+}
+.w90Bt {
+    background-position: 0 -1568px;
+}
+.w90Bt:hover {
+    background-position: 0 -1595px;
+}
+#page {
+    float: right;
+    font-size: 12px;
+    height: 21px;
+    margin: 20px auto;
+    width: auto;
+}
+#page a, #page strong {
+    float: left;
+    margin: 0 1px;
+}
+#page a {
+    display: inline-block;
+    height: 21px;
+    line-height: 21px;
+    padding: 0 8px;
+}
+#page a:hover {
+    background: #f60 none repeat scroll 0 0;
+    color: #fff;
+    text-decoration: none;
+}
+#page .on, #page a.on:hover {
+    background: #c30 none repeat scroll 0 0;
+    color: #fff;
+}
+.loadup {
+    color: gray;
+    height: 20px;
+    line-height: 20px;
+    overflow: hidden;
+    width: 100%;
+}
+.loadup .loadRp {
+    background-position: 5px -390px;
+    cursor: pointer;
+    float: left;
+}
+.loadup .loadRo {
+    background-position: 5px -363px;
+    cursor: pointer;
+    float: left;
+}
+.loadup .unLoadRp {
+    background-position: 5px -441px;
+    color: #999;
+    display: inline-block;
+}
+.loadup .unLoadRo {
+    background-position: 5px -414px;
+    color: #999;
+    display: inline-block;
+}
+.ui_wala_isRightWala .ui_wala_listing {
+    padding-left: 0;
+}
+.ui_wala_isRightWala .ui_wala_listing .page_wala {
+    padding-left: 0;
+}
+.ui_wala_isRightWala .ui_wala_listing .ui_wala_wrap .page_wala i.l {
+    display: none;
+}
+.ui_wala_isRightWala .replayNode button.button {
+    float: none !important;
+}
+.ui_wala_isRightWala .page_wala i.l {
+    top: 3px;
+}
+.ui_wala_isRightWala .page_replay {
+    height: auto;
+}
+.ui_wala_isRightWala .replayNode .review {
+    display: none;
+}
+.ui_wala_isRightWala .ico_buyTicket {
+    display: none;
+}
+.ui_wala_new {
+    margin-bottom: 20px;
+}
+.ui_wala_new .page_wala {
+    margin-left: 10px;
+    position: relative;
+}
+.ui_wala_new .ui_wala_textArea {
+    border: 2px solid #fdc;
+    border-radius: 0;
+    height: inherit;
+    padding: 0;
+}
+.ui_wala_new .page_wala i.l {
+    color: #fdc;
+}
+.ui_wala_new .page_wala i.l i {
+    left: 3px;
+}
+.ui_wala_new .modify_alt {
+    background: #fff8f3 none repeat scroll 0 0;
+    font-size: 14px;
+    line-height: 30px;
+    padding: 5px 10px;
+    width: inherit;
+}
+.ui_wala_textArea_inner {
+    margin: 4px;
+    overflow: hidden;
+}
+.wala_poster {
+    min-height: 90px;
+    position: relative;
+}
+.wala_poster .wala_header {
+    display: inline;
+    left: 0;
+    overflow: hidden;
+    position: absolute;
+    top: 0;
+    width: 90px;
+}
+.wala_poster .wala_content {
+    padding: 0 120px 0 100px;
+}
