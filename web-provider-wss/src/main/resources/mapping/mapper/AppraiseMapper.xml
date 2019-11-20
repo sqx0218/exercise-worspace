@@ -2,7 +2,7 @@
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
 <mapper namespace="com.jk.mapper.ExerciseMapper" >
   <select id="queryVenue" resultType="com.jk.model.Venue">
-  select * from t_time t LEFT JOIN t_venue v on t.price = v.price
+  select * from t_venue v LEFT JOIN t_time t  on t.price = v.price
   </select>
 
     <select id="queryAppraise" resultType="com.jk.model.UserAppraise">

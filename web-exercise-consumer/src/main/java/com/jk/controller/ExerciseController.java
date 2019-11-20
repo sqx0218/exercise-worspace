@@ -10,6 +10,7 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
 
+import java.security.Security;
 import java.util.*;
 
 @Controller
@@ -59,6 +60,10 @@ public class ExerciseController {
     @RequestMapping("toMakeInfo")
     public String toMakeInfo(Integer venueId, Model model) {
         Venue venue = venueService.getVenueById(venueId);
+
+
+
+
         model.addAttribute("venue", venue);
 
         return "Reserve";
@@ -94,9 +99,9 @@ public class ExerciseController {
      */
     @RequestMapping("queryAppraise")
     @ResponseBody
-    public List<UserAppraise> queryAppraise(Integer venueId) {
+    public HashMap<String ,Object> queryAppraise(Integer venueId,Integer page,Integer rows) {
 
-        return exerciseService.queryAppraise(venueId);
+        return exerciseService.queryAppraise(venueId,page,rows);
     }
     /**
      * 新增订单

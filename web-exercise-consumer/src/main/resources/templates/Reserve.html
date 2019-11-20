@@ -102,7 +102,7 @@
 
                 <b><h4><span th:text="${venue.venueName}"></span>&nbsp;&nbsp;<input type="button"   class="btn btn-info btn-circle btn-lg" id="button" onclick='buttonlike()'>
                     <br><br> 预约电话：<span th:text="${venue.venuePhone}"></span><br><br>
-                    <br> 场馆地址：<span th:text="${venue.venueAddress}"></span>
+                    <br> 场馆地址：<span id="venueAddress" th:text="${venue.venueAddress}"></span>
                     <br><br>
                 价格：<span th:text="${venue.price}" ></span>起
                <br><br>
@@ -152,7 +152,7 @@
 <center>
     <table  id="timeChang" class="table table-bordered" style="height:230px;width:950px;">
     </table></center>
-    </table>
+
     <div style="width:400px;height:80px;" name="orderPrice" >
         <input type="hidden" id="orderPrice" name="orderPrice" >
         <font style="font-size: 40px"   ><b>总计:<span id="span2" >0</span>元</b></font>
@@ -172,19 +172,10 @@
 
     </table></center>
     <br>
-    <!--<textarea id="apptext" class="form-control" rows="3"></textarea>-->
-<div id="show"></div>
-<div class="comment">
-    <div class="com_form">
-        <textarea class="input"id="apptext"  name="saytext"></textarea>
-        <p>
-            <input type="button"onclick="appadd()" id="saytext" name="saytext"  class="sub_btn" value="提交">
-            <span class="emotion">表情</span></p>
+    <textarea id="apptext" class="form-control" rows="3"></textarea>
+<input type="button" value="发布" onclick="appadd()">
 
-    </div>
-
-</div>
-
+<input th:text="${venue}">
     <br>
     <br>
 <script>
@@ -204,6 +195,10 @@
     function appadd(){
         var venueId=   $("#venueId").val()
         var apptext= $("#apptext").val()
+        if(apptext==""){
+            alert("请先输入")
+            return ;
+        }
         $.ajax({
             url:'../exercise/appadd',
             type:"post",
@@ -251,7 +246,7 @@
                         }},
                     {field:'er',title:'0-3',
                     formatter:function (value,row,index) {
-                        return "<a href='javascript:open("+value+")'>"+value+"</a>"
+                        return "<a href='javascript:open("+value+")' >"+value+"</a>"
                     }
                     },
                     {field:'si',title:'3-6',
@@ -282,12 +277,12 @@
 
     }
     function  open(value){
+
         var cc=parseInt(value)+ parseInt($("#span2").html());
 
 
         $("#span2").html(cc);
     }
-
 
 
     function goPayment() {
@@ -311,6 +306,21 @@
         var venueId=   $("#venueId").val();
             $("#appraiseTable").bootstrapTable({
             url:"../exercise/queryAppraise?venueId="+venueId,
+                method:'post',
+                contentType:'application/x-www-form-urlencoded',//post请求按照表单方式
+                pagination:true,
+                sidePagination:'server',//分页方式：client客户端分页，server服务端分页
+                pageNumber:1,
+                pageList:[10,20,30,40,50],
+                pageSize:10,
+                queryParams:function(){
+
+                    return {
+                        page:this.pageNumber,
+                        rows:this.pageSize,
+
+                    }
+                },
             columns:[
                 [
                     {field:'praiseInfo',title:'',
@@ -362,7 +372,8 @@
     // 创建地址解析器实例
     var myGeo = new BMap.Geocoder();
     // 将地址解析结果显示在地图上,并调整地图视野
-    myGeo.getPoint("雁塔区含光路南路216号嘉翔大厦2层 ", function(point){
+    var venueAddress=$("#venueAddress").html()
+    myGeo.getPoint(venueAddress, function(point){
         if (point) {
             map.centerAndZoom(point, 16);
             map.addOverlay(new BMap.Marker(point));
@@ -370,47 +381,6 @@
             alert("您选择地址没有解析到结果!");
         }
     }, "北京市");
-
-</script>
-<script type="text/javascript">
-
-    $(function(){
-
-        $('.emotion').qqFace({
-
-            id : 'facebox',
-
-            assign:'saytext',
-
-            path:'../textarea/arclist/'	//表情存放的路径
-
-        });
-
-        $(".sub_btn").click(function(){
-
-            var str = $("#saytext").val();
-    alert(str)
-            $("#show").html(replace_em(str));
-
-        });
-
-    });
-
-    //查看结果
-
-    function replace_em(str){
-
-        str = str.replace(/\</g,'&lt;');
-
-        str = str.replace(/\>/g,'&gt;');
-
-        str = str.replace(/\n/g,'<br/>');
-
-        str = str.replace(/\[em_([0-9]*)\]/g,'<img src="../textarea/arclist/1.gif" border="0" />');
-
-        return str;
-
-    }
 
 </script>
 

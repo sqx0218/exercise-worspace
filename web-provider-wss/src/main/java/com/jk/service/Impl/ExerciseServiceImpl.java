@@ -34,9 +34,19 @@ public class ExerciseServiceImpl implements ExerciseService {
     }
 
     @Override
-    public List<UserAppraise> queryAppraise(Integer venueId) {
-        List<UserAppraise> venue = mongoTemplate.find(Query.query(Criteria.where("venueId").is(venueId)), UserAppraise.class);
-        return venue;
+    public HashMap<String ,Object>  queryAppraise(Integer venueId,Integer page,Integer rows) {
+       HashMap<String ,Object> map =new HashMap<>();
+
+        Query query = new Query();
+        long count = mongoTemplate.count(query, UserAppraise.class);
+        int start = (page-1)*rows;
+        query.skip(start).limit(rows);
+
+        List<UserAppraise> venue = mongoTemplate.find(query, UserAppraise.class);
+
+        map.put("total",count);
+        map.put("rows",venue);
+        return map;
     }
 
     @Override
