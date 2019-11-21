@@ -1,6 +1,7 @@
 package com.jk.controller;
 
 import com.alibaba.dubbo.config.annotation.Reference;
+<<<<<<< HEAD
 import com.jk.model.VenueBean;
 import com.jk.model.VenueTypeBean;
 
@@ -15,6 +16,12 @@ import org.apache.solr.client.solrj.response.QueryResponse;
 import org.apache.solr.common.SolrDocument;
 import org.apache.solr.common.SolrDocumentList;*/
 import org.springframework.beans.factory.annotation.Autowired;
+=======
+import com.jk.model.*;
+
+import com.jk.service.ExerciseService;
+import com.jk.service.VenueService;
+>>>>>>> origin/master
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -25,10 +32,142 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
+import java.security.Security;
+import java.util.*;
 
 @Controller
-@RequestMapping("page")
+@RequestMapping("exercise")
 public class ExerciseController {
+
+    @Reference
+    private ExerciseService exerciseService;
+    @Reference
+    private VenueService venueService;
+
+
+
+
+    /**
+     * 查询时间所有信息
+     *
+     * @return
+     */
+    @RequestMapping("queryList")
+    @ResponseBody
+    public List<timeModel> queryList() {
+
+        return exerciseService.queryList();
+    }
+
+
+    /**
+     * 查询场馆所有信息
+     *
+     * @return
+     */
+    @RequestMapping("queryVenue")
+    @ResponseBody
+    public List<Venue> queryVenue() {
+
+        return exerciseService.queryVenue();
+    }
+
+    /**
+     * 跳转预约页面
+     *
+     * @param venueId
+     * @param model
+     * @return
+     */
+    @RequestMapping("toMakeInfo")
+    public String toMakeInfo(Integer venueId, Model model) {
+        Venue venue = venueService.getVenueById(venueId);
+
+
+
+
+        model.addAttribute("venue", venue);
+
+        return "Reserve";
+    }
+
+
+    /**
+     * 订单预定
+     *
+     * @param userId
+     * @param venueId
+     * @return
+     */
+    @RequestMapping("makeOrder")
+    @ResponseBody
+    public String makeOreder(Integer userId, Integer venueId) {
+
+        if (userId == null) {
+            return "error";
+        } else {
+            Venue venue = venueService.queryVenueById(venueId);
+            venueService.addUserMakeVenue(userId, venue);
+            return "success";
+        }
+    }
+
+    /**
+     * 评论查询
+     *
+     * @param
+     * @param
+     * @return
+     */
+    @RequestMapping("queryAppraise")
+    @ResponseBody
+    public HashMap<String ,Object> queryAppraise(Integer venueId,Integer page,Integer rows) {
+
+        return exerciseService.queryAppraise(venueId,page,rows);
+    }
+    /**
+     * 新增订单
+     *
+     * @param
+     * @param
+     * @return
+     */
+    @RequestMapping("addPayment")
+    @ResponseBody
+    public void addPayment(OrderInfo orderInfo) {
+
+        exerciseService.addPayment(orderInfo);
+
+
+    }
+
+    /**
+     * 收藏场馆
+     *
+     * @param
+     * @param
+     * @return
+     */
+    @RequestMapping("venuelike")
+    @ResponseBody
+    public void venuelike(Integer venueId, Integer likeId) {
+
+        exerciseService.venuelike(venueId, likeId);
+    }
+
+    /**
+     * 新增评论
+     *
+     * @param
+     * @param
+     * @return
+     */
+    @RequestMapping("appadd")
+    @ResponseBody
+    public void appadd(UserAppraise userAppraise) {
+
+        exerciseService.appadd(userAppraise);
+    }
 
 
   /*  @Autowired
@@ -48,7 +187,7 @@ public class ExerciseController {
      * @Return: java.lang.String
      * @Author: byw
      * @Date: 2019/11/15
-    **/
+     **/
     @RequestMapping("toIndex")
     public  String toIndex(){
         return "Index";
@@ -68,26 +207,26 @@ public class ExerciseController {
      * @Return: java.util.List<com.jk.model.VenueTypeBean>
      * @Author: byw
      * @Date: 2019/11/17
-    **/
+     **/
 
-  @RequestMapping("queryVenueType")
-  @ResponseBody
+    @RequestMapping("queryVenueType")
+    @ResponseBody
     public List<VenueTypeBean> queryVenueType(VenueTypeBean Vt){
-      List<VenueTypeBean> VenueTypeList=eserciseService.queryVenueType();
+        List<VenueTypeBean> VenueTypeList=eserciseService.queryVenueType();
 
 
         return VenueTypeList;
-   }
+    }
 
 
-/**
- * @MethodName: 查询场馆
- * @Description: TODO
- * @Param:
- * @Return:
- * @Author: byw
- * @Date: 2019/11/17
-**/
+    /**
+     * @MethodName: 查询场馆
+     * @Description: TODO
+     * @Param:
+     * @Return:
+     * @Author: byw
+     * @Date: 2019/11/17
+     **/
 
 
     @RequestMapping("queryVenue")
@@ -98,138 +237,13 @@ public class ExerciseController {
     }
 
 
-   @RequestMapping("queryVenueName")
-   @ResponseBody
+    @RequestMapping("queryVenueName")
+    @ResponseBody
     public List<VenueBean> queryVenueName(Integer zhi1,Integer zhi2){
-       System.out.println(zhi1+"-------------------------"+zhi2);
+        System.out.println(zhi1+"-------------------------"+zhi2);
 
         return eserciseService.queryVenueName(zhi1,zhi2);
     }
-
-
-
-
-
-
-    /*@RequestMapping("queryVenueName")
-    @ResponseBody
-    public Map<String,Object>queryVenueName(VenueBean venue){
-        Map<String,Object> map1 = new HashMap<>();
-        try {
-            SolrQuery solrQuery = new SolrQuery();
-            if(venue.getVenueName()!=null && !"".equals(venue.getVenueName())){
-                solrQuery.set("q", venue.getVenueName());
-            }else{
-                solrQuery.set("q", "*:*");
-            }
-        }catch (Exception e) {
-            e.printStackTrace();
-        }
-    }*/
-
-
-
-  /*@RequestMapping("queryVenueName")
-    @ResponseBody
-    public Map<String, Object> queryVenueName(VenueBean venue){
-
-
-        //返回到前台
-        Map<String, Object> map1=new HashMap<>();
-
-        try {
-            //存放所有的查询条件
-            SolrQuery params = new SolrQuery();
-
-            //查询条件, 这里的 q 对应 下面图片标红的地方
-            if(venue.getVenueName()!=null && !"".equals(venue.getVenueName())){
-                params.set("q", venue.getVenueName());
-            }else {
-                params.set("q", "*:*");
-            }
-
-            //过滤条件
-            // params.set("fq", "carPrice:["+car.get+" TO "++"]");
-
-            //排序
-            //params.addSort("carPrice", SolrQuery.ORDER.desc);
-
-            //分页
-            *//*if(page==null){
-                params.setStart(0);
-            }else {
-                params.setStart((page-1)*rows);
-            }
-            if(rows==null){
-                params.setRows(5);
-            }else {
-                params.setRows(rows);
-            }
-*//*
-
-            //默认域
-            params.set("df", "venueName");
-
-            //只查询指定域
-            //params.set("fl", "id,product_title,product_price");
-
-            //高亮
-            //打开开关
-           *//* params.setHighlight(true);
-            //指定高亮域
-            params.addHighlightField("venueName");
-            //设置前缀
-            params.setHighlightSimplePre("<span style='color:red'>");
-            //设置后缀
-            params.setHighlightSimplePost("</span>");
-
-            //查询后返回的对象
-            QueryResponse queryResponse = client.query("core1",params);
-            //查询后返回的对象 获得真正的查询结果
-            SolrDocumentList results = queryResponse.getResults();
-            //查询的总条数
-           // long numFound = results.getNumFound();
-
-           // System.out.println(numFound);
-
-            //获取高亮显示的结果, 高亮显示的结果和查询结果是分开放的
-            Map<String, Map<String, List<String>>> highlight = queryResponse.getHighlighting();
-
-            //创建list集合接收我们循环的参数
-            List<VenueBean> list1 =new ArrayList<>();
-            for (SolrDocument result : results) {
-
-                VenueBean car1=new VenueBean();
-                String highFile="";
-
-                Map<String, List<String>> map = highlight.get(result.get("id"));
-                List<String> list = map.get("venueName");
-                if(list==null){
-                    highFile= result.get("venueName").toString();
-                }else {
-                    highFile=list.get(0);
-                }
-
-              *//**//*  car1.setVenueId(Integer.parseInt(result.get("id").toString()));
-                car1.setVenueName((String) result.get("venueName"));
-                car1.setVenueAddress(result.get("venueAddress").toString());
-                car1.setPrice(Integer.parseInt(result.get("id").toString()));
-                car1.venueName(highFile);*//**//*
-
-               // list1.add(car1);
-            }
-         *//**//*   map1.put("total",numFound);
-            map1.put("rows",list1);*//**//*
-            return map1;*//*
-
-        } catch (Exception e) {
-            e.printStackTrace();
-        }
-
-
-        return null;
-    }*/
-
 
 
 

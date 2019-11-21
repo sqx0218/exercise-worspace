@@ -1,10 +1,12 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <title>运动场地场馆预订</title>
         <meta name="keywords" content="运动场,运动馆,运动教练,羽毛球,乒乓球,游泳,场馆预订,场馆信息查询,场馆信息">
         <meta name="description" content="格瓦拉生活网提供运动场地场馆,羽毛球馆,羽毛球场地,游泳馆查询预订,运动场馆价格表,运动场馆优惠信息,运动场馆教练,运动场所会员卡转让等信息.">
+        <script src="../demo/resources/js/hDialog/jquery.hDialog.js" type="text/javascript"></script>
+        <link href="../demo/templates/index/css/ue_gridheader.css" rel="stylesheet">
 
 		<link href="../js/bootstrap/css/bootstrap-theme.min.css" rel="stylesheet">
 		<!-- Bootstrap 核心css -->
@@ -36,6 +38,15 @@
 		<link rel="stylesheet" type="text/css" href="http://cloud.cloudcq.com/templates/index/css/login.css">		
 		<script src="../demo/templates/index/js/jquery.easing.min.js" type="text/javascript"></script>
 		<script src="../demo/templates/index/js/custom.js" type="text/javascript"></script>
+        <script src="../js/jquery.min.js"></script>
+
+
+    </head>
+    <body>
+
+
+<!-- HBox end -->
+
 		<script src="../js/jquery.min.js"></script>
 		<script src="../js/bootstrap/js/bootstrap.min.js"></script>
 		<!-- bootStrap TreeView -->
@@ -433,16 +444,15 @@ $(function(){
 
             <div class="login_tip" style="float:right;">
                 <div class="log_box">
-
+                    <b><a href="javascript:;"  class="head-mime-text" ><font size="5">订单中心</font></a>
+                        <font size="5" color="orange" > &nbsp; &nbsp;  </font>
+                    </b>
                     <b><a href="javascript:;"  class="head-mime-text" ><font size="5">登录</font></a>
                         <font size="5" color="orange" > |  </font>
                         <a href="javascript:;"  class="head-mime-text" ><font size="5" >注册</font></a>
                     </b>
 
-                    <b><a href="javascript:;"  class="head-mime-text" ><font size="5">登录</font></a>
-                        <font size="5" color="orange" > |  </font>
-                        <a href="javascript:;"  class="head-mime-text" ><font size="5" >注册</font></a>
-                    </b>
+
                 </div>
                 <div>&nbsp;</div>
             </div>
@@ -482,12 +492,149 @@ $(function(){
 				<font size="4" color="red">场馆</font>：
 				<select name="cgId" id="cg" ></select>-->
             	</div>
+                <div class="isMask"></div>
+                <ul class="clear">
+                    <li class="item"><em>项目</em><span id="itemTirger" class="freeTag2"></span>
+                        <input type="hidden" name="itemvalueid" id="itemvalueid" value=""></li>
+                    <li class="venue"><em>场馆</em>
+                        <span id="fast_tirger" onclick="searchSport(this)" class="freeTag2"></span>
+                        <input type="hidden" name="areavalueid" id="areavalueid" value=""></li>
+                    <li class="btn"><a id="" href="../page/tosearch" class="sportBtn" target="_blank" title="预定">快速预定</a></li>
+                </ul>
+            </div>
         </div>
         <div class="upsell">
             <div class="ui_layout">
                 <div class="itemListTop">
                     <div class="itemList_box">
                         <ul class="clear" id="itemList_box">
+                            <li>
+                                <a target="_blank" href="../skip/getReserve">
+                                    <span><em style="background-position:0 -300px;"></em></span>
+                                    <p>足球</p>
+                                </a>
+                            </li>
+                            <li>
+                                <a target="_blank" href="../skip/toIndex2">
+                                    <span><em style="background-position:1px 1px;"></em></span>
+                                    <p>羽毛球</p>
+                                </a>
+                            </li>
+                            <li>
+                                <a target="_blank" href="../skip/toIndex3">
+                                    <span><em style="background-position:0 -149px;"></em></span>
+                                    <p>网球</p>
+                                </a>
+                            </li>
+                            <li>
+                                <a target="_blank" href="../skip/toIndex4">
+                                    <span><em style="background-position:0 -375px;"></em></span>
+                                    <p>篮球</p>
+                                </a>
+                            </li>
+                            <li>
+                                <a target="_blank" href="../skip/toIndex5">
+                                    <span><em style="background-position:0 -223px;"></em></span>
+                                    <p>乒乓球</p>
+                                </a>
+                            </li>
+                            <li>
+                                <a target="_blank" href="../skip/toIndex6">
+                                    <span><em style="background-position:-2px -80px;"></em></span>
+                                    <p>游泳</p>
+                                </a>
+                            </li>
+                            <li>
+                                <a target="_blank" href="../skip/toIndex7">
+                                    <span><em style="background-position:0 -1875px;"></em></span>
+                                    <p>健身</p>
+                                </a>
+                            </li>
+                            <li>
+                                <a target="_blank" href="../skip/toIndex8">
+                                    <span><em style="background-position:0 -525px;"></em></span>
+                                    <p>桌球</p>
+                                </a>
+                            </li>
+                            <li style='display:none;'>
+                                <a target="_blank" href="../skip/toIndex9">
+                                    <span><em style="background-position:0 -1950px;"></em></span>
+                                    <p>瑜伽</p>
+                                </a>
+                            </li>
+                            <li style='display:none;'>
+                                <a target="_blank" href="../skip/toIndex10">
+                                    <span><em style="background-position:0 -2025px;"></em></span>
+                                    <p>搏击</p>
+                                </a>
+                            </li>
+                            <li style='display:none;'>
+                                <a target="_blank" href="../skip/toIndex11">
+                                    <span><em style="background-position:0 -978px;"></em></span>
+                                    <p>溜冰</p>
+                                </a>
+                            </li>
+                            <li style='display:none;'>
+                                <a target="_blank" href="../skip/toIndex12">
+                                    <span><em style="background-position:0 -1200px;"></em></span>
+                                    <p>轮滑</p>
+                                </a>
+                            </li>
+                            <li style='display:none;'>
+                                <a target="_blank" href="../skip/toIndex13">
+                                    <span><em style="background-position:0 -600px;"></em></span>
+                                    <p>攀岩</p>
+                                </a>
+                            </li>
+                            <li style='display:none;'>
+                                <a target="_blank" href="../skip/toIndex314">
+                                    <span><em style="background-position:2px -450px;"></em></span>
+                                    <p>壁球</p>
+                                </a>
+                            </li>
+                            <li style='display:none;'>
+                                <a target="_blank" href="../skip/toIndex315">
+                                    <span><em style="background-position:0 -678px;"></em></span>
+                                    <p>射箭</p>
+                                </a>
+                            </li>
+                            <li style='display:none;'>
+                                <a target="_blank" href="../skip/toIndex16">
+                                    <span><em style="background-position:-2px -820px;"></em></span>
+                                    <p>高尔夫球</p>
+                                </a>
+                            </li>
+                            <li style='display:none;'>
+                                <a target="_blank" href="../skip/toIndex17">
+                                    <span><em style="background-position:0 -902px;"></em></span>
+                                    <p>射击</p>
+                                </a>
+                            </li>
+                            <li style='display:none;'>
+                                <a target="_blank" href="../skip/toIndex18">
+                                    <span><em style="background-position:0 -750px;"></em></span>
+                                    <p>保龄球</p>
+                                </a>
+                            </li>
+                            <li style='display:none;'>
+                                <a target="_blank" href="../skip/toIndex19">
+                                    <span><em style="background-position:0 -1575px;"></em></span>
+                                    <p>马术</p>
+                                </a>
+                            </li>
+                            <li style='display:none;'>
+                                <a target="_blank" href="../skip/toIndex20">
+                                    <span><em style="background-position:0 -1650px;"></em></span>
+                                    <p>卡丁车</p>
+                                </a>
+                            </li>
+                            <li style='display:none;'>
+                                <a target="_blank" href="../skip/toIndex21">
+                                    <span><em style="background-position:0 -2100px;"></em></span>
+                                    <p>击剑</p>
+                                </a>
+                            </li>
+                        </ul>
 						                          <li>
 								<a target="_blank" href="../page/tosearch_20">
 									<span><em style="background-position:0 -300px;"></em></span>
@@ -929,6 +1076,7 @@ $(function(){
 																			<a href='javascript:' style='background-color:#727070' class='sportBtn indexhotBtn' target='_blank'>场馆维护</a>
 																	</li>
 
+
 							                            </ul>
                         </div>
                         <div class="clear center mt15">
@@ -1184,4 +1332,57 @@ $(function(){
         </div>
     </div>
     </body>
+    <input id="Lease">
+    </body>
+
+<script>
+    $(function(){
+        queryVenue();
+    })
+    function queryVenue(){
+    $.ajax({
+        url:"../exercise/queryVenue",
+        success:function (data) {
+            var aa="";
+            for (var i = 0; i < data.length; i++) {
+           aa+=
+               "<li>"+
+           "<div class='title' style='height:27px;overflow:hidden;width:405px;'>" +
+           "<h2><a class='color3' target='_blank'>"+data[i].venueName+"</a>"+
+           "</h2>"+
+               "<span><a target='_blank' title='网球'><label>"+data[i].venueTypeName+"</label><em class='freeTag2'></em></a></span>"+
+           "</div>" +
+           "<p class='mt15'>"+
+           "<em class='freeTag2'></em>"+
+           "<font>"+data[i].venueAddress+"</font>"+
+           "</p>"+
+           "<div class='mt5 conditionIco'>"+
+           "<span><em class='freeTag2 sp_tcc'></em>停车场</span>"+
+           "<span><em class='freeTag2 sp_skjs'></em>卖品销售</span>"+
+            "<span><em class='freeTag2 sp_qczj'></em>器材租借</span>"+
+               "</div>"+
+               "<a  id='aa' href='javascript:yuDing(\""+data[i].venueLease+"\",\""+data[i].venueId+"\")' class='sportBtn indexhotBtn' target='_blank'>"+data[i].venueLease+"</a>"
+                +"</li>"
+
+            }
+
+            $("#hotVenueShow").html(aa)
+
+        }
+      })
+    }
+
+    function yuDing(venueLease,venueId){
+        if(venueLease=="在线预订"){
+                location.href="../exercise/toMakeInfo?venueId="+venueId;
+        }
+        else if (venueLease=="场馆维护"){
+           alert("场馆维护")
+            return ;
+        }
+
+
+    }
+</script>
+
 </html>
