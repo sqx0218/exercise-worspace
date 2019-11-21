@@ -102,6 +102,7 @@ public class ExerciseController {
    @ResponseBody
     public List<VenueBean> queryVenueName(Integer zhi1,Integer zhi2){
        System.out.println(zhi1+"-------------------------"+zhi2);
+
         return eserciseService.queryVenueName(zhi1,zhi2);
     }
 
