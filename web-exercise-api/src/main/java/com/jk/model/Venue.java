@@ -12,9 +12,9 @@ public class Venue implements Serializable {
 
     private Double price;
 
-    private Date doTime;
+    private String doTime;
 
-    private String Img;
+    private String img;
 
     private String venueServer;
 
@@ -44,6 +44,24 @@ public class Venue implements Serializable {
 
     private String venueTypeName;
 
+    private String venueLike;
+
+    public String getVenueLike() {
+        return venueLike;
+    }
+
+    public void setVenueLike(String venueLike) {
+        this.venueLike = venueLike;
+    }
+
+    public String getVenueTypeName() {
+        return venueTypeName;
+    }
+
+    public void setVenueTypeName(String venueTypeName) {
+        this.venueTypeName = venueTypeName;
+    }
+
     public Integer getVenueId() {
         return venueId;
     }
@@ -57,7 +75,7 @@ public class Venue implements Serializable {
     }
 
     public void setVenueName(String venueName) {
-        this.venueName = venueName;
+        this.venueName = venueName == null ? null : venueName.trim();
     }
 
     public String getVenueAddress() {
@@ -65,7 +83,7 @@ public class Venue implements Serializable {
     }
 
     public void setVenueAddress(String venueAddress) {
-        this.venueAddress = venueAddress;
+        this.venueAddress = venueAddress == null ? null : venueAddress.trim();
     }
 
     public Double getPrice() {
@@ -76,20 +94,20 @@ public class Venue implements Serializable {
         this.price = price;
     }
 
-    public Date getDoTime() {
+    public String getDoTime() {
         return doTime;
     }
 
-    public void setDoTime(Date doTime) {
+    public void setDoTime(String doTime) {
         this.doTime = doTime;
     }
 
     public String getImg() {
-        return Img;
+        return img;
     }
 
     public void setImg(String img) {
-        Img = img;
+        this.img = img == null ? null : img.trim();
     }
 
     public String getVenueServer() {
@@ -97,7 +115,7 @@ public class Venue implements Serializable {
     }
 
     public void setVenueServer(String venueServer) {
-        this.venueServer = venueServer;
+        this.venueServer = venueServer == null ? null : venueServer.trim();
     }
 
     public String getVenueMetro() {
@@ -105,7 +123,7 @@ public class Venue implements Serializable {
     }
 
     public void setVenueMetro(String venueMetro) {
-        this.venueMetro = venueMetro;
+        this.venueMetro = venueMetro == null ? null : venueMetro.trim();
     }
 
     public String getVenueCar() {
@@ -113,7 +131,7 @@ public class Venue implements Serializable {
     }
 
     public void setVenueCar(String venueCar) {
-        this.venueCar = venueCar;
+        this.venueCar = venueCar == null ? null : venueCar.trim();
     }
 
     public String getVenueLease() {
@@ -121,7 +139,7 @@ public class Venue implements Serializable {
     }
 
     public void setVenueLease(String venueLease) {
-        this.venueLease = venueLease;
+        this.venueLease = venueLease == null ? null : venueLease.trim();
     }
 
     public String getVenueMaintain() {
@@ -129,7 +147,7 @@ public class Venue implements Serializable {
     }
 
     public void setVenueMaintain(String venueMaintain) {
-        this.venueMaintain = venueMaintain;
+        this.venueMaintain = venueMaintain == null ? null : venueMaintain.trim();
     }
 
     public String getVenueMore() {
@@ -137,7 +155,7 @@ public class Venue implements Serializable {
     }
 
     public void setVenueMore(String venueMore) {
-        this.venueMore = venueMore;
+        this.venueMore = venueMore == null ? null : venueMore.trim();
     }
 
     public String getVenueBath() {
@@ -145,7 +163,7 @@ public class Venue implements Serializable {
     }
 
     public void setVenueBath(String venueBath) {
-        this.venueBath = venueBath;
+        this.venueBath = venueBath == null ? null : venueBath.trim();
     }
 
     public String getVenueGoods() {
@@ -153,7 +171,7 @@ public class Venue implements Serializable {
     }
 
     public void setVenueGoods(String venueGoods) {
-        this.venueGoods = venueGoods;
+        this.venueGoods = venueGoods == null ? null : venueGoods.trim();
     }
 
     public String getVenueInvoice() {
@@ -161,7 +179,7 @@ public class Venue implements Serializable {
     }
 
     public void setVenueInvoice(String venueInvoice) {
-        this.venueInvoice = venueInvoice;
+        this.venueInvoice = venueInvoice == null ? null : venueInvoice.trim();
     }
 
     public String getVenuePark() {
@@ -169,7 +187,7 @@ public class Venue implements Serializable {
     }
 
     public void setVenuePark(String venuePark) {
-        this.venuePark = venuePark;
+        this.venuePark = venuePark == null ? null : venuePark.trim();
     }
 
     public String getVenueHint() {
@@ -177,7 +195,7 @@ public class Venue implements Serializable {
     }
 
     public void setVenueHint(String venueHint) {
-        this.venueHint = venueHint;
+        this.venueHint = venueHint == null ? null : venueHint.trim();
     }
 
     public Integer getVipId() {
@@ -196,11 +214,5 @@ public class Venue implements Serializable {
         this.venuePhone = venuePhone;
     }
 
-    public String getVenueTypeName() {
-        return venueTypeName;
-    }
 
-    public void setVenueTypeName(String venueTypeName) {
-        this.venueTypeName = venueTypeName;
-    }
 }

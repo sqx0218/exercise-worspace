@@ -1,5 +1,8 @@
 package com.jk.model;
 
+
+import org.springframework.data.mongodb.core.mapping.Document;
+
 import java.io.Serializable;
 import java.util.Date;
 
@@ -47,7 +50,8 @@ public class OrderInfo implements Serializable {
     }
 
     public void setOrderNum(String orderNum) {
-        this.orderNum = orderNum;
+
+        this.orderNum = orderNum == null ? null : orderNum.trim();
     }
 
     public Double getOrderPrice() {
