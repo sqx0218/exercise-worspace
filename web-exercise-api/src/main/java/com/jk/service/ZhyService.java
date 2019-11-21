@@ -13,5 +13,9 @@ public interface ZhyService {
 
     int update2(Venueb venueb);
 
-    List<Venueb> query(int status);
+    List<Venueb> query();
+
+    List<Venueb> query2(int venueastatus);
+
+    List<Venueb> query3(int venueastatus);
 }

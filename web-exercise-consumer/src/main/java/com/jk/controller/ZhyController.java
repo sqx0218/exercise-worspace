@@ -24,21 +24,24 @@ public class ZhyController {
 
     @RequestMapping("insert")
     @ResponseBody
-    public int insert(Venueb venueb){
+    public int insert(Venueb venueb) {
         int b = zhyService.insert(venueb);
-        if(b==1){
+        if (b == 1) {
             return 3;
         }
-            return 4;
+        return 4;
     }
 
 
     /**
      * 通过
+     *
      * @param venueb
      * @return
      */
-    public int update(Venueb venueb){
+    @RequestMapping("update")
+    @ResponseBody
+    public int update(Venueb venueb) {
         zhyService.update(venueb);
         return 3;
     }
@@ -46,18 +49,60 @@ public class ZhyController {
 
     /**
      * 未通过
+     *
      * @param venueb
      * @return
      */
-    public int update2(Venueb venueb){
+    @RequestMapping("update2")
+    @ResponseBody
+    public int update2(Venueb venueb) {
         zhyService.update2(venueb);
         return 3;
     }
 
-    public List<Venueb> query(int status){
-        return zhyService.query(status);
+
+    @RequestMapping("chaxun")
+    @ResponseBody
+    public List<Venueb> query() {
+        System.out.println();
+        return zhyService.query();
     }
 
 
+    @RequestMapping("query2")
+    @ResponseBody
+    public List<Venueb> query2(int venueastatus) {
+        System.out.println(venueastatus);
+        return zhyService.query2(venueastatus);
+    }
 
+
+    @RequestMapping("query3")
+    @ResponseBody
+    public List<Venueb> query3(int venueastatus) {
+        System.out.println(venueastatus);
+        return zhyService.query3(venueastatus);
+    }
+
+
+    @RequestMapping("get")
+    public String  get(){
+        return "zhy";
+    }
+
+    @RequestMapping("zz")
+    public String  zz(){
+        return "form";
+    }
+    @RequestMapping("tongguo")
+    public String  tongguo(){
+        return "tongguo";
+    }
+    @RequestMapping("weitonggguo")
+    public String  weitonggguo(){
+        return "weitonggguo";
+    }
 }
+
+
+
