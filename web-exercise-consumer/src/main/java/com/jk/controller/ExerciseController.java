@@ -21,18 +21,11 @@ import com.jk.model.*;
 
 import com.jk.service.ExerciseService;
 import com.jk.service.VenueService;
->>>>>>> origin/master
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
-import org.springframework.web.servlet.ModelAndView;
 
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
-import java.security.Security;
 import java.util.*;
 
 @Controller
@@ -168,84 +161,6 @@ public class ExerciseController {
 
         exerciseService.appadd(userAppraise);
     }
-
-
-  /*  @Autowired
-    private SolrClient client;*/
-
-
-
-    @Reference(retries = 3,timeout = 10000)
-    // @Reference
-    private EserciseService eserciseService;
-
-
-    /**
-     * @MethodName: toIndex
-     * @Description: TODO
-     * @Param: []
-     * @Return: java.lang.String
-     * @Author: byw
-     * @Date: 2019/11/15
-     **/
-    @RequestMapping("toIndex")
-    public  String toIndex(){
-        return "Index";
-    }
-    @RequestMapping("toIndex2")
-    public  String toIndex2(){
-        return "Index2";
-    }
-    @RequestMapping("toIndex3")
-    public  String toIndex3(){
-        return "Index3";
-    }
-    /**
-     * @MethodName: queryVenueType  查询运动
-     * @Description: TODO
-     * @Param: []
-     * @Return: java.util.List<com.jk.model.VenueTypeBean>
-     * @Author: byw
-     * @Date: 2019/11/17
-     **/
-
-    @RequestMapping("queryVenueType")
-    @ResponseBody
-    public List<VenueTypeBean> queryVenueType(VenueTypeBean Vt){
-        List<VenueTypeBean> VenueTypeList=eserciseService.queryVenueType();
-
-
-        return VenueTypeList;
-    }
-
-
-    /**
-     * @MethodName: 查询场馆
-     * @Description: TODO
-     * @Param:
-     * @Return:
-     * @Author: byw
-     * @Date: 2019/11/17
-     **/
-
-
-    @RequestMapping("queryVenue")
-    @ResponseBody
-    public  List<VenueBean> queryVenue(Integer typeId){
-        List<VenueBean> VenueList=eserciseService.queryVenue(typeId);
-        return VenueList;
-    }
-
-
-    @RequestMapping("queryVenueName")
-    @ResponseBody
-    public List<VenueBean> queryVenueName(Integer zhi1,Integer zhi2){
-        System.out.println(zhi1+"-------------------------"+zhi2);
-
-        return eserciseService.queryVenueName(zhi1,zhi2);
-    }
-
-
 
 
 }

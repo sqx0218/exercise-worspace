@@ -5,6 +5,8 @@ import com.jk.mapper.VenueMapper;
 import com.jk.model.OrderInfo;
 import com.jk.model.Venue;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.mongodb.core.MongoTemplate;
+import org.springframework.stereotype.Component;
 
 import javax.sound.midi.Soundbank;
 import java.text.SimpleDateFormat;
@@ -20,11 +22,13 @@ import java.util.UUID;
  * @Version V1.0
  **/
 @Service
+
 public class VenueServiceImpl implements VenueService{
     @Autowired
     private VenueMapper venueMapper;
 
-
+    @Autowired
+    private MongoTemplate mongoTemplate;
 
 
     public List<Venue> queryFootballVenue(String typeName) {
@@ -33,6 +37,7 @@ public class VenueServiceImpl implements VenueService{
 
     @Override
     public Venue queryVenueById(Integer venueId) {
+
         return venueMapper.queryVenueById(venueId);
     }
 

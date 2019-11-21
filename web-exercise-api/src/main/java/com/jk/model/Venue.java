@@ -4,6 +4,7 @@ import java.io.Serializable;
 import java.util.Date;
 
 public class Venue implements Serializable {
+    private static final long serialVersionUID = -6011954329898353532L;
     private Integer venueId;
 
     private String venueName;

@@ -1,6 +1,12 @@
 package com.jk.model;
 
-public class Type {
+
+import java.io.Serializable;
+
+/**
+ *
+ */
+public class Type implements Serializable {
     private Integer typeid;
 
     private String typename;

@@ -6,7 +6,9 @@ import org.springframework.data.mongodb.core.mapping.Document;
 import java.io.Serializable;
 import java.util.Date;
 
+
 public class OrderInfo implements Serializable {
+    private static final long serialVersionUID = 2514118049056308458L;
     private Integer userId;
 
     private Integer venueId;
