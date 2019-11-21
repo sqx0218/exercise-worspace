@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link href="../js/bootstrap/css/bootstrap-theme.min.css" rel="stylesheet">
+    <!-- Bootstrap 核心css -->
+    <link href="../js/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Bootstrap TreeView css -->
+    <link href="../js/bootstrap-treeview/dist/bootstrap-treeview.min.css" rel="stylesheet">
+    <!-- Bootstrap addTabs css -->
+    <link href="../js/bootStrap-addTabs/bootstrap.addtabs.css" rel="stylesheet">
+    <!-- Bootstrap table css -->
+    <link href="../js/bootstrap-table/dist/bootstrap-table.css" rel="stylesheet">
+    <!-- bootstrap-datetimepicker css -->
+    <link href="../js/bootstrap-datetimepicker/css/bootstrap-datetimepicker.css" rel="stylesheet">
+    <!-- bootstrap-dialog css -->
+    <link href="../js/bootstrap-dialog/dist/css/bootstrap-dialog.css" rel="stylesheet">
+    <!-- bootstrap-fileinput css -->
+    <link href="../js/bootstrap-fileinput/css/fileinput.css" rel="stylesheet">
+    <script src="../js/jquery.min.js"></script>
+    <script src="../js/bootstrap/js/bootstrap.min.js"></script>
+    <!-- bootStrap TreeView -->
+    <script src="../js/bootstrap-treeview/dist/bootstrap-treeview.min.js"></script>
+    <!-- bootStrap addTabs -->
+    <script src="../js/bootStrap-addTabs/bootstrap.addtabs.js"></script>
+    <!-- bootStrap table -->
+    <script src="../js/bootstrap-table/dist/bootstrap-table.js"></script>
+    <!-- bootStrap table 语言包中文-->
+    <script src="../js/bootstrap-table/dist/locale/bootstrap-table-zh-CN.js"></script>
+    <!-- bootstrap-datetimepicker -->
+    <script src="../js/bootstrap-datetimepicker/js/bootstrap-datetimepicker.js"></script>
+    <script src="../js/bootstrap-datetimepicker/js/locales/bootstrap-datetimepicker.zh-CN.js"></script>
+    <!-- bootstrap-dialog -->
+    <script src="../js/bootstrap-dialog/dist/js/bootstrap-dialog.js"></script>
+    <!-- bootstrap-fileinput -->
+    <script src="../js/bootstrap-fileinput/js/fileinput.js"></script>
+    <script src="../js/bootstrap-fileinput/js/locales/zh.js"></script>
+</head>
+<body>
+
+<!--  表格 -->
+<table id="cx" class="table"></table>
+
+</body>
+
+<script type="text/javascript">
+    $(function(){
+        initTable();
+    })
+    function initTable(){
+        $('#cx').bootstrapTable({
+            fitColumns:true,
+            toolbar:'#toolbar',
+            url:'../zhy/query3',
+            showColumns:false,
+            showToggle:true,
+            showPaginationSwitch:false,
+            showRefresh:true,
+            detailView:false,
+            showFooter:false,
+            clickToSelect: false,
+            sidePagination:'server',
+            striped:true,
+            columns:[
+                {field: 'checkbox', checkbox: true},  //开启复选框
+                {field: 'venueid', title: '主键id', width: 300},      //  列    field   代表是 后台  传过来的值
+                {field: 'venuename', title: '场馆名称', width: 300},
+                {field: 'venuephone', title: '联系方式', width: 300},
+                {field: 'venuearea', title: '城市', width: 300},
+                {field: 'venueaddress', title: '详情地址', width: 300},
+                {field: 'venuepeople', title: '联系人', width: 300},
+            ]
+        })
+    }
+
+
+
+
+
+
+
+</script>
+</html>

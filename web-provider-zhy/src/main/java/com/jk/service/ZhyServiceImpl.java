@@ -44,7 +44,17 @@ public class ZhyServiceImpl implements  ZhyService {
     }
 
     @Override
-    public List<Venueb> query(int status) {
-        return zhyMapper.query(status);
+    public List<Venueb> query( ) {
+        return zhyMapper.query();
+    }
+
+    @Override
+    public List<Venueb> query2(int venueastatus) {
+        return zhyMapper.query2(venueastatus);
+    }
+
+    @Override
+    public List<Venueb> query3(int venueastatus) {
+        return zhyMapper.query3(venueastatus);
     }
 }

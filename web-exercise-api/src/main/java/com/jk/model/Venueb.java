@@ -14,6 +14,18 @@ public class Venueb  implements Serializable {
      */
     private String venuename;
 
+    /**
+     * 联系人
+     */
+    private String venuepeople;
+
+    public String getVenuepeople() {
+        return venuepeople;
+    }
+
+    public void setVenuepeople(String venuepeople) {
+        this.venuepeople = venuepeople;
+    }
 
     /**
      * 联系方式

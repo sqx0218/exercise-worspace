@@ -1,29 +1,28 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
 <mapper namespace="com.jk.mapper.ZhyMapper" >
-  <resultMap id="ZhyBaseResultMap" type="com.jk.model.Venueb" >
-    <id column="venueid" property="venueid" jdbcType="INTEGER" />
-    <result column="venuename" property="venuename" jdbcType="VARCHAR" />
-    <result column="venuephone" property="venuephone" jdbcType="VARCHAR" />
-    <result column="venuearea" property="venuearea" jdbcType="VARCHAR" />
-    <result column="venueaddress" property="typename" jdbcType="VARCHAR" />
-    <result column="venueastatus" property="venueastatus" jdbcType="INTEGER" />
-  </resultMap>
+
 
   <insert id="insert" parameterType="int" >
-      INSERT  INTO  t_venue_b (venuename,venuephone,venuearea,venueaddress,venueastatus,)VALUES(#{venuename},#{venuephone},#{venuearea},#{venueaddress},0)
+      INSERT  INTO  t_venue_b (venuename,venuephone,venuearea,venueaddress,venueastatus,venuepeople)VALUES(#{venuename},#{venuephone},#{venuearea},#{venueaddress},0,#{venuepeople})
   </insert>
 
 
-  <update id="update" parameterType="int">
-    update t_venue_b set venueastatus=1
+  <update id="update" parameterType="int" >
+    update t_venue_b set venueastatus=1 where venueid=#{venueid}
   </update>
 
   <update id="update2" parameterType="int">
-        update t_venue_b set venueastatus=2
+        update t_venue_b set venueastatus=2 where venueid=#{venueid}
   </update>
   
-  <select id="query" resultMap="ZhyBaseResultMap">
-    SELECT  venueid,venuename,venuephone,venuearea,venueaddress from t_venue_b where venueastatus=#{venueastatus}
+  <select id="query" resultType="com.jk.model.Venueb">
+    SELECT  venueid,venuename,venuephone,venuearea,venueaddress,venuepeople from t_venue_b where venueastatus=0
+  </select>
+  <select id="query2" resultType="com.jk.model.Venueb">
+    SELECT  venueid,venuename,venuephone,venuearea,venueaddress,venuepeople venuepeoplefrom t_venue_b where venueastatus=1
+  </select>
+  <select id="query3" resultType="com.jk.model.Venueb">
+    SELECT  venueid,venuename,venuephone,venuearea,venueaddress,venuepeople from t_venue_b where venueastatus=2
   </select>
 </mapper>
