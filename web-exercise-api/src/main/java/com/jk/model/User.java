@@ -1,8 +1,9 @@
 package com.jk.model;
 
+import java.io.Serializable;
 import java.util.Date;
 
-public class User {
+public class User implements Serializable {
     private Integer userId;
 
     private String userName;
@@ -10,6 +11,16 @@ public class User {
     private Date createTime;
 
     private String password;
+
+    private String phone;
+
+    public String getPhone() {
+        return phone;
+    }
+
+    public void setPhone(String phone) {
+        this.phone = phone;
+    }
 
     public Integer getUserId() {
         return userId;
