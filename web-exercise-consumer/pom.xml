@@ -114,12 +114,11 @@
             <scope>compile</scope>
         </dependency>
         <dependency>
-            <groupId>com.alipay.api</groupId>
-            <artifactId>k12-alipay-sdk</artifactId>
-            <version>0.0.1-beta</version>
+            <groupId>org.apache.httpcomponents</groupId>
+            <artifactId>httpclient</artifactId>
+            <version>4.5.10</version>
             <scope>compile</scope>
         </dependency>
-
 
         <!--//短信接口配置文件<dependency>
             <groupId>org.apache.httpcomponents</groupId>

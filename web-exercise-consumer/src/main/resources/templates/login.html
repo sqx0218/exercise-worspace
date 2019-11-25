@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8"/>
+
+    <title>LOGIN</title>
+    <meta name="keywords" content="HTML5,美观,简洁大气,响应式,第三方登录,网页模板" />
+    <meta name="description" content="HTML5美观简洁大气响应式带第三方登录网页模板下载。鼠标经过登录按钮带紫色渐变炫酷动画效果。带有简单的表单验证功能。" />
+
+
+  <!--  &lt;!&ndash; 引入easyui的css样式 &ndash;&gt;
+    <link rel="stylesheet" href="../jquery-easyui-1.5/themes/default/easyui.css">
+    &lt;!&ndash; 引入easyui的图标css样式 &ndash;&gt;
+    <link rel="stylesheet" href="../jquery-easyui-1.5/themes/icon.css">
+    &lt;!&ndash; 引入jqury的js文件 &ndash;&gt;
+    <script type="text/javascript" src="../jquery-easyui-1.5/jquery.min.js"></script>
+    &lt;!&ndash; 引入easyui的js文件 &ndash;&gt;
+    <script type="text/javascript" src="../jquery-easyui-1.5/jquery.easyui.min.js"></script>
+    &lt;!&ndash; 引入easyui的中文js文件 &ndash;&gt;
+    <script type="text/javascript" src="../jquery-easyui-1.5/locale/easyui-lang-zh_CN.js"></script>-->
+</head>
+<link rel="stylesheet" type="text/css" href="../denglu/vendor/bootstrap/css/bootstrap.min.css">
+<link rel="stylesheet" type="text/css" href="../denglu/fonts/font-awesome-4.7.0/css/font-awesome.min.css">
+<link rel="stylesheet" type="text/css" href="../denglu/fonts/iconic/css/material-design-iconic-font.min.css">
+<link rel="stylesheet" type="text/css" href="../denglu/css/util.css">
+<link rel="stylesheet" type="text/css" href="../denglu/css/main.css">
+<!-- Bootstrap 插件 css -->
+<link href="../js/bootstrap/css/bootstrap-theme.min.css" rel="stylesheet">
+<!-- Bootstrap 核心css -->
+<link href="../js/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+<!-- Bootstrap TreeView css -->
+<link href="../js/bootstrap-treeview/dist/bootstrap-treeview.min.css" rel="stylesheet">
+
+<!-- Bootstrap addTabs css -->
+<link href="../js/bootStrap-addTabs/bootstrap.addtabs.css" rel="stylesheet">
+
+<!-- Bootstrap table css -->
+<link href="../js/bootstrap-table/dist/bootstrap-table.css" rel="stylesheet">
+<!-- bootstrap-datetimepicker css -->
+<link href="../js/bootstrap-datetimepicker/css/bootstrap-datetimepicker.css" rel="stylesheet">
+
+<!-- bootstrap-dialog css -->
+<link href="../js/bootstrap-dialog/dist/css/bootstrap-dialog.css" rel="stylesheet">
+<!-- bootstrap-fileinput css -->
+<link href="../js/bootstrap-fileinput/css/fileinput.css" rel="stylesheet">
+
+
+
+<!--jQuery核心js  -->
+<script src="../js/jquery.min.js"></script>
+<!-- bootstrap 核心js文件 -->
+<script src="../js/bootstrap/js/bootstrap.min.js"></script>
+<!-- bootStrap TreeView -->
+<script src="../js/bootstrap-treeview/dist/bootstrap-treeview.min.js"></script>
+
+<!-- bootStrap addTabs -->
+<script src="../js/bootStrap-addTabs/bootstrap.addtabs.js"></script>
+
+<!-- bootStrap table -->
+<script src="../js/bootstrap-table/dist/bootstrap-table.js"></script>
+<!-- bootStrap table 语言包中文-->
+<script src="../js/bootstrap-table/dist/locale/bootstrap-table-zh-CN.js"></script>
+
+<!-- bootstrap-datetimepicker -->
+<script src="../js/bootstrap-datetimepicker/js/bootstrap-datetimepicker.js"></script>
+<script src="../js/bootstrap-datetimepicker/js/locales/bootstrap-datetimepicker.zh-CN.js"></script>
+
+<!-- bootstrap-dialog -->
+<script src="../js/bootstrap-dialog/dist/js/bootstrap-dialog.js"></script>
+<!-- bootstrap-fileinput -->
+<script src="../js/bootstrap-fileinput/js/fileinput.js"></script>
+<script src="../js/bootstrap-fileinput/js/locales/zh.js"></script>
+<body>
+<!--<div class="easyui-dialog" data-options="width:350,height:200,title:'登录',iconCls:'icon-tip',buttons:'#bt'">
+    <form id="loginForm" method="post">
+        <table>
+            <tr>
+                <td>用户名</td>
+                <td>
+                    <input class="easyui-textbox" name="userName" data-options="iconCls:'icon-man'">
+                </td>
+            </tr>
+            <tr>
+                <td>密码</td>
+                <td>
+                    <input class="easyui-passwordbox" name="password" data-options="iconCls:'icon-lock'">
+                </td>
+            </tr>
+&lt;!&ndash;            <tr>
+                <td>验证码</td>
+                <td>
+                    <input class="easyui-textbox" name="code">
+                    <img id="refreshCode" src="../user/gainCode.do">
+                </td>
+            </tr>&ndash;&gt;
+        </table>
+    </form>
+</div>
+<div id="bt">
+    <a class="easyui-linkbutton" href="javascript:toRegister()" data-options="iconCls:'icon-redo'">注册</a>
+    <a class="easyui-linkbutton" href="javascript:index()" data-options="iconCls:'icon-ok'">登录</a>
+</div>-->
+
+<div class="limiter">
+    <div class="container-login100" style="background-image: url('/denglu/images/bg-01.jpg');">
+        <div class="wrap-login100 p-l-55 p-r-55 p-t-65 p-b-54">
+            <form id="loginForm" method="post">
+                <span class="login100-form-title p-b-49">登录</span>
+
+                <div class="wrap-input100 validate-input m-b-23" data-validate="请输入用户名">
+                    <span class="label-input100">用户名</span>
+                    <input class="input100" type="text" name="userName" placeholder="请输入用户名" autocomplete="off">
+                    <span class="focus-input100" data-symbol="&#xf206;"></span>
+                </div>
+
+                <div class="wrap-input100 validate-input" data-validate="请输入密码">
+                    <span class="label-input100">密码</span>
+                    <input class="input100" type="password" name="password" placeholder="请输入密码">
+                    <span class="focus-input100" data-symbol="&#xf190;"></span>
+                </div>
+
+                <div class="text-right p-t-8 p-b-31">
+                    <a href="javascript:">忘记密码？</a>
+                </div>
+
+                <div class="container-login100-form-btn">
+                    <div class="wrap-login100-form-btn">
+                        <div class="login100-form-bgbtn"></div>
+                        <a class="login100-form-btn" href="../login/logina" role="button">登录</a>
+                           <!-- <button class="login100-form-btn" onclick="index()">登陆</button>-->
+                    </div>
+                </div>
+
+                <div class="txt1 text-center p-t-54 p-b-20">
+
+                </div>
+                <div class="container-login100-form-btn">
+                    <div class="wrap-login100-form-btn">
+                        <div class="login100-form-bgbtn"></div>
+                        <a class="login100-form-btn" href="../login/tokjdl" role="button">手机登录</a>
+                    </div>
+                </div>
+                <br>
+                <br>
+                <br>
+               <!-- <div class="flex-c-m">
+                    <a href="#" class="login100-social-item bg1">
+                        <i class="fa fa-wechat"></i>
+                    </a>
+
+                    <a href="#" class="login100-social-item bg2">
+                        <i class="fa fa-qq"></i>
+                    </a>
+
+                    <a href="#" class="login100-social-item bg3">
+                        <i class="fa fa-weibo"></i>
+                    </a>
+                </div>-->
+                <div></div>
+                <div class="container-login100-form-btn">
+                    <div class="wrap-login100-form-btn">
+                        <div class="login100-form-bgbtn"></div>
+                        <a class="login100-form-btn" href="../login/register" role="button">立即注册</a>
+                    </div>
+                <div class="flex-col-c p-t-25">
+                    <a href="javascript:toRegister()" class="txt2">立即注册</a>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+</body>
+<script type="text/javascript">
+
+    $("#refreshCode").click(function(){
+        $(this).prop("src","../user/gainCode.do?"+new Date().getTime());
+    })
+
+    //登录
+    function index(){
+    alert("77")
+        $("#loginForm").form("submit",{
+            url:"../login/logina",
+            success:function(data){
+
+                $.messager.alert("提示",data,"info");
+                if(data=="登录成功"){
+                    //location.href="../exercise/toIndex";
+                    location.href="../login/kjdl";
+                }
+            }
+        });
+    }
+     //注册
+    function toRegister(){
+
+        location.href="../login/register";
+
+    }
+    function kuaijie() {
+
+        location.href="../login/tokjdl";
+    }
+</script>
+</html>
