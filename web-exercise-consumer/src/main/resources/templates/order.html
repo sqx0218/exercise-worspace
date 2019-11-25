@@ -1,0 +1,194 @@
+<!DOCTYPE html >
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link href="../js/bootstrap/css/bootstrap-theme.min.css" rel="stylesheet">
+    <!-- Bootstrap 核心css -->
+    <link href="../js/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Bootstrap TreeView css -->
+    <link href="../js/bootstrap-treeview/dist/bootstrap-treeview.min.css" rel="stylesheet">
+    <!-- Bootstrap addTabs css -->
+    <link href="../js/bootStrap-addTabs/bootstrap.addtabs.css" rel="stylesheet">
+    <!-- Bootstrap table css -->
+    <link href="../js/bootstrap-table/dist/bootstrap-table.css" rel="stylesheet">
+    <!-- bootstrap-datetimepicker css -->
+    <link href="../js/bootstrap-datetimepicker/css/bootstrap-datetimepicker.css" rel="stylesheet">
+    <!-- bootstrap-dialog css -->
+    <link href="../js/bootstrap-dialog/dist/css/bootstrap-dialog.css" rel="stylesheet">
+    <!-- bootstrap-fileinput css -->
+    <link href="../js/bootstrap-fileinput/css/fileinput.css" rel="stylesheet">
+    <script src="../js/jquery.min.js"></script>
+    <script src="../js/bootstrap/js/bootstrap.min.js"></script>
+    <!-- bootStrap TreeView -->
+    <script src="../js/bootstrap-treeview/dist/bootstrap-treeview.min.js"></script>
+    <!-- bootStrap addTabs -->
+    <script src="../js/bootStrap-addTabs/bootstrap.addtabs.js"></script>
+    <!-- bootStrap table -->
+    <script src="../js/bootstrap-table/dist/bootstrap-table.js"></script>
+    <!-- bootStrap table 语言包中文-->
+    <script src="../js/bootstrap-table/dist/locale/bootstrap-table-zh-CN.js"></script>
+    <!-- bootstrap-datetimepicker -->
+    <script src="../js/bootstrap-datetimepicker/js/bootstrap-datetimepicker.js"></script>
+    <script src="../js/bootstrap-datetimepicker/js/locales/bootstrap-datetimepicker.zh-CN.js"></script>
+    <!-- bootstrap-dialog -->
+    <script src="../js/bootstrap-dialog/dist/js/bootstrap-dialog.js"></script>
+    <!-- bootstrap-fileinput -->
+    <script src="../js/bootstrap-fileinput/js/fileinput.js"></script>
+    <script src="../js/bootstrap-fileinput/js/locales/zh.js"></script>
+</head>
+<body>
+
+<input id="u" th:value="${user}" hidden>
+<h2>
+    <center><B><p class="text-primary"><span id="now_times"></span></p></B></center>
+</h2>
+<button class="btn btn-default" onclick="returns()">返回首页</button>
+<table id="cx" class="table"></table>
+<h3><p class="text-danger"><span id='timer'></span></p></h3>
+<script type="text/javascript">
+
+    $(function () {
+        initTable();
+    })
+
+    function initTable() {
+       var userId= $('#u').val();
+        $('#cx').bootstrapTable({
+            fitColumns: true,
+            toolbar: '#toolbar',
+            url: '../myOrder?userId=' + userId,
+            showColumns: false,
+            showToggle: true,
+            showPaginationSwitch: false,
+            showRefresh: true,
+            detailView: false,
+            showFooter: false,
+            clickToSelect: false,
+            sidePagination: 'server',
+            striped: true,
+            columns: [
+                [
+                    {
+                        field: 'venueName', title: '场馆',
+                        formatter: function (value, row, index) {
+                            return row.venueName + '<br><br> 订单编号： ' + row.orderNum + '<br> ' + row.orderTime
+                        }
+                    },
+                    {
+                        field: 'orderTime', title: '使用日期',
+                        formatter: function (value, row, index) {
+                            return value
+                        }
+                    },
+                    {field: 'orderInfo', title: '详细信息'},
+                    {
+                        field: 'orderPrice', title: '支付金额',
+                        formatter: function (value, row, index) {
+                            var str = "￥" + value
+                            return str
+                        }
+                    },
+                    {
+                        field: 'orderStatus', title: '状态',
+                        formatter: function (value, row, index) {
+                            if (value == 1) {
+                                return '待付款'
+                            }
+                            if (value == 2) {
+                                return '已付款';
+                            }
+
+                        }
+                    },
+                    {
+                        field: '123', title: '操作', formatter: function (value, row, index) {
+                            if (row.orderStatus == 1) {
+                                return '<button class="btn btn-primary" onclick="pay(' + row.orderId + ',\'' + row.orderNum + '\',\'' + row.orderTime + '\',\'' + row.orderInfo + '\',' + row.orderPrice + ',' + row.orderStatus + ')">支付</button> <br><br>' +
+                                    '<button class="btn btn-default" onclick="delOrder(' + row.orderId + ')">取消</button>'
+
+                            }
+
+                        }
+                    }
+                ]
+            ]
+        })
+    }
+
+    function delOrder(orderId) {
+        $.ajax({
+            url: '../delOrder',
+            data: {orderId: orderId},
+            success: function (data) {
+                $("#cx").bootstrapTable("refresh");
+            }
+        })
+
+    }
+
+    function pay(bh, ddbh, ddcjsj, ddxx, jg, zt) {
+        location.href = "../goAlipay?jg=" + jg;
+        $.ajax({
+            url: '../updateStatus',
+            data: {orderId: bh},
+            success: function () {
+                alert("你的订单成功处理")
+            }
+        })
+        /*$.ajax({
+            url:"../goAlipay",
+            type:"post",
+            data:{
+                ddbh:ddbh,
+                ddxx:ddxx,
+                jg:jg,
+            },
+            success:function(){
+                alert("成功");
+            },
+            error:function(){
+                alert("shibai");
+            }
+        })*/
+    }
+
+    function returns() {
+        location.href = "../toIndex2";
+    }
+</script>
+
+<script type="text/javascript">
+    /*'<p class="text-danger"><span class="timer"></span></p>';*/
+    var maxtime = 7 * 24 * 60 * 10;
+
+    function CountDown() {
+        if (maxtime >= 0) {
+            minutes = Math.floor(maxtime / 60);
+            seconds = Math.floor(maxtime % 60);
+            msg = "订单有效时间还剩：" + minutes + "分" + seconds + "秒" + "请及时到达。欢迎您的光临";
+            document.all["timer"].innerHTML = msg;
+            if (maxtime == 1 * 60) alert("距离结束仅剩1分钟");
+            --maxtime;
+        } else {
+            clearInterval(timer);
+            alert("时间到，结束!");
+
+        }
+    }
+
+    timer = setInterval("CountDown()", 1000);
+</script>
+<script type="text/javascript">
+    function timestamptostr() {
+        d = new Date(Math.round(new Date().getTime() / 1000) * 1000);
+        var jstimestamp = (d.getFullYear()) + "年" + (d.getMonth() + 1) + "月" + (d.getDate()) + "日 " + (d.getHours()) + "时" + (d.getMinutes()) + "分" + (d.getSeconds() + "秒");
+        return jstimestamp;
+    }
+
+    setInterval(function () {
+        document.getElementById('now_times').innerHTML = timestamptostr();
+    }, 1000);
+</script>
+</body>
+</html>

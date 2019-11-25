@@ -19,6 +19,9 @@ import java.util.List;
 @RequestMapping("zhy")
 public class ZhyController {
 
+
+
+
     @Reference
     private ZhyService zhyService;
 
@@ -102,7 +105,13 @@ public class ZhyController {
     public String  weitonggguo(){
         return "weitonggguo";
     }
+
+    @RequestMapping("tiao")
+    public String tiao(){
+        return "tiao";
+    }
 }
+
 
 
 

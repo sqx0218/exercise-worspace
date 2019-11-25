@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.jk.mapper.OrderInfoMapper">
+    <select id="myOrder" resultType="com.jk.model.OrderInfo">
+        select
+        t.*,v.venueName
+        from t_order_info t
+        left join t_user u
+        on t.userId=u.userId
+        left join t_venue v
+        on t.venueId=v.venueId
+        where t.userId=#{userId}
+    </select>
+    <delete id="delOrder">
+        delete from t_order_info where orderId=#{orderId}
+    </delete>
+    <update id="updateStatus">
+        update t_order_info set orderStatus=2 where orderId=#{orderId}
+    </update>
+</mapper>

@@ -1,17 +1,24 @@
 package com.jk.model;
 
-
+import com.fasterxml.jackson.annotation.JsonFormat;
 import org.springframework.data.mongodb.core.mapping.Document;
+import org.springframework.format.annotation.DateTimeFormat;
 
 import java.io.Serializable;
 import java.util.Date;
 
-
+@Document(collection = "OrderInfo")
 public class OrderInfo implements Serializable {
-    private static final long serialVersionUID = 2514118049056308458L;
+    private static final long serialVersionUID = -6223105691902585000L;
     private Integer userId;
 
     private Integer venueId;
+
+    private Integer orderId;
+
+
+    @DateTimeFormat(pattern = "yyyy-MM-dd HH:mm:ss")
+    @JsonFormat(pattern = "yyyy-MM-dd HH:mm:ss", timezone = "GMT+8")
 
     private Date orderTime;
 
@@ -22,6 +29,34 @@ public class OrderInfo implements Serializable {
     private Integer orderStatus;
 
     private String orderInfo;
+
+    private String venueName;
+
+    private String userName;
+
+    public Integer getOrderId() {
+        return orderId;
+    }
+
+    public void setOrderId(Integer orderId) {
+        this.orderId = orderId;
+    }
+
+    public String getUserName() {
+        return userName;
+    }
+
+    public void setUserName(String userName) {
+        this.userName = userName;
+    }
+
+    public String getOrderInfo() {
+        return orderInfo;
+    }
+
+    public void setOrderInfo(String orderInfo) {
+        this.orderInfo = orderInfo;
+    }
 
     public Integer getUserId() {
         return userId;
@@ -39,6 +74,14 @@ public class OrderInfo implements Serializable {
         this.venueId = venueId;
     }
 
+    public String getVenueName() {
+        return venueName;
+    }
+
+    public void setVenueName(String venueName) {
+        this.venueName = venueName;
+    }
+
     public Date getOrderTime() {
         return orderTime;
     }
@@ -52,7 +95,6 @@ public class OrderInfo implements Serializable {
     }
 
     public void setOrderNum(String orderNum) {
-
         this.orderNum = orderNum == null ? null : orderNum.trim();
     }
 
@@ -70,13 +112,5 @@ public class OrderInfo implements Serializable {
 
     public void setOrderStatus(Integer orderStatus) {
         this.orderStatus = orderStatus;
-    }
-
-    public String getOrderInfo() {
-        return orderInfo;
-    }
-
-    public void setOrderInfo(String orderInfo) {
-        this.orderInfo = orderInfo;
     }
 }

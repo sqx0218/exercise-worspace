@@ -3,46 +3,148 @@
 <head>
     <meta charset="UTF-8">
     <title>Title</title>
- <!-- <style type="text/css">
-        body, html,#allmap {width: 100%;height: 100%;overflow: hidden;margin:0;font-family:"微软雅黑";}
-        #allmap{height:500px;width:100%;}
-        #r-result{width:100%; font-size:14px;}
-    </style>-->
+    <!-- <style type="text/css">
+           body, html,#allmap {width: 100%;height: 100%;overflow: hidden;margin:0;font-family:"微软雅黑";}
+           #allmap{height:500px;width:100%;}
+           #r-result{width:100%; font-size:14px;}
+       </style>-->
+
     <style>
-        .comment { width: 680px; margin: 20px auto; position: relative; background: #fff; padding: 20px 50px 50px; border: 1px solid #DDD; border-radius: 5px; }
-        .comment h3 { height: 28px; line-height: 28px }
-        .com_form { width: 100%; position: relative }
-        .input { width: 99%; height: 60px; border: 1px solid #ccc }
-        .com_form p { height: 28px; line-height: 28px; position: relative; margin-top: 10px; }
-        span.emotion { width: 42px; height: 20px; padding-left: 20px; cursor: pointer }
-        span.emotion:hover { background-position: 2px -28px }
-        .qqFace { margin-top: 4px; background: #fff; padding: 2px; border: 1px #dfe6f6 solid; }
-        .qqFace table td { padding: 0px; }
-        .qqFace table td img { cursor: pointer; border: 1px #fff solid; }
-        .qqFace table td img:hover { border: 1px #0066cc solid; }
-        #show { width: 770px; margin: 20px auto; background: #fff; padding: 5px; border: 1px solid #DDD; vertical-align: top; }
-        .sub_btn { position: absolute; right: 0px; top: 0; display: inline-block; zoom: 1; /* zoom and *display = ie7 hack for display:inline-block */  *display: inline;
-            vertical-align: baseline; margin: 0 2px; outline: none; cursor: pointer; text-align: center; font: 14px/100% Arial, Helvetica, sans-serif; padding: .5em 2em .55em; text-shadow: 0 1px 1px rgba(0,0,0,.6); -webkit-border-radius: 3px; -moz-border-radius: 3px; border-radius: 3px; -webkit-box-shadow: 0 1px 2px rgba(0,0,0,.2); -moz-box-shadow: 0 1px 2px rgba(0,0,0,.2); box-shadow: 0 1px 2px rgba(0,0,0,.2); color: #e8f0de; border: solid 1px #538312; background: #64991e; background: -webkit-gradient(linear, left top, left bottom, from(#7db72f), to(#4e7d0e)); background: -moz-linear-gradient(top, #7db72f, #4e7d0e);  filter:  progid:DXImageTransform.Microsoft.gradient(startColorstr='#7db72f', endColorstr='#4e7d0e');
+        a:visited {
+            color: #0f0f0f
         }
-        .sub_btn:hover { background: #538018; background: -webkit-gradient(linear, left top, left bottom, from(#6b9d28), to(#436b0c)); background: -moz-linear-gradient(top, #6b9d28, #436b0c);  filter:  progid:DXImageTransform.Microsoft.gradient(startColorstr='#6b9d28', endColorstr='#436b0c');
+
+        a.visited {
+            color: #d43f3a
+        }
+
+        .comment {
+            width: 680px;
+            margin: 20px auto;
+            position: relative;
+            background: #fff;
+            padding: 20px 50px 50px;
+            border: 1px solid #DDD;
+            border-radius: 5px;
+        }
+
+        .comment h3 {
+            height: 28px;
+            line-height: 28px
+        }
+
+        .com_form {
+            width: 100%;
+            position: relative
+        }
+
+        .input {
+            width: 99%;
+            height: 60px;
+            border: 1px solid #ccc
+        }
+
+        .com_form p {
+            height: 28px;
+            line-height: 28px;
+            position: relative;
+            margin-top: 10px;
+        }
+
+        span.emotion {
+            width: 42px;
+            height: 20px;
+            padding-left: 20px;
+            cursor: pointer
+        }
+
+        span.emotion:hover {
+            background-position: 2px -28px
+        }
+
+        .qqFace {
+            margin-top: 4px;
+            background: #fff;
+            padding: 2px;
+            border: 1px #dfe6f6 solid;
+        }
+
+        .qqFace table td {
+            padding: 0px;
+        }
+
+        .qqFace table td img {
+            cursor: pointer;
+            border: 1px #fff solid;
+        }
+
+        .qqFace table td img:hover {
+            border: 1px #0066cc solid;
+        }
+
+        #show {
+            width: 770px;
+            margin: 20px auto;
+            background: #fff;
+            padding: 5px;
+            border: 1px solid #DDD;
+            vertical-align: top;
+        }
+
+        .sub_btn {
+            position: absolute;
+            right: 0px;
+            top: 0;
+            display: inline-block;
+            zoom: 1; /* zoom and *display = ie7 hack for display:inline-block */
+            *display: inline;
+            vertical-align: baseline;
+            margin: 0 2px;
+            outline: none;
+            cursor: pointer;
+            text-align: center;
+            font: 14px/100% Arial, Helvetica, sans-serif;
+            padding: .5em 2em .55em;
+            text-shadow: 0 1px 1px rgba(0, 0, 0, .6);
+            -webkit-border-radius: 3px;
+            -moz-border-radius: 3px;
+            border-radius: 3px;
+            -webkit-box-shadow: 0 1px 2px rgba(0, 0, 0, .2);
+            -moz-box-shadow: 0 1px 2px rgba(0, 0, 0, .2);
+            box-shadow: 0 1px 2px rgba(0, 0, 0, .2);
+            color: #e8f0de;
+            border: solid 1px #538312;
+            background: #64991e;
+            background: -webkit-gradient(linear, left top, left bottom, from(#7db72f), to(#4e7d0e));
+            background: -moz-linear-gradient(top, #7db72f, #4e7d0e);
+            filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#7db72f', endColorstr='#4e7d0e');
+        }
+
+        .sub_btn:hover {
+            background: #538018;
+            background: -webkit-gradient(linear, left top, left bottom, from(#6b9d28), to(#436b0c));
+            background: -moz-linear-gradient(top, #6b9d28, #436b0c);
+            filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#6b9d28', endColorstr='#436b0c');
         }
     </style>
-    <script type="text/javascript" src="http://api.map.baidu.com/api?v=2.0&ak=GCwaboPOtvBE9KIcr0HjDkEKgQgPL2iH"></script>
+    <script type="text/javascript"
+            src="http://api.map.baidu.com/api?v=2.0&ak=GCwaboPOtvBE9KIcr0HjDkEKgQgPL2iH"></script>
 
 
     <link rel="stylesheet" href="https://a.amap.com/jsapi_demos/static/demo-center/css/demo-center.css"/>
     <style>
-        html,body,#container{
-            margin:0;
-            height:100%;
+        html, body, #container {
+            margin: 0;
+            height: 100%;
         }
-        .input-item-text{
-            width:7rem;
+
+        .input-item-text {
+            width: 7rem;
         }
     </style>
     <link href="../textarea/css/bootstrap.min.css" rel="stylesheet" media="screen">
     <link rel="stylesheet" href="../textarea/css/reset.css">
-    <script  src="../textarea/js/jquery.min.js"></script>
+    <script src="../textarea/js/jquery.min.js"></script>
     <script type="text/javascript" src="../textarea/js/jquery.qqFace.js"></script>
     <!-- Bootstrap 插件 css -->
     <link href="../js/bootstrap/css/bootstrap-theme.min.css" rel="stylesheet">
@@ -64,7 +166,6 @@
     <!-- bootstrap-fileinput css -->
     <link href="../js/bootstrap-fileinput/css/fileinput.css" rel="stylesheet">
 </head>
-
 
 
 <!--jQuery核心js  -->
@@ -95,274 +196,333 @@
 
 <div class="container">
     <form id="fm">
-    <div class="row clearfix">
-        <div class="col-md-8 column">
-            <div>
-                <br>
+        <div class="row clearfix">
+            <div class="col-md-8 column">
+                <div>
+                    <br>
 
-                <b><h4><span th:text="${venue.venueName}"></span>&nbsp;&nbsp;<input type="button"   class="btn btn-info btn-circle btn-lg" id="button" onclick='buttonlike()'>
-                    <br><br> 预约电话：<span th:text="${venue.venuePhone}"></span><br><br>
-                    <br> 场馆地址：<span id="venueAddress" th:text="${venue.venueAddress}"></span>
-                    <br><br>
-                价格：<span th:text="${venue.price}" ></span>起
-               <br><br>
+                    <b><h4><span th:text="${venue.venueName}"></span>&nbsp;&nbsp;<input type="button"
+                                                                                        class="btn btn-info btn-circle btn-lg"
+                                                                                        id="button"
+                                                                                        onclick='buttonlike()'>
+                        <br><br> 预约电话：<span th:text="${venue.venuePhone}"></span><br><br>
+                        <br> 场馆地址：<span id="venueAddress" th:text="${venue.venueAddress}"></span>
+                        <br><br>
+                        价格：<span th:text="${venue.price}"></span>起
+                        <br><br>
 
-                    地铁：<span th:text="${venue.venueMetro}"></span><br><br>
-                    公交：<span th:text="${venue.venueCar}"></span><br>
-                <br><br>
+                        地铁：<span th:text="${venue.venueMetro}"></span><br><br>
+                        公交：<span th:text="${venue.venueCar}"></span><br>
+                        <br><br>
 
-                    场地类型：<span th:text="${venue.venueTypeName}"></span>
-                <br><br>
+                        场地类型：<span th:text="${venue.venueTypeName}"></span>
+                        <br><br>
 
-                    洗浴：<span th:text="${venue.venueBath}"></span>
-               <br><br>
+                        洗浴：<span th:text="${venue.venueBath}"></span>
+                        <br><br>
 
-                    发票： <span th:text="${venue.venueInvoice}"></span>
-                <br><br>
+                        发票： <span th:text="${venue.venueInvoice}"></span>
+                        <br><br>
 
-                    营业时间： <span th:text="${venue.doTime}"></span>
-                <br><br>
+                        营业时间： <span th:text="${venue.doTime}"></span>
+                        <br><br>
 
-                    温馨提示：<span th:text="${venue.venueHint}"></span>
-                </h4></b>
-                <br>
-                <br>
-                <br>
-                <h3>场馆预定</h3>
+                        温馨提示：<span th:text="${venue.venueHint}"></span>
+                    </h4></b>
+                    <br>
+                    <br>
+                    <br>
+                    <h3>场馆预定</h3>
+                </div>
             </div>
-        </div>
-        <div class="col-md-2">
-            <div>
-                <input id="like" type="hidden"  th:value="${venue.venueLike}" >
-                <img src="../img/hh.jpg"   th:value="${venue.img}" style="width: 350px;height:250px">
-                <input type="hidden" name="venueId" id="venueId" th:value="${venue.venueId}">
-               <br>
-                <br>
-                <!--地图-->
-                <div id="allmap" style="height:300px;width:350px"></div>
+            <div class="col-md-2">
+                <div>
+                    <input id="like" type="hidden" th:value="${venue.venueLike}">
+                    <img src="../img/hh.jpg" th:value="${venue.img}" style="width: 350px;height:250px">
+                    <input type="hidden" name="venueId" id="venueId" th:value="${venue.venueId}">
+                    <br>
+                    <br>
+                    <!--地图-->
+                    <div id="allmap" style="height:300px;width:350px"></div>
+                    <div id="r-result">
+                        城市名: <input id="cityName" type="text" style="width:100px; margin-right:10px;"/>
+                        <input type="button" value="查询" onclick="theLocation()"/>
+                    </div>
+                    <!--end-->
 
-                <!--end-->
-
+                </div>
             </div>
+
         </div>
+        <br>
+        <div>
+        </div>
+        <center>
+            <table id="timeChang" class="table table-bordered" style="height:230px;width:950px;">
+            </table>
+        </center>
 
-    </div>  <br>
-<div>
+        <div style="width:400px;height:80px;" name="orderPrice">
+            <input type="hidden" id="orderPrice" name="orderPrice">
+            <font style="font-size: 40px"><b>总计:<span id="span2">0</span>元</b></font>
+        </div>
+        </dt><br>
+        <dt>
+            <button type="button" class="btn btn-danger" onclick="goPayment('+${venue.price}+')">提交订单</button>
+        </dt>
+
+
+    </form>
 </div>
+<h3>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;用户评论</h3>
+<hr style="filter: alpha(opacity=0,finishopacity=100,style=1)" width="80%" color="black" size="10px">
 <center>
-    <table  id="timeChang" class="table table-bordered" style="height:230px;width:950px;">
-    </table></center>
+    <table id="appraiseTable" class="table table-bordered" style="height:230px;width:950px;">
 
-    <div style="width:400px;height:80px;" name="orderPrice" >
-        <input type="hidden" id="orderPrice" name="orderPrice" >
-        <font style="font-size: 40px"   ><b>总计:<span id="span2" >0</span>元</b></font>
-    </div>
-    </dt><br>
-    <dt>
-        <button type="button" class="btn btn-danger" onclick="goPayment('+${venue.price}+')">提交订单</button>
-    </dt>
-
-
-
-</form>
-</div>
-<h3>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;用户评论</h3><hr style="filter: alpha(opacity=0,finishopacity=100,style=1)" width="80%"  color="black" size="10px">
-<center>
-    <table  id="appraiseTable" class="table table-bordered" style="height:230px;width:950px;">
-
-    </table></center>
-    <br>
-    <textarea id="apptext" class="form-control" rows="3"></textarea>
+    </table>
+</center>
+<br>
+<textarea id="apptext" class="form-control" rows="3"></textarea>
 <input type="button" value="发布" onclick="appadd()">
+<input id="UserLike" th:value="${user}" hidden>
 
-<input th:text="${venue}">
-    <br>
-    <br>
+
+<br>
+<br>
 <script>
+
     $(function () {
 
         querylike()
     })
+
     function querylike() {
 
-        if ($("#like").val()==1){
+        var Username = $("#UserLike").val();
+        //alert("111111"+Username)
+        if (UserLike == "" && UserLike == null) {
+            alert("请先登录");
+            location.href = '../login/tologin';
+            return;
+        }
+        if ($("#like").val() == 1) {
             $("#button").val("💖")
-        }else {
+        } else {
             $("#button").val("＋")
         }
     }
 
-    function appadd(){
-        var venueId=   $("#venueId").val()
-        var apptext= $("#apptext").val()
-        if(apptext==""){
+
+    //评论提交按钮
+    function appadd() {
+        var UserLike = $("#UserLike").val();
+
+        if (UserLike == "" || UserLike == null) {
+            alert("请先登录");
+            location.href = '../login/tologin';
+            return;
+        }
+        var venueId = $("#venueId").val()
+        var apptext = $("#apptext").val()
+        if (apptext == "") {
             alert("请先输入")
-            return ;
+            return;
         }
         $.ajax({
-            url:'../exercise/appadd',
-            type:"post",
-            data:{venueId:venueId,praiseInfo:apptext},
-            success:function(){
-                location.href=location;
-            },error:function(){
+            url: '../exercise/appadd',
+            type: "post",
+            data: {venueId: venueId, praiseInfo: UserLike + ":" + apptext},
+            success: function () {
+                location.href = location;
+            }, error: function () {
                 alert("失败");
             }
 
         });
     }
 
-    function buttonlike(){
-
-        var venueId=   $("#venueId").val()
-        var likeId= $("#like").val()
+    //收藏
+    function buttonlike() {
+        var UserLike = $("#UserLike").val();
+        if (UserLike == "" || UserLike == null) {
+            alert("请先登录");
+            location.href = '../login/tologin';
+            return;
+        }
+        var venueId = $("#venueId").val()
+        var likeId = $("#like").val()
         $.ajax({
-            url:'../exercise/venuelike',
-            type:"post",
-            data:{venueId:venueId,likeId:likeId},
-            success:function(){
-                location.href=location;
+            url: '../exercise/venuelike',
+            type: "post",
+            data: {venueId: venueId, likeId: likeId},
+            success: function () {
+                location.href = location;
                 querylike()
-            },error:function(){
+            }, error: function () {
                 alert("收藏失败");
             }
 
         });
     }
-    $(function(){
+
+    $(function () {
         queryAppraise();
         queryList();
     })
-    function queryList () {
+
+    function queryList() {
 
         $("#timeChang").bootstrapTable({
-            url:"../exercise/queryList",
-            columns:[
+            url: "../exercise/queryList",
+            columns: [
                 [
-                    {field:'id',
-                        formatter:function (value,row,index) {
+                    {
+                        field: 'id',
+                        formatter: function (value, row, index) {
 
-                            return index+1+"号场";
-                        }},
-                    {field:'er',title:'0-3',
-                    formatter:function (value,row,index) {
-                        return "<a href='javascript:open("+value+")' >"+value+"</a>"
-                    }
+                            return index + 1 + "号场";
+                        }
                     },
-                    {field:'si',title:'3-6',
-                        formatter:function (value,row,index) {
-                            return "<a href='javascript:open("+value+")'>"+value+"</a>"
-                        }},
-                    {field:'liu',title:'6-9',formatter:function (value,row,index) {
-                            return "<a href='javascript:open("+value+")'>"+value+"</a>"
-                        }},
-                    {field:'ba',title:'9-12',formatter:function (value,row,index) {
-                            return "<a href='javascript:open("+value+")'>"+value+"</a>"
-                        }},
-                    {field:'shi',title:'12-15',formatter:function (value,row,index) {
-                            return "<a href='javascript:open("+value+")'>"+value+"</a>"
-                        }},
-                    {field:'shier',title:'15-18',formatter:function (value,row,index) {
-                            return "<a href='javascript:open("+value+")'>"+value+"</a>"
-                        }},
-                    {field:'shisi',title:'18-21',formatter:function (value,row,index) {
-                            return "<a href='javascript:open("+value+")'>"+value+"</a>"
-                        }},
-                    {field:'shiliu',title:'21-24',formatter:function (value,row,index) {
-                            return "<a href='javascript:open("+value+")'>"+value+"</a>"
-                        }},
+                    {
+                        field: 'er', title: '0-3',
+                        formatter: function (value, row, index) {
+                            return "<a href='javascript:open(" + value + ")' class='red'>" + value + "</a>"
+
+                        }
+                    },
+                    {
+                        field: 'si', title: '3-6',
+                        formatter: function (value, row, index) {
+                            return "<a href='javascript:open(" + value + ")' class='red' >" + value + "</a>"
+                        }
+                    },
+                    {
+                        field: 'liu', title: '6-9', formatter: function (value, row, index) {
+                            return "<a href='javascript:open(" + value + ")'>" + value + "</a>"
+                        }
+                    },
+                    {
+                        field: 'ba', title: '9-12', formatter: function (value, row, index) {
+                            return "<a href='javascript:open(" + value + ")'>" + value + "</a>"
+                        }
+                    },
+                    {
+                        field: 'shi', title: '12-15', formatter: function (value, row, index) {
+                            return "<a href='javascript:open(" + value + ")'>" + value + "</a>"
+                        }
+                    },
+                    {
+                        field: 'shier', title: '15-18', formatter: function (value, row, index) {
+                            return "<a href='javascript:open(" + value + ")'>" + value + "</a>"
+                        }
+                    },
+                    {
+                        field: 'shisi', title: '18-21', formatter: function (value, row, index) {
+                            return "<a href='javascript:open(" + value + ")'>" + value + "</a>"
+                        }
+                    },
+                    {
+                        field: 'shiliu', title: '21-24', formatter: function (value, row, index) {
+                            return "<a href='javascript:open(" + value + ")'>" + value + "</a>"
+                        }
+                    },
                 ]
             ]
+
         })
 
     }
-    function  open(value){
 
-        var cc=parseInt(value)+ parseInt($("#span2").html());
+    function open(value, x) {
+        $('a').click(function () {
+            $('a.visited').removeClass('visited');
+
+            $(this).addClass('visited');
+
+        });
+
+        var cc = parseInt(value) + parseInt($("#span2").html());
 
 
         $("#span2").html(cc);
+
+
+        /*  //删除a标签的点击事件
+          $("a").removeAttr("href");
+         //设置30S后执行添加a标签点击事件
+          setTimeout("$('a').attr('href','test();')",1000)*/
+
     }
 
 
     function goPayment() {
-      var price=  $("#span2").html()
+        var UserLike = $("#UserLike").val();
+        if (UserLike == "" || UserLike == null) {
+            alert("请先登录");
+            return;
+        }
+        var price = $("#span2").html()
 
-        $("#orderPrice").val(price)
-        alert($("#fm").serialize())
-       $.ajax({
-           url:'../exercise/addPayment',
-           data:$("#fm").serialize(),
-           success:function () {
-               location.href="../page/toMap";
-           }
-       })
+        var price2 = $("#orderPrice").val(price)
+        //alert($("#fm").serialize())
+
+        if (price == 0 || price == "") {
+            alert("请选择场地")
+            return;
+        }
+        $.ajax({
+            url: '../exercise/addPayment',
+            data: $("#fm").serialize(),
+            success: function () {
+                location.href = "../exercise/toOrder";
+            }
+        })
 
     }
 
 
-
     function queryAppraise() {
-        var venueId=   $("#venueId").val();
-            $("#appraiseTable").bootstrapTable({
-            url:"../exercise/queryAppraise?venueId="+venueId,
-                method:'post',
-                contentType:'application/x-www-form-urlencoded',//post请求按照表单方式
-                pagination:true,
-                sidePagination:'server',//分页方式：client客户端分页，server服务端分页
-                pageNumber:1,
-                pageList:[10,20,30,40,50],
-                pageSize:10,
-                queryParams:function(){
+        var venueId = $("#venueId").val();
+        // alert(venueId)
+        $("#appraiseTable").bootstrapTable({
+            url: "../exercise/queryAppraise?venueId=" + venueId,
+            method: 'post',
+            contentType: 'application/x-www-form-urlencoded',//post请求按照表单方式
+            pagination: true,
+            sidePagination: 'server',//分页方式：client客户端分页，server服务端分页
+            pageNumber: 1,
+            pageList: [10, 20, 30, 40, 50],
+            pageSize: 10,
+            queryParams: function () {
 
-                    return {
-                        page:this.pageNumber,
-                        rows:this.pageSize,
+                return {
+                    page: this.pageNumber,
+                    rows: this.pageSize,
 
-                    }
-                },
-            columns:[
+                }
+            },
+            columns: [
                 [
-                    {field:'praiseInfo',title:'',
-                    formatter:function (vlaue,row,index) {
-                        return vlaue+"    <a href='javascript:huifu()'>回复</a>"
-                    }
-                    }
+
+                    {field: 'praiseInfo', title: ''}
                 ]
             ]
         })
     }
 
-   function huifu(){
+    function huifu() {
 
 
-   }
-    /*function makerOrede(venueId) {
-
-        $.ajax({
-            url:'../exercise/makeOrder',
-            data:{userId:$("#userId"),venueId:venueId},
-            type:'post',
-            success:function (msg) {
-                if(msg == 'error'){
-                    alert("预约失败")
-                    location.href = "../login/login";
-                }
-                if (msg == 'success'){
-                    alert("预约成功")
-                    location.href = "../Order";
-                }
-            }
-        })
     }
-*/
+
 </script>
 <script type="text/javascript">
     // 百度地图API功能
     var map = new BMap.Map("allmap");
-    var point = new BMap.Point(116.331398,39.897445);
-    map.centerAndZoom(point,11);
-    function myFun(result){
+    var point = new BMap.Point(116.331398, 39.897445);
+    map.centerAndZoom(point, 11);
+
+    function myFun(result) {
         var cityName = result.name;
         map.setCenter(cityName);
         //alert("当前定位城市:"+cityName);
@@ -372,16 +532,29 @@
     // 创建地址解析器实例
     var myGeo = new BMap.Geocoder();
     // 将地址解析结果显示在地图上,并调整地图视野
-    var venueAddress=$("#venueAddress").html()
-    myGeo.getPoint(venueAddress, function(point){
+    var venueAddress = $("#venueAddress").html()
+    myGeo.getPoint(venueAddress, function (point) {
         if (point) {
             map.centerAndZoom(point, 16);
             map.addOverlay(new BMap.Marker(point));
-        }else{
+        } else {
             alert("您选择地址没有解析到结果!");
         }
     }, "北京市");
 
+    function theLocation() {
+        var city = document.getElementById("cityName").value;
+        if (city != "") {
+            map.centerAndZoom(city, 11);      // 用城市名设置地图中心点
+        }
+    }
+
+    map.enableScrollWheelZoom(true);     //开启鼠标滚轮缩放
+    function showInfo(e) {
+        alert(e.point.lng + ", " + e.point.lat);
+    }
+
+    map.addEventListener("click", showInfo);
 </script>
 
 </body>

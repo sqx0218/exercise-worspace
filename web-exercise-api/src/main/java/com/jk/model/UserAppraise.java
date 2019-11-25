@@ -3,30 +3,30 @@ package com.jk.model;
 import org.springframework.data.mongodb.core.mapping.Document;
 
 import java.io.Serializable;
-@Document(collection="AppraiseInfo")
-public class UserAppraise implements Serializable {
-    private Integer infoId;
 
+@Document(collection = "AppraiseInfo")
+public class UserAppraise implements Serializable {
+    private Integer userId;
+    private String userName;
     private Integer venueId;
 
     private String praiseInfo;
     private Integer pid;
 
-
-    public Integer getInfoId() {
-        return infoId;
+    public Integer getUserId() {
+        return userId;
     }
 
-    public void setInfoId(Integer infoId) {
-        this.infoId = infoId;
+    public void setUserId(Integer userId) {
+        this.userId = userId;
     }
 
-    public Integer getPid() {
-        return pid;
+    public String getUserName() {
+        return userName;
     }
 
-    public void setPid(Integer pid) {
-        this.pid = pid;
+    public void setUserName(String userName) {
+        this.userName = userName;
     }
 
     public Integer getVenueId() {
@@ -35,6 +35,14 @@ public class UserAppraise implements Serializable {
 
     public void setVenueId(Integer venueId) {
         this.venueId = venueId;
+    }
+
+    public Integer getPid() {
+        return pid;
+    }
+
+    public void setPid(Integer pid) {
+        this.pid = pid;
     }
 
     public String getPraiseInfo() {
